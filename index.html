@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PracticalAI: Empowering Kiwi Businesses with Hands-On AI Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+    <style>
+        .hero-body {
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: black;
+        }
+        .navbar-item img {
+            max-height: 3rem;
+        }
+        .section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        .card {
+            height: 100%;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="https://drive.google.com/uc?export=download&id=1fbMmKFA61avIZnxxy4avLO0gZ1j_7ax3" alt="PracticalAI Logo">
+                </a>
+            </div>
+        </nav>
+
+        <section class="hero is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">{{ heroTitle }}</h1>
+                    <h2 class="subtitle is-3">{{ heroSubtitle }}</h2>
+                    <a class="button is-primary is-large" @click="scrollToSection('contact')">{{ heroCta }}</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="content">
+                    <h2 class="title is-2">Introduction</h2>
+                    <p>{{ introduction }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">AI Benefits</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-half" v-for="benefit in aiBenefits" :key="benefit.title">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">{{ benefit.title }}</p>
+                                <p class="subtitle">{{ benefit.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">Courses</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-one-third" v-for="course in courses" :key="course.title">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">
+                                    <span class="icon">
+                                        <i :class="course.icon"></i>
+                                    </span>
+                                    {{ course.title }}
+                                </p>
+                                <p class="subtitle">{{ course.price }}</p>
+                                <p>{{ course.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">The PracticalAI Difference</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-half" v-for="difference in practicalAiDifference" :key="difference.title">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">{{ difference.title }}</p>
+                                <p>{{ difference.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">Testimonials</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-one-third" v-for="testimonial in testimonials" :key="testimonial.name">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-5">{{ testimonial.name }}</p>
+                                <p class="subtitle is-6">{{ testimonial.role }}</p>
+                                <p>{{ testimonial.quote }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">About the Instructors</h2>
+                <div class="columns">
+                    <div class="column is-two-thirds">
+                        <p>{{ aboutInstructors }}</p>
+                    </div>
+                    <div class="column">
+                        <figure class="image">
+                            <img src="https://drive.google.com/uc?export=download&id=1nNezvKVZlEp-VxKB9TIep92ZcxlPboGw" alt="Instructor">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2">FAQs</h2>
+                <div class="content">
+                    <dl>
+                        <dt v-for="faq in faqs" :key="faq.question">
+                            <strong>{{ faq.question }}</strong>
+                        </dt>
+                        <dd v-for="faq in faqs" :key="faq.answer">
+                            {{ faq.answer }}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="title is-2">Contact Us</h2>
+                <p>{{ contactInfo }}</p>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="Your email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary">Subscribe to Newsletter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>{{ footerText }}</p>
+                <div class="buttons is-centered">
+                    <a class="button is-light" v-for="social in socialMedia" :key="social">
+                        <span class="icon">
+                            <i :class="'fab fa-' + social.toLowerCase()"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    heroTitle: '',
+                    heroSubtitle: '',
+                    heroCta: '',
+                    introduction: '',
+                    aiBenefits: [],
+                    courses: [],
+                    practicalAiDifference: [],
+                    testimonials: [],
+                    aboutInstructors: '',
+                    faqs: [],
+                    contactInfo: '',
+                    footerText: '',
+                    socialMedia: []
+                }
+            },
+            methods: {
+                async fetchContent() {
+                    try {
+                        const response = await fetch('/practicalai-content.md');
+                        const text = await response.text();
+                        this.parseContent(text);
+                    } catch (error) {
+                        console.error('Error fetching content:', error);
+                    }
+                },
+                parseContent(content) {
+                    const sections = content.split('##').slice(1);
+                    sections.forEach(section => {
+                        const [title, ...lines] = section.trim().split('\n');
+                        const sectionContent = lines.join('\n').trim();
+
+                        switch (title.trim()) {
+                            case 'Hero Section':
+                                this.parseHeroSection(sectionContent);
+                                break;
+                            case 'Introduction':
+                                this.introduction = sectionContent;
+                                break;
+                            case 'AI Benefits':
+                                this.parseAIBenefits(sectionContent);
+                                break;
+                            case 'Courses':
+                                this.parseCourses(sectionContent);
+                                break;
+                            case 'PracticalAI Difference':
+                                this.parsePracticalAIDifference(sectionContent);
+                                break;
+                            case 'Testimonials':
+                                this.parseTestimonials(sectionContent);
+                                break;
+                            case 'About the Instructors':
+                                this.aboutInstructors = sectionContent;
+                                break;
+                            case 'FAQs':
+                                this.parseFAQs(sectionContent);
+                                break;
+                            case 'Footer':
+                                this.parseFooter(sectionContent);
+                                break;
+                        }
+                    });
+                },
+                parseHeroSection(content) {
+                    const lines = content.split('\n');
+                    this.heroTitle = lines[0].replace('**Title:**', '').trim();
+                    this.heroSubtitle = lines[1].replace('**Subtitle:**', '').trim();
+                    this.heroCta = lines[2].replace('**CTA Button:**', '').trim();
+                },
+                parseAIBenefits(content) {
+                    this.aiBenefits = content.split('-').slice(1).map(benefit => {
+                        const [title, description] = benefit.split('\n');
+                        return {
+                            title: title.trim(),
+                            description: description.trim()
+                        };
+                    });
+                },
+                parseCourses(content) {
+                    this.courses = content.split('\n\n').map(course => {
+                        const lines = course.split('\n');
+                        return {
+                            title: lines[0].replace(/^\d+\.\s+\*\*/, '').replace('**', ''),
+                            price: lines[1].replace('   - Price:', '').trim(),
+                            description: lines[2].replace('   - Description:', '').trim(),
+                            icon: lines[3].replace('   - Icon:', '').trim()
+                        };
+                    });
+                },
+                parsePracticalAIDifference(content) {
+                    this.practicalAiDifference = content.split('-').slice(1).map(difference => {
+                        const [title, description] = difference.split('\n');
+                        return {
+                            title: title.trim(),
+                            description: description.trim()
+                        };
+                    });
+                },
+                parseTestimonials(content) {
+                    this.testimonials = content.split('\n\n').map(testimonial => {
+                        const [nameRole, quote] = testimonial.split('\n');
+                        const [name, role] = nameRole.split(',');
+                        return {
+                            name: name.replace(/^\d+\.\s+\*\*/, '').replace('**', '').trim(),
+                            role: role.trim(),
+                            quote: quote.replace(/^   "/, '').replace(/"$/, '').trim()
+                        };
+                    });
+                },
+                parseFAQs(content) {
+                    this.faqs = content.split('\n\n').map(faq => {
+                        const [question, answer] = faq.split('\n');
+                        return {
+                            question: question.replace(/^\d+\.\s+\*\*/, '').replace('**', '').trim(),
+                            answer: answer.trim()
+                        };
+                    });
+                },
+                parseFooter(content) {
+                    const lines = content.split('\n');
+                    this.contactInfo = lines[0].replace('**Contact:**', '').trim();
+                    this.socialMedia = lines.slice(2, -2).map(line => line.replace('-', '').trim());
+                    this.footerText = lines[lines.length - 1].replace('**Copyright:**', '').trim();
+                },
+                scrollToSection(sectionId) {
+                    const element = document.getElementById(sectionId);
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            },
+            mounted() {
+                this.fetchContent();
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
