@@ -30,8 +30,8 @@ Boost productivity and innovation in our new AI-powered future
 
 ## Introduction
 
-At PracticalAI, we compare AI to the humble spreadsheet every business uses – it's an incredibly powerful tool, but 20 years ago without some basic skills and training it might have been mistaken for just a silly gimmick. 
-
+At PracticalAI, we compare AI to the humble spreadsheet every business uses – it's an incredibly powerful tool, but 20 years ago without some basic skills and training it might have been mistaken for just a silly gimmick.
+  
 The truth is, just like the humble spreadsheet, AI will be a game-changer for every business and professional across every industry – if you know how to use it.
 
 ## AI Benefits
@@ -76,19 +76,19 @@ Don't let AI pass you by. Here in NZ, let's do to AI what we did to cafes. After
 
 1. **Kiwi Experts**
    - Image: /content/justnz.png
-   - TagLine: Our instructors aren't just tech gurus; they're locals who understand the unique challenges and opportunities of doing business in New Zealand.
+   - Description: Our instructors aren't just tech gurus; they're locals who understand the unique challenges and opportunities of doing business in New Zealand.
 
 2. **No Fluff, Just Stuff**
-   - Image: /content/justnz.png
-   - TagLine: We cut through the tech jargon and USA hype-cycle to focus on practical skills you can use today.
+   - Image: /content/nohype.png
+   - Description: We cut through the tech jargon and USA hype-cycle to focus on practical skills you can use today.
 
 3. **Hands On Learning**
    - Image: /content/justnz.png
-   - TagLine:  We're all about learning by doing, you'll get your hands dirty with real AI tools and techniques.
+   - Description:  We're all about learning by doing, you'll get your hands dirty with real AI tools and techniques.
 
 4. **Ongoing Support**
    - Image: /content/justnz.png
-   - TagLine: Join our Practical:AI User Group for continued learning and networking with other AI savvy Kiwis.
+   - Description: Join our Practical:AI User Group for continued learning and networking with other AI savvy Kiwis.
 
 ## Testimonials
 

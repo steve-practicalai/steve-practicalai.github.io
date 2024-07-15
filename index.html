@@ -54,7 +54,7 @@
             <div class="container">
                 <div class="content">
                     <h2 class="title is-2">Introduction</h2>
-                    <p>{{ introduction }}</p>
+                    <div class="content" v-html="this.introduction"></div>
                 </div>
             </div>
         </section>
@@ -99,13 +99,22 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="title is-2">The PracticalAI Difference</h2>
+                <h2 class="title is-2">The Practical:AI Difference</h2>
                 <div class="columns is-multiline">
-                    <div class="column is-half" v-for="difference in practicalAiDifference" :key="difference.title">
+                    <div class="column is-12 mb-4" v-for="difference in practicalAiDifferences" :key="difference.title">
                         <div class="card">
                             <div class="card-content">
-                                <p class="title is-4">{{ difference.title }}</p>
-                                <p>{{ difference.description }}</p>
+                                <div class="media">
+                                  <div class="media-left">
+                                    <figure v-if="difference.image" class="image is-64x64">
+                                        <img :src="difference.image" :alt="difference.title">
+                                    </figure>
+                                  </div>
+                                  <div class="media-content">
+                                    <p class="title is-4">{{ difference.title }}</p>
+                                    <p class="subtitle is-6">{{ difference.description }}</p>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,7 +214,7 @@
                 introduction: '',
                     aiBenefits: [],
                     courses: [],
-                    practicalAiDifference: [],
+                    practicalAiDifferences: [],
                 testimonials: [],
                 aboutInstructors: '',
                 faqs: [],
@@ -235,7 +244,7 @@
                                 this.parseHeroSection(sectionContent);
                                 break;
                             case 'Introduction':
-                                this.introduction = sectionContent;
+                                this.introduction = marked.parse(sectionContent);
                                 break;
                             case 'AI Benefits':
                                 this.parseAIBenefits(sectionContent);
@@ -243,7 +252,7 @@
                             case 'Courses':
                                 this.parseCourses(sectionContent);
                                 break;
-                            case 'PracticalAI Difference':
+                            case 'Practical:AI Difference':
                                 this.parsePracticalAIDifference(sectionContent);
                                 break;
                             case 'Testimonials':
@@ -288,11 +297,12 @@
                     });
                 },
                 parsePracticalAIDifference(content) {
-                    this.practicalAiDifference = content.split('-').slice(1).map(difference => {
-                        const [title, description] = difference.split('\n');
+                    this.practicalAiDifferences = content.split('\n\n').map(practicalAiDifference => {
+                        const lines = practicalAiDifference.split('\n');
                         return {
-                            title: title.trim(),
-                            description: description.trim()
+                            title: lines[0].replace(/^\d+\.\s+\*\*/, '').replace('**', ''),
+                            image: lines[1].replace('   - Image:', '').trim(),
+                            description: lines[2].replace('   - Description:', '').trim()
                         };
                     });
                 },
