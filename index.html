@@ -141,20 +141,39 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="title is-2">About the Instructors</h2>
-                <div class="columns">
-                    <div class="column is-two-thirds">
-                        <div class="content" v-html="this.aboutInstructors"></div>
-                    </div>
-                    <div class="column">
-                        <iframe src="linkedin-iframe.html" height="400" width="255" frameborder="0"></iframe>
-                        <figure class="image custom-max-width-200 mt-4">
-                            <img src="/content/BlackLogo-BrandName-OnTransparent.png" alt="Practical:AI Logo">
-                        </figure>
-                    </div>
+              <h2 class="title is-2">About the Instructors</h2>
+              <div class="columns">
+                <div class="column is-two-thirds">
+                  <div class="content" v-html="this.aboutInstructors"></div>
                 </div>
+                <div class="column">
+                  <!-- LinkedIn Profile Component -->
+                  <div class="card">
+                    <div class="card-header" style="background-color: #f1ece6; padding: 0.5rem;">
+                      <div class="card-header-title" style="padding: 0;">
+                        <img src="/content/LinkedInLogo.png" alt="LinkedIn" style="height: 20px;">
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="has-text-centered">
+                        <figure class="image is-256x256 is-inline-block mb-4">
+                          <img class="is-rounded" src="/content/SteveHeadshot.png" alt="Steve Green">
+                        </figure>
+                        <p class="title is-4">Steve Green</p>
+                        <p class="subtitle is-6 mb-4">Co-Founder at Practical:AI</p>
+                        <a href="https://nz.linkedin.com/in/stevegnz" class="button is-info is-outlined is-fullwidth">
+                          <span class="icon">
+                            <i class="fab fa-linkedin"></i>
+                          </span>
+                          <span>View LinkedIn Profile</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
 
         <section class="section">
             <div class="container">
