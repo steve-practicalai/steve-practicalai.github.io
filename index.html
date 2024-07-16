@@ -28,25 +28,54 @@
             background-color: black;
             color: white;
         }
+        .custom-button {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .custom-button:hover {
+            border-color: black !important;
+            background-color: #ffffff !important;
+            color: black !important;
+        }
     </style>
 </head>
-<body>
+<body class="has-navbar-fixed-top">
     <div id="app">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="PracticalAI Logo">
-                </a>
-            </div>
-        </nav>
-
-        <section class="hero is-medium">
-            <div class="hero-body">
+        <section class="hero is-info is-medium">
+            <div class="hero-head">
+              <nav class="navbar is-fixed-top has-background-black">
                 <div class="container">
-                    <h1 class="title is-1">{{ heroTitle }}</h1>
-                    <h2 class="subtitle is-3">{{ heroSubtitle }}</h2>
-                    <a class="button is-primary is-large" @click="scrollToSection('contact')">{{ heroCta }}</a>
+                  <div class="navbar-brand">
+                    <a class="navbar-item">
+                      <img src="/content/WhiteLogo-OnTransparent.png"  alt="Logo" />
+                    </a>
+                  </div>
+                  <div id="navbarMenuHeroB" class="navbar-menu">
+                    <div class="navbar-end">
+                      <a class="navbar-item has-background-white has-text-black"> Home </a>
+                      <a class="navbar-item" @click="scrollToSection('courses')"> Courses </a>
+                      <a class="navbar-item" @click="scrollToSection('faq')"> FAQ </a>
+                      <a class="navbar-item" @click="scrollToSection('contact')"> Contact </a>
+                    </div>
+                  </div>
                 </div>
+              </nav>
+            </div>
+          
+            <div class="hero-body has-background-black">
+                <div class="columns">
+                <div class="column">
+                <div>
+                    <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="Steve Green">
+                </div>
+                <p class="title">{{ heroTitle }}</p>
+                <p class="subtitle">{{ heroSubtitle }}</p>
+                <a class="button is-primary is-large has-background-white has-text-black" @click="scrollToSection('courses')">{{ heroCta }}</a>
+                </div>
+                <div class="column is-one-third">
+                <figure class="image">
+                    <img class="is-rounded" src="/content/asarole.png" alt="AI Roles" />
+                </figure>
+                </div></div>
             </div>
         </section>
 
@@ -77,28 +106,6 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="title is-2">Courses</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-half" v-for="course in courses" :key="course.title">
-                        <div class="card">
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <span class="icon">
-                                        <i :class="course.icon"></i>
-                                    </span>
-                                    {{ course.title }}
-                                </p>
-                                <p class="subtitle">{{ course.price }}</p>
-                                <p>{{ course.description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
                 <h2 class="title is-2">The Practical:AI Difference</h2>
                 <div class="columns is-multiline">
                     <div class="column is-12 mb-4" v-for="difference in practicalAiDifferences" :key="difference.title">
@@ -119,6 +126,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section" id="courses">
+            <div class="container">
+                <h2 class="title is-2">Courses</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-half" v-for="course in courses" :key="course.title">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">
+                                    <span class="icon">
+                                        <i :class="course.icon"></i>
+                                    </span>
+                                    {{ course.title }}
+                                </p>
+                                <p class="subtitle">{{ course.price }}</p>
+                                <p>{{ course.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container has-text-centered mt-6">
+                <button class="button is-large is-black custom-button">Secure Your AI Workshop Spot Now</button>
             </div>
         </section>
 
@@ -180,12 +212,10 @@
                 <h2 class="title is-2">FAQs</h2>
                 <div class="content">
                     <dl>
-                        <dt v-for="faq in faqs" :key="faq.question">
+                        <dt class="mb-3" v-for="faq in faqs" :key="faq.question">
                             <strong>{{ faq.question }}</strong>
+                            <div class="content" v-html="faq.answer"></div>
                         </dt>
-                        <dd v-for="faq in faqs" :key="faq.answer">
-                            {{ faq.answer }}
-                        </dd>
                     </dl>
                 </div>
             </div>
@@ -194,18 +224,14 @@
         <section class="section" id="contact">
             <div class="container">
                 <h2 class="title is-2">Contact Us</h2>
-                <p>{{ contactInfo }}</p>
-                <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control">
-                        <input class="input" type="email" placeholder="Your email">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <button class="button is-primary">Subscribe to Newsletter</button>
-                    </div>
-                </div>
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                hbspt.forms.create({
+                    region: "na1",
+                    portalId: "45154194",
+                    formId: "5687d1d3-54b0-48a9-8207-0478b326920f"
+                });
+                </script>
             </div>
         </section>
 
@@ -213,11 +239,8 @@
             <div class="content has-text-centered">
                 <p>{{ footerText }}</p>
                 <div class="buttons is-centered">
-                    <a class="button is-light" v-for="social in socialMedia" :key="social">
-                        <span class="icon">
-                            <i :class="'fab fa-' + social.toLowerCase()"></i>
-                        </span>
-                    </a>
+                    <a href="https://www.facebook.com/PracticalAINZ" class="button is-light"><span class="icon"><i class="fab fa-facebook"></i></span></a>
+                    <a href="https://www.linkedin.com/company/nzpai/" class="button is-light"><span class="icon"><i class="fab fa-linkedin"></i></span></a>
                 </div>
             </div>
         </footer>
@@ -341,7 +364,7 @@
                         const [question, answer] = faq.split('\n');
                         return {
                             question: question.replace(/^\d+\.\s+\*\*/, '').replace('**', '').trim(),
-                            answer: answer.trim()
+                            answer: marked.parse(answer.trim())
                         };
                     });
                 },

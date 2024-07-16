@@ -22,10 +22,8 @@ Image of AI "robots":
 
 ## Hero Section
 
-**Title:** Practical:AI: Empowering Kiwi Businesses with Hands-On AI Skills
-
-Boost productivity and innovation in our new AI-powered future
-
+**Title:** Understand it intuitively. Use it practically. 
+**Subtitle:** Supercharge Your Productivity and Innovation in the AI Era
 **CTA Button:** Book Your AI Skills Workshop
 
 ## Introduction
@@ -40,10 +38,10 @@ The truth is, just like the humble spreadsheet, AI will be a game-changer for ev
   Automate those mindnumbing tasks and offload drudge work to free up time for the important stuff.
 
 - Raise the floor
-  AI isn't a match in your area of expertise but it's a world class expert in everything you're not an expert in.
+  AI isn't a match in your area of expertise but it's a world class expert in everything you're not.
 
 - Spark Innovation
-  Supercharge your brainstorming for new ideas and solutions you might not have thought of before.
+  Supercharge your brainstorming with new ideas and solutions you might not have thought of before.
 
 - Improve Customer Experience
   Offer personalised services that'll have your customers raving.
@@ -83,11 +81,11 @@ Don't let AI pass you by. Here in NZ, let's do to AI what we did to cafes. After
    - Description: We cut through the tech jargon and USA hype-cycle to focus on practical skills you can use today.
 
 3. **Hands On Learning**
-   - Image: /content/justnz.png
+   - Image: /content/handson.png
    - Description:  We're all about learning by doing, you'll get your hands dirty with real AI tools and techniques.
 
 4. **Ongoing Support**
-   - Image: /content/justnz.png
+   - Image: /content/pug.png
    - Description: Join our Practical:AI User Group for continued learning and networking with other AI savvy Kiwis.
 
 ## Testimonials
@@ -119,13 +117,16 @@ Our workshops are led by tech veterans with over 20 years of experience in AI an
 ## FAQs
 
 1. **Do I need prior AI experience?**
-   No prior AI experience is necessary for our Foundation course. We cater to all skill levels.
+   No prior AI experience is necessary for our Foundation course which provides a solid grounding in what's possible with today's AI technology. We cater to all skill levels with the Skills course aimed at ChatGPT power users and the Advanced course if for those looking to take it a step further with advanced prompt engineering and powerful automation techniques.
 
 2. **How long are the courses?**
    Course durations vary from half-day workshops to full-day intensive sessions. Check each course description for specific details.
 
 3. **Are the courses suitable for my industry?**
    Yes! Our courses are designed to be applicable across various industries. We focus on practical skills that can be adapted to your specific needs.
+
+3. **Do I need ChatGPT Pro?**
+   Our courses aren't for any specific vendor and our Foundations course can be completed with the free [ChatGPT](https://openai.com/index/chatgpt/) or [Claude](https://www.anthropic.com/claude) account. The Skills and Advanced courses do require access to the professional subscription and API developer tools respectively.
 
 ## Newsletter Signup
 
