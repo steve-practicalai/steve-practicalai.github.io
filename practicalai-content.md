@@ -48,27 +48,57 @@ The truth is, just like the humble spreadsheet, AI will be a game-changer for ev
 
 Don't let AI pass you by. Here in NZ, let's do to AI what we did to cafes. After all, we don't grow the coffee or make espresso machines, it's our skills, knowledge and mindset that makes us special.
 
-## Courses
+## Workshops
 
-1. **Practical:AI Foundation**
-   - Price: $250 (on-demand video) / $500 (half-day workshop)
-   - Description: Get to grips with AI basics. Available as an on-demand video with access to exercises or a half-day workshop.
-   - Icon: fas fa-rocket
+### Practical:AI Foundation
 
-2. **Practical:AI Skills**
-   - Price: $1500
-   - Description: A full-day, hands-on course to boost your AI productivity.
-   - Icon: fas fa-tools
+- Subtitle: Kickstart your AI journey
+- Image: /content/foundationsicon.png
+- Button: Book
+- Price: $500 (half-day workshop)
 
-3. **Practical:AI Advanced**
-   - Price: $2500
-   - Description: A full-day, deep dive for those ready to take their AI skills to the next level with advanced prompt engineering and prompt chaining techniques.
-   - Icon: fas fa-brain
+Our half-day Foundations workshop will equip you with:
+- **AI Theory (That Won't Put You to Sleep):** Understand how AI ticks under the hood without needing a math PhD.
+- **Extracting real business value:** AI is an endless goldmine of value, learn how to 'mine' it safely.
+- **Risks and challenges:** Learn about what is meant when we say AI "hallucinates", the bias risks and how they can be managed.
+- **The new frontier:** AI has upended the status quo to the extent everything will need to be revalauated, learn to seperate the low-hanging fruit from the AI slop.
 
-4. **Practical:AI User Group**
-   - Price: $50/month
-   - Description: All courses come with 3 months of updates. Students can then subscribe ongoing to stay up-to-date with the latest AI developments.
-   - Icon: fas fa-users
+### Practical:AI Skills (Coming Soon)
+
+- Subtitle: Move beyond the basics
+- Image: /content/skillsicon.png
+- Button: Reserve | https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
+- Price: $1500 (full-day workshop)
+
+A full-day, hands-on course to boost your AI productivity:
+- **Prompt Engineering:** In-depth explanation of prompt engineering techniques
+- **RCCT:** Practical frameworks like RCCT for structuring AI interactions
+- **Risks:** Discussion of potential pitfalls and biases in AI use
+- **Exercises:** Hands-on exercises and examples throughout
+
+### Practical:AI Advanced (Coming Soon)
+
+- Subtitle: Move beyond the basics
+- Icon: fas fa-brain
+- Button: Reserve | https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
+- Price: $2500 (full-day workshop)
+
+A full-day, deep dive for those ready to take their AI skills to the next level with advanced prompt engineering and prompt chaining techniques.:
+- **Prompt Engineering:** In-depth explanation of prompt engineering techniques
+- **RCCT:** Practical frameworks like RCCT for structuring AI interactions
+- **Risks:** Discussion of potential pitfalls and biases in AI use
+- **Exercises:** Hands-on exercises and examples throughout
+
+### Practical:AI User Group
+
+- Subtitle: Move beyond the basics
+- Image: /content/pug.png
+- Price: $50/month
+
+ All courses come with 3 months of updates. Students can then subscribe ongoing to stay up-to-date with the latest AI developments.
+- **Workshop Exercises:** Throughout the workshop we'll walk through exercises that you can complete at your own pace later via the portal.
+- **AI Content:** Practical:AI maintains a library of resources from glossaries of common terms, prompt engineering guides and video content.
+- **Community:** The portal also serves as a community hub where you can engage with current and prior students of Practical:AI's workshops.
 
 ## Practical:AI Difference
 
@@ -90,14 +120,19 @@ Don't let AI pass you by. Here in NZ, let's do to AI what we did to cafes. After
 
 ## Testimonials
 
-1. **Jane Doe, CEO**
-   "PracticalAI's workshop transformed how we approach AI in our business."
+1. **Paul Armstrong, Independent Consultant**
+"...a fantastic learning experience.  
+  \
+This course would be valuable to everyone, especially public servants who may have recently lost their jobs, and public services trying to figure out how to replace what their people used to do.  
+  \
+This is not a moment to look back. This course enables the motivated to not only look forward but practice how to start moving forward."
 
-2. **John Smith, Marketing Director**
-   "The hands-on approach made complex AI concepts easy to grasp and apply."
-
-3. **Sarah Johnson, Product Manager**
-   "I've seen immediate productivity gains after implementing what I learned."
+2. **Dave Knight, B2B Sales coach**
+"Such a valuable course. A great day with a fabulous group.  
+  \
+If you are a business owner, founder, sole trader, this course will help you leverage the power of AI. Importantly you will learn its (current) limits and get actionable insights in how to get the best from this emerging tech.  
+  \
+Much more than AI buzz... this is substantial content and tools!"
 
 ## About the Instructors
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical:AI Empowering Kiwi Businesses with Hands-On AI Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
+    <style>
+        .hero-body {
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: black;
+        }
+        .navbar-item img {
+            max-height: 3rem;
+        }
+        .section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        .card {
+            height: 100%;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+        }
+        .custom-button {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .custom-button:hover {
+            border-color: black !important;
+            background-color: #ffffff !important;
+            color: black !important;
+        }
+    </style>
+    <script>
+        // Function to get query parameter value
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Function to set iframe src
+        function setIframeSrc() {
+            const eventCode = getQueryParam('eventCode');
+            if (eventCode) {
+                const iframe = document.getElementById('bookwhen-iframe');
+                if (iframe) {
+                    iframe.src = `https://bookwhen.com/pai-foundations/iframe/e/${eventCode}`;
+                } else {
+                    console.error('Iframe element not found');
+                }
+            }
+        }
+
+        // Run the setIframeSrc function after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', setIframeSrc);
+    </script>
+</head>
+<body class="has-navbar-fixed-top">
+        <nav class="navbar is-info is-fixed-top has-background-black">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item">
+                        <img src="/content/WhiteLogo-OnTransparent.png"  alt="Logo" />
+                    </a>
+                </div>
+                <div id="navbarMenuHeroB" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item has-background-white has-text-black"> Home </a>
+                        <a class="navbar-item" href="/index.html#workshops"> Workshops </a>
+                        <a class="navbar-item" href="/index.html#faq"> FAQ </a>
+                        <a class="navbar-item"href="/index.html#contact"> Contact </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="section pt-2">
+            <div class="container">
+                <iframe id="bookwhen-iframe" frameborder="0" scrolling="yes" seamless="seamless" style="display:block;border:none;width:100%;height:900px;"></iframe>
+            </div>
+        </section>
+
+</body>
+</html>
