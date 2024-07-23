@@ -55,47 +55,47 @@ Don't let AI pass you by. Here in NZ, let's do to AI what we did to cafes. After
 - Subtitle: Kickstart your AI journey
 - Image: /content/foundationsicon.png
 - Button: Book
-- Price: $500 (half-day workshop)
+- Price: $499 (half-day workshop)
 
 Our half-day Foundations workshop will equip you with:
 - **AI Theory (That Won't Put You to Sleep):** Understand how AI ticks under the hood without needing a math PhD.
 - **Extracting real business value:** AI is an endless goldmine of value, learn how to 'mine' it safely.
-- **Risks and challenges:** Learn about what is meant when we say AI "hallucinates", the bias risks and how they can be managed.
-- **The new frontier:** AI has upended the status quo to the extent everything will need to be revalauated, learn to seperate the low-hanging fruit from the AI slop.
+- **Risks and challenges:** Learn about what is meant when we say AI "hallucinates", the biases, risks and how they can be managed.
+- **The new frontier:** AI has upended the status quo to the extent everything will need to be revalauated, learn to seperate the low-hanging fruit from the AI Slop.
 
 ### Practical:AI Skills (Coming Soon)
 
-- Subtitle: Move beyond the basics
+- Subtitle: AI as a skillset
 - Image: /content/skillsicon.png
 - Button: Reserve | https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
 - Price: $1500 (full-day workshop)
 
 A full-day, hands-on course to boost your AI productivity:
-- **Prompt Engineering:** In-depth explanation of prompt engineering techniques
-- **RCCT:** Practical frameworks like RCCT for structuring AI interactions
-- **Risks:** Discussion of potential pitfalls and biases in AI use
-- **Exercises:** Hands-on exercises and examples throughout
+- **Prompt Engineering:** In-depth explanation of prompt engineering techniques to reliably extract the most value from LLM models.
+- **RCCT:** The Role/Context/Constraint/Task framework for building complex prompts out of reusable components.
+- **Image Generation:** How it functions under the hood and advanced approaches to generate 
+- **Advanced use cases:** Covering use cases such as content creation, business metric extraction and data analysis.
 
 ### Practical:AI Advanced (Coming Soon)
 
-- Subtitle: Move beyond the basics
-- Icon: fas fa-brain
+- Subtitle: Moving beyond just AI chat
+- Image: /content/advancedicon.png
 - Button: Reserve | https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
 - Price: $2500 (full-day workshop)
 
-A full-day, deep dive for those ready to take their AI skills to the next level with advanced prompt engineering and prompt chaining techniques.:
-- **Prompt Engineering:** In-depth explanation of prompt engineering techniques
-- **RCCT:** Practical frameworks like RCCT for structuring AI interactions
-- **Risks:** Discussion of potential pitfalls and biases in AI use
-- **Exercises:** Hands-on exercises and examples throughout
+A full-day, deep dive for those ready to take their AI skills to the next level:
+- **Prompt chaining:** Master the technique of chaining prompts to generate everything from business plans to functioning software.
+- **Coding for non-coders:** Creating functioning apps and software in hours regardless of coding ability.
+- **API access:** Explore both low-code and no-code options for accessing the various LLM API providers, including overview of their consumption pricing models.
+- **Automation and Risks:** Discussion of opportunities and potential pitfalls in incorpoarting AI into automation workflows.
 
 ### Practical:AI User Group
 
-- Subtitle: Move beyond the basics
+- Subtitle: Non-Artificial Intelligence
 - Image: /content/pug.png
 - Price: $50/month
 
- All courses come with 3 months of updates. Students can then subscribe ongoing to stay up-to-date with the latest AI developments.
+ All courses come with exercises and 3 months of updates. Students can then subscribe ongoing to stay up-to-date with the latest AI developments.
 - **Workshop Exercises:** Throughout the workshop we'll walk through exercises that you can complete at your own pace later via the portal.
 - **AI Content:** Practical:AI maintains a library of resources from glossaries of common terms, prompt engineering guides and video content.
 - **Community:** The portal also serves as a community hub where you can engage with current and prior students of Practical:AI's workshops.

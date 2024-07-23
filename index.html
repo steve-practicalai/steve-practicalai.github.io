@@ -29,12 +29,24 @@
             color: white;
         }
         .custom-button {
+            border-color: rgb(255, 255, 255) !important;
+            background-color: #000000 !important;
+            color: rgb(255, 255, 255) !important;
             transition: background-color 0.3s, color 0.3s;
         }
         .custom-button:hover {
             border-color: black !important;
             background-color: #ffffff !important;
             color: black !important;
+        }
+        .custom-button2 {
+            color: black !important;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .custom-button2:hover {
+            border-color: rgb(255, 255, 255) !important;
+            background-color: #000000 !important;
+            color: rgb(255, 255, 255) !important;
         }
     </style>
 </head>
@@ -43,13 +55,13 @@
         <nav class="navbar is-info is-fixed-top has-background-black">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="/index.html#hero">
                         <img src="/content/WhiteLogo-OnTransparent.png"  alt="Logo" />
                     </a>
                 </div>
                 <div id="navbarMenuHeroB" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item has-background-white has-text-black"> Home </a>
+                        <a class="navbar-item has-background-white has-text-black" href="/index.html#hero"> Home </a>
                         <a class="navbar-item" @click="scrollToSection('workshops')"> Workshops </a>
                         <a class="navbar-item" @click="scrollToSection('faq')"> FAQ </a>
                         <a class="navbar-item" @click="scrollToSection('contact')"> Contact </a>
@@ -57,7 +69,7 @@
                 </div>
             </div>
         </nav>
-        <section class="hero is-info is-medium has-background-black">
+        <section class="hero is-info is-medium has-background-black" id="hero">
             <div class="container">
                 <div class="hero-body has-background-black">
                     <div class="columns">
@@ -67,7 +79,7 @@
                             </div>
                             <p class="title">{{ heroTitle }}</p>
                             <p class="subtitle">{{ heroSubtitle }}</p>
-                            <a class="button is-primary is-large has-background-white has-text-black"
+                            <a class="button custom-button2 is-primary is-large has-background-white"
                                 @click="scrollToSection('workshops')">{{ heroCta }}</a>
                         </div>
                         <div class="column is-one-third">
@@ -156,7 +168,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-left" v-if="workshop.image || workshop.icon">
-                          <figure class="image is-48x48" v-if="workshop.image">
+                          <figure class="image is-64x64" v-if="workshop.image">
                             <img class="is-rounded" :src="workshop.image" :alt="workshop.title">
                           </figure>
                           <span class="icon is-large" v-else-if="workshop.icon">
@@ -164,8 +176,8 @@
                           </span>
                         </div>
                         <div class="media-content">
-                          <p class="title is-4">{{ workshop.title }}</p>
-                          <p class="subtitle is-6" v-if="workshop.subtitle">{{ workshop.subtitle }}</p>
+                          <p class="title is-3">{{ workshop.title }}</p>
+                          <p class="subtitle is-5" v-if="workshop.subtitle">{{ workshop.subtitle }}</p>
                         </div>
                       </div>
             
@@ -178,7 +190,7 @@
                             <a 
                               :href="workshop.buttonlink" 
                               @click="!workshop.buttonlink && toggleEventSelector(index)"
-                              :class="['button', 'is-large', 'is-black', { 'custom-button': workshop.buttonlink }]"
+                              :class="['button', 'is-large','is-black', 'custom-button']"
                             >
                               {{ workshop.buttontext }}
                             </a>
