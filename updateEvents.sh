@@ -1,0 +1,1 @@
+wget https://feeds.bookwhen.com/ical/idvv5nkv1e44/pj75f4/public.ics -O public.ics
