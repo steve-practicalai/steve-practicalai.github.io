@@ -6,7 +6,7 @@
     <title>Practical:AI Empowering Kiwi Businesses with Hands-On AI Skills</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/png" href="/content/BlackLogo-OnTransparent250.png">
+    <link rel="icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
     <style>
@@ -286,7 +286,8 @@
 
         <footer class="footer">
             <div class="content has-text-centered">
-                <p>{{ footerText }}</p>
+                <p>{{ generated }}</p>
+                <p>{{ copyright }}</p>
                 <div class="buttons is-centered">
                     <a href="https://www.facebook.com/PracticalAINZ" class="button is-light"><span class="icon"><i class="fab fa-facebook"></i></span></a>
                     <a href="https://www.linkedin.com/company/nzpai/" class="button is-light"><span class="icon"><i class="fab fa-linkedin"></i></span></a>
@@ -499,9 +500,8 @@
                 },
                 parseFooter(content) {
                     const lines = content.split('\n');
-                    this.contactInfo = lines[0].replace('**Contact:**', '').trim();
-                    this.socialMedia = lines.slice(2, -2).map(line => line.replace('-', '').trim());
-                    this.footerText = lines[lines.length - 1].replace('**Copyright:**', '').trim();
+                    this.generated = lines[0].replace('**Generated:**', '').trim();
+                    this.copyright = lines[2].replace('**Copyright:**', '').trim();
                 },
                 scrollToSection(sectionId) {
                     const element = document.getElementById(sectionId);
