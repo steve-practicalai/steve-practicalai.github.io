@@ -23,10 +23,10 @@ TZNAME:NZST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-DTSTAMP:20240723T091506Z
+DTSTAMP:20240725T212115Z
 UID:bwnp-idvv5nkv1e44-ev-srvf-20240821100000
 DTSTART;TZID=Pacific/Auckland:20240821T100000
-DTEND;TZID=Pacific/Auckland:20240821T110000
+DTEND;TZID=Pacific/Auckland:20240821T140000
 DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  .\nArtificial Intelligence is about to radically change your business and 
  personal productivity\, even with just the capabilities that have already 
@@ -73,17 +73,17 @@ DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  nes\, it's our skills\, knowledge and mindset that makes us special.\nEmpo
  wer yourself. Innovate your business. Shape the future with PracticalAI. \
  n\n\nhttps://bookwhen.com/pai-foundations/e/ev-srvf-20240821100000
-LOCATION:Wellington CBD\, Venue TBC\, Wellington
+LOCATION:Wellington Region\, Venue TBC\, Wellington
 ORGANIZER:mailto:office@practicalai.co.nz
 STATUS:CONFIRMED
-SUMMARY:Lower Hutt - Practical:AI Foundation
+SUMMARY:Wellington - Practical:AI Foundation
 URL:https://bookwhen.com/pai-foundations/e/ev-srvf-20240821100000
 END:VEVENT
 BEGIN:VEVENT
-DTSTAMP:20240723T091506Z
-UID:bwnp-idvv5nkv1e44-ev-srvf-20240828100000
+DTSTAMP:20240725T212115Z
+UID:bwnp-idvv5nkv1e44-ev-stoj-20240828100000
 DTSTART;TZID=Pacific/Auckland:20240828T100000
-DTEND;TZID=Pacific/Auckland:20240828T110000
+DTEND;TZID=Pacific/Auckland:20240828T140000
 DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  .\nArtificial Intelligence is about to radically change your business and 
  personal productivity\, even with just the capabilities that have already 
@@ -129,18 +129,18 @@ DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  e did to cafes\, after all we don't grow the coffee or make espresso machi
  nes\, it's our skills\, knowledge and mindset that makes us special.\nEmpo
  wer yourself. Innovate your business. Shape the future with PracticalAI. \
- n\n\nhttps://bookwhen.com/pai-foundations/e/ev-srvf-20240828100000
-LOCATION:Wellington CBD\, Venue TBC\, Wellington
+ n\n\nhttps://bookwhen.com/pai-foundations/e/ev-stoj-20240828100000
+LOCATION:Wellington Region\, Venue TBC\, Wellington
 ORGANIZER:mailto:office@practicalai.co.nz
 STATUS:CONFIRMED
-SUMMARY:Lower Hutt - Practical:AI Foundation
-URL:https://bookwhen.com/pai-foundations/e/ev-srvf-20240828100000
+SUMMARY:Wellington - Practical:AI Foundation
+URL:https://bookwhen.com/pai-foundations/e/ev-stoj-20240828100000
 END:VEVENT
 BEGIN:VEVENT
-DTSTAMP:20240723T091506Z
+DTSTAMP:20240725T212115Z
 UID:bwnp-idvv5nkv1e44-ev-srvf-20240904100000
 DTSTART;TZID=Pacific/Auckland:20240904T100000
-DTEND;TZID=Pacific/Auckland:20240904T110000
+DTEND;TZID=Pacific/Auckland:20240904T140000
 DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  .\nArtificial Intelligence is about to radically change your business and 
  personal productivity\, even with just the capabilities that have already 
@@ -187,17 +187,17 @@ DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  nes\, it's our skills\, knowledge and mindset that makes us special.\nEmpo
  wer yourself. Innovate your business. Shape the future with PracticalAI. \
  n\n\nhttps://bookwhen.com/pai-foundations/e/ev-srvf-20240904100000
-LOCATION:Wellington CBD\, Venue TBC\, Wellington
+LOCATION:Wellington Region\, Venue TBC\, Wellington
 ORGANIZER:mailto:office@practicalai.co.nz
 STATUS:CONFIRMED
-SUMMARY:Lower Hutt - Practical:AI Foundation
+SUMMARY:Wellington - Practical:AI Foundation
 URL:https://bookwhen.com/pai-foundations/e/ev-srvf-20240904100000
 END:VEVENT
 BEGIN:VEVENT
-DTSTAMP:20240723T091506Z
+DTSTAMP:20240725T212115Z
 UID:bwnp-idvv5nkv1e44-ev-srvf-20240911100000
 DTSTART;TZID=Pacific/Auckland:20240911T100000
-DTEND;TZID=Pacific/Auckland:20240911T110000
+DTEND;TZID=Pacific/Auckland:20240911T140000
 DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  .\nArtificial Intelligence is about to radically change your business and 
  personal productivity\, even with just the capabilities that have already 
@@ -244,17 +244,17 @@ DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  nes\, it's our skills\, knowledge and mindset that makes us special.\nEmpo
  wer yourself. Innovate your business. Shape the future with PracticalAI. \
  n\n\nhttps://bookwhen.com/pai-foundations/e/ev-srvf-20240911100000
-LOCATION:Wellington CBD\, Venue TBC\, Wellington
+LOCATION:Wellington Region\, Venue TBC\, Wellington
 ORGANIZER:mailto:office@practicalai.co.nz
 STATUS:CONFIRMED
-SUMMARY:Lower Hutt - Practical:AI Foundation
+SUMMARY:Wellington - Practical:AI Foundation
 URL:https://bookwhen.com/pai-foundations/e/ev-srvf-20240911100000
 END:VEVENT
 BEGIN:VEVENT
-DTSTAMP:20240723T091506Z
+DTSTAMP:20240725T212115Z
 UID:bwnp-idvv5nkv1e44-ev-srvf-20240918100000
 DTSTART;TZID=Pacific/Auckland:20240918T100000
-DTEND;TZID=Pacific/Auckland:20240918T110000
+DTEND;TZID=Pacific/Auckland:20240918T140000
 DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  .\nArtificial Intelligence is about to radically change your business and 
  personal productivity\, even with just the capabilities that have already 
@@ -301,10 +301,10 @@ DESCRIPTION:Kickstart your AI journey with Practical:AI's foundation course
  nes\, it's our skills\, knowledge and mindset that makes us special.\nEmpo
  wer yourself. Innovate your business. Shape the future with PracticalAI. \
  n\n\nhttps://bookwhen.com/pai-foundations/e/ev-srvf-20240918100000
-LOCATION:Wellington CBD\, Venue TBC\, Wellington
+LOCATION:Wellington Region\, Venue TBC\, Wellington
 ORGANIZER:mailto:office@practicalai.co.nz
 STATUS:CONFIRMED
-SUMMARY:Lower Hutt - Practical:AI Foundation
+SUMMARY:Wellington - Practical:AI Foundation
 URL:https://bookwhen.com/pai-foundations/e/ev-srvf-20240918100000
 END:VEVENT
 END:VCALENDAR
