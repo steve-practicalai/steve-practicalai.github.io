@@ -1,0 +1,196 @@
+---
+logo: /content/WhiteLogo-OnTransparent.png
+menuItems:
+  - text: Home
+    url: /#hero
+  - text: Workshops
+    url: /#Workshops
+  - text: FAQ
+    url: /#FAQs
+  - text: Contact
+    url: /#contact
+
+sections:
+  - type: HeroSection
+    title: Understand it intuitively. Use it practically.
+    subtitle: Supercharge Your Productivity and Innovation in the AI Era
+    ctaText: Book Your AI Skills Workshop
+    ctaLink: "#Workshops"
+    background: has-background-black
+
+  - type: ContentSection
+    title: Introduction
+    content: |
+      At PracticalAI, we compare AI to the humble spreadsheets every business uses – it's an incredibly powerful tool, but 20 years ago without some basic skills and training it might have been mistaken for just a silly gimmick.
+      
+      The truth is, just like the humble spreadsheet, AI will be a game-changer for every business and professional across every industry – if you know how to use it.
+
+  - type: CardSection
+    title: AI Benefits
+    columnClass: is-half
+    items:
+      - title: Boost Your Productivity
+        subtitle: Automate those mindnumbing tasks and offload drudge work to free up time for the important stuff.
+      - title: Raise the floor
+        subtitle: AI isn't a match in your area of expertise but it's a world class expert in everything you're not.
+      - title: Spark Innovation
+        subtitle: Supercharge your brainstorming with new ideas and solutions you might not have thought of before.
+      - title: Improve Customer Experience
+        subtitle: Offer personalised services that'll have your customers raving.
+
+  - type: CardSection
+    title: The Practical:AI Difference
+    columnClass: is-12
+    items:
+      - title: Kiwi Experts
+        image: /content/justnz.png
+        subtitle: Our instructors aren't just tech gurus; they're locals who understand the unique challenges and opportunities of doing business in New Zealand.
+      - title: No Fluff, Just Stuff
+        image: /content/nohype.png
+        subtitle: We cut through the tech jargon and USA hype-cycle to focus on practical skills you can use today.
+      - title: Hands On Learning
+        image: /content/handson.png
+        subtitle: We're all about learning by doing, you'll get your hands dirty with real AI tools and techniques.
+      - title: Ongoing Support
+        image: /content/pug.png
+        subtitle: Join our Practical:AI User Group for continued learning and networking with other AI savvy Kiwis.
+
+  - type: CardSection
+    title: Testimonials
+    columnClass: is-one-third
+    items:
+      - title: Paul Armstrong
+        subtitle: Independent Consultant
+        content: |
+          "...a fantastic learning experience.
+          
+          This course would be valuable to everyone, especially public servants who may have recently lost their jobs, and public services trying to figure out how to replace what their people used to do.
+          
+          This is not a moment to look back. This course enables the motivated to not only look forward but practice how to start moving forward."
+      - title: Dave Knight
+        subtitle: B2B Sales coach
+        content: |
+          "Such a valuable course. A great day with a fabulous group.
+          
+          If you are a business owner, founder, sole trader, this course will help you leverage the power of AI. Importantly you will learn its (current) limits and get actionable insights in how to get the best from this emerging tech.
+          
+          Much more than AI buzz... this is substantial content and tools!"
+
+  - type: CardSection
+    title: Workshops
+    columnClass: is-12
+    items:
+      - title: Practical:AI Foundation
+        subtitle: Kickstart your AI journey
+        image: /content/foundationsicon.png
+        content: |
+          Our half-day Foundations workshop will equip you with:
+          - **AI Theory (That Won't Put You to Sleep):** Understand how AI ticks under the hood without needing a math PhD.
+          - **Extracting real business value:** AI is an endless goldmine of value, learn how to 'mine' it safely.
+          - **Risks and challenges:** Learn about what is meant when we say AI "hallucinates", the biases, risks and how they can be managed.
+          - **The new frontier:** AI has upended the status quo to the extent everything will need to be revalauated, learn to seperate the low-hanging fruit from the AI Slop.
+           
+          #### **Price: $499 (half-day workshop)**
+        buttonText: Book
+      - title: Practical:AI Skills (Coming Soon)
+        subtitle: AI as a skillset
+        image: /content/skillsicon.png
+        content: |
+          A full-day, hands-on course to boost your AI productivity:
+          - **Prompt Engineering:** In-depth explanation of prompt engineering techniques to reliably extract the most value from LLM models.
+          - **RCCT:** The Role/Context/Constraint/Task framework for building complex prompts out of reusable components.
+          - **Image Generation:** How it functions under the hood and advanced approaches to generate 
+          - **Advanced use cases:** Covering use cases such as content creation, business metric extraction and data analysis.
+                     
+          #### **Price: $1500 (full-day workshop)**
+        buttonText: Reserve
+        buttonLink: https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
+      - title: Practical:AI Advanced (Coming Soon)
+        subtitle: Moving beyond just AI chat
+        image: /content/advancedicon.png
+        content: |
+          A full-day, deep dive for those ready to take their AI skills to the next level:
+          - **Prompt chaining:** Master the technique of chaining prompts to generate everything from business plans to functioning software.
+          - **Coding for non-coders:** Creating functioning apps and software in hours regardless of coding ability.
+          - **API access:** Explore both low-code and no-code options for accessing the various LLM API providers, including overview of their consumption pricing models.
+          - **Automation and Risks:** Discussion of opportunities and potential pitfalls in incorpoarting AI into automation workflows.
+                     
+          #### **Price: $2500 (full-day workshop)**
+        buttonText: Reserve
+        buttonLink: https://docs.google.com/forms/d/e/1FAIpQLSfdU-YvqSTqTZ4sM_so9aStDo3HmK4ra-IVjKUwprjLbgATDQ/viewform?usp=sf_link
+      - title: Practical:AI User Group
+        subtitle: Non-Artificial Intelligence
+        image: /content/pug.png
+        content: |
+          All courses come with exercises and 3 months of updates. Students can then subscribe ongoing to stay up-to-date with the latest AI developments.
+          - **Workshop Exercises:** Throughout the workshop we'll walk through exercises that you can complete at your own pace later via the portal.
+          - **AI Content:** Practical:AI maintains a library of resources from glossaries of common terms, prompt engineering guides and video content.
+          - **Community:** The portal also serves as a community hub where you can engage with current and prior students of Practical:AI's workshops.
+                     
+          #### **Price: $50/month**
+
+  - type: ContentSection
+    title: About the Instructors
+    columnClass: is-two-thirds
+    content: |
+      Our workshops are led by tech veterans with over 20 years of experience in AI and Machine Learning. We're not about vague strategies or far-future speculation - we focus on the transformative tools available today and practical skills you can apply immediately.
+      
+      **Steve's 20+ Journey from Machine Learning to AI**
+      - **2003** Built Linear Regression models to forecast international call volumes.
+      - **2005** Ran predictive time-series models for over 80 million phone calls processed by his startup.
+      - **2009** Integrated modern forecasting models for City of London clients post-2008 crash.
+      - **2010** Developed an automated RFP Q&A response tool using Natural Language Processing (still in use today).
+      - **2014** Product Manager for a pioneering big-data marketing platform.
+      - **2018** Completed Andrew Ng's Machine Learning Specialisation.
+      - **2021** Created first OpenAI account (pre-ChatGPT) to use DALLE for content generation.
+      - **2023** Tasked GPT-4 to code a functioning Tetris clone from scratch.
+      - **2024** Built a SaaS startup and product in four months using just AI.
+    staticHTML: |
+      <div class="column">
+      <!-- LinkedIn Profile Component -->
+      <div class="card">
+        <div class="card-header" style="background-color: #f1ece6; padding: 0.5rem;">
+          <div class="card-header-title" style="padding: 0;">
+            <img src="/content/LinkedInLogo.png" alt="LinkedIn" style="height: 20px;">
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="has-text-centered">
+            <figure class="image is-256x256 is-inline-block mb-4">
+              <img class="is-rounded" src="/content/SteveHeadshot.png" alt="Steve Green">
+            </figure>
+            <p class="title is-4">Steve Green</p>
+            <p class="subtitle is-6 mb-4">Co-Founder at Practical:AI</p>
+            <a href="https://nz.linkedin.com/in/stevegnz" class="button is-info is-outlined is-fullwidth">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>View LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+  - type: CardSection
+    title: FAQs
+    columnClass: is-12
+    items:
+      - title: Do I need prior AI experience?
+        content: No prior AI experience is necessary for our Foundation course which provides a solid grounding in what's possible with today's AI technology. We cater to all skill levels with the Skills course aimed at ChatGPT power users and the Advanced course if for those looking to take it a step further with advanced prompt engineering and powerful automation techniques.
+      - title: How long are the courses?
+        content: Course durations vary from half-day workshops to full-day intensive sessions. Check each course description for specific details.
+      - title: Are the courses suitable for my industry?
+        content: Yes! Our courses are designed to be applicable across various industries. We focus on practical skills that can be adapted to your specific needs.
+
+  - type: ContactForm
+    title: Contact Us
+
+footer:
+  generated: Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620
+  copyright: All content generated by humans and © 2024 Practical:AI - All rights reserved.
+  socialLinks:
+    - url: https://www.facebook.com/PracticalAINZ
+      icon: fab fa-facebook
+    - url: https://www.linkedin.com/company/nzpai/
+      icon: fab fa-linkedin

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
@@ -62,467 +63,290 @@
 </head>
 <body class="has-navbar-fixed-top">
     <div id="app">
-        <nav class="navbar is-info is-fixed-top has-background-black">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/index.html#hero">
-                        <img src="/content/WhiteLogo-OnTransparent.png"  alt="Logo" />
-                    </a>
-                </div>
-                <div id="navbarMenuHeroB" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item has-background-white has-text-black" href="/index.html#hero"> Home </a>
-                        <a class="navbar-item" @click="scrollToSection('workshops')"> Workshops </a>
-                        <a class="navbar-item" @click="scrollToSection('faq')"> FAQ </a>
-                        <a class="navbar-item" @click="scrollToSection('contact')"> Contact </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <section class="hero is-info is-medium has-background-black" id="hero">
-            <div class="container">
-                <div class="hero-body has-background-black">
-                    <div class="columns">
-                        <div class="column">
-                            <div>
-                                <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="Steve Green">
-                            </div>
-                            <p class="title">{{ heroTitle }}</p>
-                            <p class="subtitle">{{ heroSubtitle }}</p>
-                            <a class="button custom-button2 is-primary is-large has-background-white"
-                                @click="scrollToSection('workshops')">{{ heroCta }}</a>
-                        </div>
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img class="is-rounded" src="/content/asarole.png" alt="AI Roles" />
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="content">
-                    <h2 class="title is-2">Introduction</h2>
-                    <div class="content" v-html="this.introduction"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="title is-2">AI Benefits</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-half" v-for="benefit in aiBenefits" :key="benefit.title">
-                        <div class="card">
-                            <div class="card-content">
-                                <p class="title is-4">{{ benefit.title }}</p>
-                                <p class="subtitle">{{ benefit.description }}</p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="title is-2">The Practical:AI Difference</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-12 mb-4" v-for="difference in practicalAiDifferences" :key="difference.title">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="media">
-                                  <div class="media-left">
-                                    <figure v-if="difference.image" class="image is-64x64">
-                                        <img :src="difference.image" :alt="difference.title">
-                                    </figure>
-                                  </div>
-                                  <div class="media-content">
-                                    <p class="title is-4">{{ difference.title }}</p>
-                                    <p class="subtitle is-6">{{ difference.description }}</p>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="title is-2">Testimonials</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-one-third" v-for="testimonial in testimonials" :key="testimonial.name">
-                        <div class="card">
-                            <div class="card-content">
-                                <p class="title is-5">{{ testimonial.name }}</p>
-                                <p class="subtitle is-6">{{ testimonial.role }}</p>
-                                <div v-html="testimonial.quote"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="workshops">
-            <div class="container">
-              <h2 class="title is-2">Workshops</h2>
-              <div class="columns is-multiline">
-                <div class="column is-12 mb-4" v-for="(workshop, index) in workshops" :key="workshop.title">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left" v-if="workshop.image || workshop.icon">
-                          <figure class="image is-64x64" v-if="workshop.image">
-                            <img class="is-rounded" :src="workshop.image" :alt="workshop.title">
-                          </figure>
-                          <span class="icon is-large" v-else-if="workshop.icon">
-                            <i :class="workshop.icon"></i>
-                          </span>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-3">{{ workshop.title }}</p>
-                          <p class="subtitle is-5" v-if="workshop.subtitle">{{ workshop.subtitle }}</p>
-                        </div>
-                      </div>
-            
-                      <div class="content">
-                        <div v-if="workshop.description" v-html="workshop.description"></div>
-                        <div class="has-text-weight-bold mt-4" v-if="workshop.price">
-                          Price: {{ workshop.price }}
-                        </div>
-                        <div v-if="workshop.buttontext" class="mt-5">
-                            <a 
-                              :href="workshop.buttonlink" 
-                              @click="!workshop.buttonlink && toggleEventSelector(index)"
-                              :class="['button', 'is-large','is-black', 'custom-button']"
-                            >
-                              {{ workshop.buttontext }}
-                            </a>
-                          </div>
-                                          <!-- Event Selector -->
-                  <div v-if="selectedWorkshopIndex === index" class="content mt-4" :class="{ 'is-hidden': !showEventSelector }">
-                    <h3 class="title is-5">Select an event date:</h3>
-                    <div class="buttons">
-                      <button 
-                        v-for="event in filteredEvents(workshop)" 
-                        :key="event.eventCode" 
-                        class="button is-light"
-                        @click="bookEvent(event.eventCode)"
-                      >
-                        {{ formatDate(event.date) }} - {{ event.location }}
-                      </button>
-                    </div>
-                  </div>
-                      </div>
-                    </div>
-                  </div>
+        <nav-bar :logo="content.logo" :menu-items="content.menuItems"></nav-bar>
         
+        <template v-for="(section, index) in content.sections" :key="index">
+            <component :is="section.type" :section-data="section" :events="workshops" @book-event="bookEvent"></component>
+        </template>
 
-                </div>
-              </div>
-            </div>
-          </section>
-
-        <section class="section">
-            <div class="container">
-              <h2 class="title is-2">About the Instructors</h2>
-              <div class="columns">
-                <div class="column is-two-thirds">
-                  <div class="content" v-html="this.aboutInstructors"></div>
-                </div>
-                <div class="column">
-                  <!-- LinkedIn Profile Component -->
-                  <div class="card">
-                    <div class="card-header" style="background-color: #f1ece6; padding: 0.5rem;">
-                      <div class="card-header-title" style="padding: 0;">
-                        <img src="/content/LinkedInLogo.png" alt="LinkedIn" style="height: 20px;">
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="has-text-centered">
-                        <figure class="image is-256x256 is-inline-block mb-4">
-                          <img class="is-rounded" src="/content/SteveHeadshot.png" alt="Steve Green">
-                        </figure>
-                        <p class="title is-4">Steve Green</p>
-                        <p class="subtitle is-6 mb-4">Co-Founder at Practical:AI</p>
-                        <a href="https://nz.linkedin.com/in/stevegnz" class="button is-info is-outlined is-fullwidth">
-                          <span class="icon">
-                            <i class="fab fa-linkedin"></i>
-                          </span>
-                          <span>View LinkedIn Profile</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-        <section class="section" id="faq">
-            <div class="container">
-                <h2 class="title is-2">FAQs</h2>
-                <div class="content">
-                    <dl>
-                        <dt class="mb-3" v-for="faq in faqs" :key="faq.question">
-                            <strong>{{ faq.question }}</strong>
-                            <div class="content" v-html="faq.answer"></div>
-                        </dt>
-                    </dl>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="contact">
-            <div class="container">
-                <h2 class="title is-2">Contact Us</h2>
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                <script>
-                hbspt.forms.create({
-                    region: "na1",
-                    portalId: "45154194",
-                    formId: "5687d1d3-54b0-48a9-8207-0478b326920f"
-                });
-                </script>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>{{ generated }}</p>
-                <p>{{ copyright }}</p>
-                <div class="buttons is-centered">
-                    <a href="https://www.facebook.com/PracticalAINZ" class="button is-light"><span class="icon"><i class="fab fa-facebook"></i></span></a>
-                    <a href="https://www.linkedin.com/company/nzpai/" class="button is-light"><span class="icon"><i class="fab fa-linkedin"></i></span></a>
-                </div>
-            </div>
-        </footer>
+        <site-footer :footer-data="content.footer"></site-footer>
     </div>
 
     <script>
-        const app = Vue.createApp({
+        const NavBar = {
+            props: ['logo', 'menuItems'],
+            template: `
+                <nav class="navbar is-fixed-top is-info has-background-black">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="/">
+                                <img :src="logo" alt="Logo">
+                            </a>
+                        </div>
+                        <div class="navbar-menu">
+                            <div class="navbar-end">
+                                <a v-for="item in menuItems" :key="item.url" class="navbar-item" :href="item.url">
+                                    {{ item.text }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            `
+        };
+
+        const HeroSection = {
+            props: ['sectionData'],
+            template: `
+                    <section class="hero is-medium is-info " :class="sectionData.background" id="hero">
+                        <div class="container">
+                            <div class="hero-body"  :class="sectionData.background">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div>
+                                            <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="Practical:AI Logo">
+                                        </div>
+                                        <h1 class="title">{{ sectionData.title }}</h1>
+                                        <h2 class="subtitle">{{ sectionData.subtitle }}</h2>
+                                        <a :href="sectionData.ctaLink" class="button custom-button2 is-primary is-large has-background-white">{{ sectionData.ctaText }}</a>
+                                    </div>
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img class="is-rounded" src="/content/asarole.png" alt="AI Roles" />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+            `
+        };
+
+        const ContentSection = {
+            props: ['sectionData'],
+            template: `
+                    <section class="section">
+                        <div class="container" v-if="!sectionData.staticHTML">
+                            <h2 class="title is-2">{{ sectionData.title }}</h2>
+                            <div class="content" v-html="parseMarkdown(sectionData.content)"></div>
+                        </div>
+                        <div class="container" v-else>
+                            <h2 class="title is-2">{{ sectionData.title }}</h2>
+                            <div class="columns">
+                                <div :class="['column', sectionData.columnClass]">
+                                    <div class="content" v-html="parseMarkdown(sectionData.content)"></div>
+                                </div>
+                                <div class="column" v-html="sectionData.staticHTML"></div>
+                            </div>
+                        </div>
+                    </section>
+            `,
+            methods: {
+                parseMarkdown(value) {
+                    return marked.parse(value);
+                }
+            }
+        };
+
+        const CardSection = {
+            props: ['sectionData', 'events'],
             data() {
                 return {
-                    heroTitle: '',
-                    heroSubtitle: '',
-                    heroCta: '',
-                    introduction: '',
-                    aiBenefits: [],
-                    workshops: [],
-                    events: [],
-                    practicalAiDifferences: [],
-                    testimonials: [],
-                    aboutInstructors: '',
-                    faqs: [],
-                    contactInfo: '',
-                    footerText: '',
-                    socialMedia: [],
-                    selectedWorkshopIndex: null,
-                    showEventSelector: false
+                    activeModal: null,
+                }
+            },
+            template: `
+                <section class="section" :id="sectionData.title">
+                    <div class="container">
+                        <h2 class="title is-2">{{ sectionData.title }}</h2>
+                        <div class="columns is-multiline">
+                            <div v-for="(item, index) in sectionData.items" :key="index" class="column" :class="sectionData.columnClass">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-left" v-if="item.image || item.icon">
+                                                <figure class="image is-64x64" v-if="item.image">
+                                                    <img class="is-rounded" :src="item.image" :alt="item.title">
+                                                </figure>
+                                                <span class="icon is-large" v-else-if="item.icon">
+                                                    <i :class="item.icon"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-content">
+                                                <p class="title is-4">{{ item.title }}</p>
+                                                <p class="subtitle" v-if="item.subtitle">{{ item.subtitle }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="content" v-if="item.content" v-html="parseMarkdown(item.content)"></div>
+                                        <div v-if="item.buttonText" class="mt-5">
+                                            <a 
+                                                :href="item.buttonLink" 
+                                                @click.prevent="!item.buttonLink && openModal(index)"
+                                                class="button is-primary custom-button is-large is-black"
+                                            >
+                                                {{ item.buttonText }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bulma Modal -->
+                                <div class="modal" :class="{ 'is-active': activeModal === index }">
+                                    <div class="modal-background" @click="closeModal"></div>
+                                    <div class="modal-card">
+                                        <header class="modal-card-head">
+                                            <p class="modal-card-title">Select an event date for {{ item.title }}</p>
+                                            <button class="delete" aria-label="close" @click="closeModal"></button>
+                                        </header>
+                                        <section class="modal-card-body">
+                                            <div class="buttons">
+                                                <button 
+                                                    v-for="event in filteredEvents(item)"
+                                                    :key="event.eventCode"
+                                                    class="button is-fullwidth is-light"
+                                                    @click="bookEvent(event.eventCode)"
+                                                >
+                                                    {{ formatDate(event.date) }} - {{ event.location }}
+                                                </button>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `,
+            methods: {
+                parseMarkdown(value) {
+                    return marked.parse(value);
+                },
+                openModal(index) {
+                    this.activeModal = index;
+                },
+                closeModal() {
+                    this.activeModal = null;
+                },
+                filteredEvents(item) {
+                    return this.events.workshops.filter(event => event.title === item.title);
+                },
+                formatDate(dateString) {
+                    // Parse the ISO date string manually
+                    const year = dateString.substr(0, 4);
+                    const month = dateString.substr(4, 2);
+                    const day = dateString.substr(6, 2);
+                    const hour = dateString.substr(9, 2);
+                    const minute = dateString.substr(11, 2);
+                    const second = dateString.substr(13, 2);
+
+                    // Create a new Date object
+                    const date = new Date(year, month - 1, day, hour, minute, second);
+
+                    // Format the date
+                    return date.toLocaleDateString('en-NZ', { 
+                        month: 'short', 
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
+                },
+                bookEvent(eventCode) {
+                    window.location.href = `/booking.html?eventCode=${eventCode}`;
+                }
+            }
+        };
+        
+
+        const ContactForm = {
+            props: ['sectionData'],
+            template: `
+                <section class="section" id="contact">
+                    <div class="container">
+                        <h2 class="title is-2">Contact Us</h2>
+                        <div id="hubspot-form-container"></div>
+                    </div>
+                </section>
+            `,
+            mounted() {
+                this.loadHubspotForm();
+            },
+            methods: {
+                loadHubspotForm() {
+                    const script = document.createElement('script');
+                    script.charset = 'utf-8';
+                    script.type = 'text/javascript';
+                    script.src = '//js.hsforms.net/forms/embed/v2.js';
+                    script.addEventListener('load', () => {
+                        hbspt.forms.create({
+                            region: "na1",
+                            portalId: "45154194",
+                            formId: "5687d1d3-54b0-48a9-8207-0478b326920f",
+                            target: "#hubspot-form-container"
+                        });
+                    });
+                    document.head.appendChild(script);
+                }
+            }
+        };
+
+        const SiteFooter = {
+            props: ['footerData'],
+            template: `
+                <footer class="footer">
+                    <div class="content has-text-centered">
+                        <p>{{ footerData.generated }}</p>
+                        <p>{{ footerData.copyright }}</p>
+                        <div class="buttons is-centered">
+                            <a v-for="(link, index) in footerData.socialLinks" :key="index" :href="link.url" class="button is-light">
+                                <span class="icon"><i :class="link.icon"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            `
+        };
+
+        const app = Vue.createApp({
+            components: {
+                NavBar,
+                HeroSection,
+                ContentSection,
+                CardSection,
+                ContactForm,
+                SiteFooter
+            },
+            data() {
+                return {
+                    content: {
+                        logo: '',
+                        menuItems: [],
+                        sections: [],
+                        footer: {}
+                    },
+                    workshops: []
                 }
             },
             methods: {
                 async fetchContent() {
-                    try {
-                        const response = await fetch('/practicalai-content.md');
-                        const text = await response.text();
-                        this.parseContent(text);
-                        this.events = await this.fetchAndParseBookWhen();
-                    } catch (error) {
-                        console.error('Error fetching content:', error);
-                    }
-                },
-                toggleEventSelector(index) {
-                    if (this.selectedWorkshopIndex === index && this.showEventSelector) {
-                        this.showEventSelector = false;
-                        this.selectedWorkshopIndex = null;
-                    } else {
-                        this.selectedWorkshopIndex = index;
-                        this.showEventSelector = true;
-                    }
-                },
-                filteredEvents(workshop) {
-                    return this.events.filter(event => event.title == workshop.title);
-                },
-                formatDate(date) {
-                    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                },
-                bookEvent(eventCode) {
-                    window.location.href = `/booking.html?eventCode=${eventCode}`;
-                },
-                parseDate(dateString) {
-                    const match = dateString.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/);
-                    if (match) {
-                        const [, year, month, day, hour, minute, second] = match;
-                        return new Date(Date.UTC(year, month - 1, day, hour, minute, second));
-                    }
-                    return null;
-                    },
-                async fetchAndParseBookWhen() {
-                    try {
-                        const response = await fetch('/public.ics');
-                        const data = await response.text();
-                        
-                        const events = [];
-                        const lines = data.split(/\r?\n/);
-                        let currentEvent = {};
-                        let description = '';
+                    const [contentResponse, workshopResponse] = await Promise.all([
+                        fetch('content.yml'),
+                        fetch('workshops.yml')
+                    ]);
 
-                        for (let i = 0; i < lines.length; i++) {
-                            const line = lines[i].trim();
-                            
-                            if (line === 'BEGIN:VEVENT') {
-                                currentEvent = {};
-                            } else if (line === 'END:VEVENT') {
-                                if (currentEvent.location && currentEvent.date && currentEvent.title && currentEvent.url) {
-                                    events.push(currentEvent);
-                                }
-                            } else {
-                                const [key, ...values] = line.split(':');
-                                const value = values.join(':'); // Rejoin in case there were colons in the value
+                    const [yamlContent, yamlWorkshops] = await Promise.all([
+                        contentResponse.text(),
+                        workshopResponse.text()
+                    ]);
 
-                                switch (key) {
-                                case 'SUMMARY':
-                                    currentEvent.location = value.split(' - ')[0]; 
-                                    currentEvent.title = value.split(' - ')[1]; 
-                                    break;
-                                case 'DTSTART;TZID=Pacific/Auckland':
-                                    currentEvent.date = this.parseDate(value);
-                                    break;
-                                case 'URL':
-                                    currentEvent.url = value;
-                                    const urlParts = value.split('/');
-                                    currentEvent.eventCode = urlParts[urlParts.length - 1];
-                                    break;
-                                default:
-                                    if (line.startsWith(' ') && description) {
-                                    description += ' ' + line.trim();
-                                    }
-                                }
-                            }
-                        }
-
-                            return events;
-                        } catch (error) {
-                            console.error('Error fetching or parsing ICS file:', error);
-                            return [];
-                        }
-                    },
-                parseContent(content) {
-                    const sections = content.split(/^## /m).slice(1);
-                    const sectionParsers = {
-                        'Hero Section': this.parseHeroSection,
-                        'Introduction': (content) => { this.introduction = marked.parse(content); },
-                        'AI Benefits': this.parseAIBenefits,
-                        'Workshops': this.parseWorkshops,
-                        'Practical:AI Difference': this.parsePracticalAIDifference,
-                        'Testimonials': this.parseTestimonials,
-                        'About the Instructors': (content) => { this.aboutInstructors = marked.parse(content); },
-                        'FAQs': this.parseFAQs,
-                        'Footer': this.parseFooter,
-                    };
-
-                    sections.forEach(section => {
-                        const [title, ...contentLines] = section.trim().split('\n');
-                        const sectionContent = contentLines.join('\n').trim();
-                        const parser = sectionParsers[title];
-                        
-                        if (parser) {
-                        parser(sectionContent);
-                        }
-                    });
-                },
-                parseHeroSection(content) {
-                    const lines = content.split('\n');
-                    this.heroTitle = lines[0].replace('**Title:**', '').trim();
-                    this.heroSubtitle = lines[1].replace('**Subtitle:**', '').trim();
-                    this.heroCta = lines[2].replace('**CTA Button:**', '').trim();
-                },
-                parseAIBenefits(content) {
-                    this.aiBenefits = content.split('-').slice(1).map(benefit => {
-                        const [title, description] = benefit.split('\n');
-                        return {
-                            title: title.trim(),
-                            description: description.trim()
-                        };
-                    });
-                },
-                parseWorkshops(content) {
-                    const workshopRegex = /###\s+(.+?)(?:\n\n|\n)(?:- Subtitle: (.+?)\n)?(?:- Icon: (.+?)\n)?(?:- Image: (.+?)\n)?(?:- Button: (.+?)\n)?(?:- Price: (.+?)\n)?([\s\S]+?)(?=\n###|\n?$)/g;
-                    this.workshops = Array.from(content.matchAll(workshopRegex)).map(([, title, subtitle, icon, image, button, price, description]) => {
-                        const workshop = { 
-                            title,
-                            subtitle,
-                            icon,
-                            image,
-                            price,
-                            description: marked.parse(description.trim())
-                        };
-
-                        if (button) {
-                            const [buttonText, buttonLink] = button.split('|').map(s => s.trim());
-                            workshop.buttontext = buttonText;
-                            workshop.buttonlink = buttonLink;
-                        }
-
-                        // Remove undefined properties
-                        Object.keys(workshop).forEach(key => workshop[key] === undefined && delete workshop[key]);
-
-                        return workshop;
-                    });
-                },
-                parsePracticalAIDifference(content) {
-                    this.practicalAiDifferences = content.split('\n\n').map(practicalAiDifference => {
-                        const lines = practicalAiDifference.split('\n');
-                        return {
-                            title: lines[0].replace(/^\d+\.\s+\*\*/, '').replace('**', ''),
-                            image: lines[1].replace('   - Image:', '').trim(),
-                            description: lines[2].replace('   - Description:', '').trim()
-                        };
-                    });
-                },
-                parseTestimonials(content) {
-                    this.testimonials = content.split(/\d+\.\s+/).filter(Boolean).map(testimonial => {
-                        const [nameRole, ...quoteLines] = testimonial.split('\n');
-                        const [name, role] = nameRole.split(',');
-                        return {
-                            name: name.replace(/^\*\*/, '').replace(/\*\*$/, '').trim(),
-                            role: role.replace(/\*\*$/, '').trim(),
-                            quote: marked.parse(quoteLines.join('\n').trim())
-                        };
-                    });
-                },
-                parseFAQs(content) {
-                    this.faqs = content.split('\n\n').map(faq => {
-                        const [question, answer] = faq.split('\n');
-                        return {
-                            question: question.replace(/^\d+\.\s+\*\*/, '').replace('**', '').trim(),
-                            answer: marked.parse(answer.trim())
-                        };
-                    });
-                },
-                parseFooter(content) {
-                    const lines = content.split('\n');
-                    this.generated = lines[0].replace('**Generated:**', '').trim();
-                    this.copyright = lines[2].replace('**Copyright:**', '').trim();
-                },
-                scrollToSection(sectionId) {
-                    const element = document.getElementById(sectionId);
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                },
-                mounted() {
-                    this.fetchContent();
+                    this.content = jsyaml.load(yamlContent);
+                    this.workshops = jsyaml.load(yamlWorkshops);
                 }
+            },
+            mounted() {
+                this.fetchContent();
+            }
         });
 
-            app.mount('#app');
+        app.mount('#app');
     </script>
 </body>
 </html>
