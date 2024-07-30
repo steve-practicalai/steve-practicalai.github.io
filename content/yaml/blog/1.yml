@@ -2,10 +2,10 @@
 sections:
   - type: ContentSection
     columnsClass: is-multiline
-    columnClass: is-full pb-0
+    columnClass: is-full pb-0 mb-0
     title: Tech in 2024 is starting to feel a lot like tech in the 1990s
     content: |
-      #### For good and bad, it smells like a hype cycle
+      #### Reruns of the .com bubble (or could it really be different this time?)
     staticHTML: |
         <a href="www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
           <span class="icon">
@@ -13,15 +13,16 @@ sections:
           </span>
           Steve Green
         </a>
+        <span class="has-text-grey-light is-size-7">25th July 2024</span>
 
   - type: ContentSection
-    columnClass: is-three-quarters
+    columnClass: is-three-quarters mr-6 pt-0 mt-0
     content: |
       As a geriatric Millennial I can say with absolute objective certainty that everything was better in the 90s, obviously the music but also the tech industry.
 
       A lot of what Silicon Valley morphed into over this 20 year boom that followed the .com crash was really just cosplay of the 90s. The 90s was driven by a wild eyed excitement that came from simply looking at the pace of progress, making conservative projections out and seeing that *everything was going to change*.
 
-      That same future forecasting is what's driving the current AI hype bubble however just like the .com bubble they'll likely miss the landing in the short term (i.e. stock market crash) but exceed everyone's expectations in the long run (e.g. just like social media did in the 2000s).
+      That same future forecasting is what's driving the current AI hype bubble but just like the .com bubble they'll likely miss the landing in the short term (i.e. stock market crash) but exceed everyone's expectations in the long run (e.g. just like social media did in the 2000s).
 
       I think the clearest signal of what's driving the AI hype is the current near-exponential quality-to-cost ratio improvements we're seeing on LLM models. AI models are returning better results, at a lower cost, which is improving at a rate that's almost impossible to keep up with.
 
@@ -32,8 +33,8 @@ sections:
           <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s grunge singer, wearing flannel. The robot has a casual, laid-back posture, with flannel shirt over a band tee, ripped jeans, and grungy boots. No background details.</figcaption>        
         </figure>
   - type: ContentSection
-    columnClass: is-three-quarters
     columnsClass: is-flex-direction-row-reverse
+    columnClass: is-three-quarters ml-6
     content: |
         Let's say you have some meeting transcripts you would like to extract business metrics from, for example you want to track the number of times employee recognition is given in your meetings.
 
@@ -43,20 +44,28 @@ sections:
 
         In Nov 2023 Anthropic was charging $8 per million tokens on their flagship Claude3, today you use the also substantially better Claude3.5 for just $3.
 
-        If that pace of change wasn't fast enough Meta has just announced that they've open sourced their Llama 3.1 model: https://lnkd.in/dfPuKfbh
+        If that pace of change wasn't fast enough Meta has just announced that they've open sourced their Llama 3.1 model: https://ai.meta.com/blog/meta-llama-3-1/
     staticHTML: |
         <figure class="image">
           <img class="is-rounded" src="/content/blog/90sRobot2.webp" alt="Prompt: A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.">
            <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.</figcaption>        
         </figure>
   - type: ContentSection
-    columnClass: is-two-thirds
+    sectionClass: pt-3 
+    columnsClass: is-multiline
+    columnClass: is-full 
     content: |
           We're speed-running the usual tech progression here, in the 90s we saw things like databases and internet routers transform from expensive commercial products to open source ubiquity. Here we're seeing the same thing happening with AI but at an even faster pace.
 
           Great news for us consumers, not sure if it's also great news for the tech giants. I think we can confidently predict increased individual productivity and vast untapped seas of potential innovation for new NZ Startups, for everything else (including 'Big Tech' itself) all bets are off.
+
+          If nothing in AI improves from today then we're still set for 10 years of incredible changes as we unlock the biggest productivity boost since the spreadsheet. But that's not enough for big tech, they're betting everything on the next phase which is sucessfully achieving agentic AI. 
+          
+          Importantly I believe they're going to achieve that but with currently investment levels they need to stick the landing this year, early 2025 at the latest and if they don't it will be the .com bubble all over again (followed by everything they promised getting delivered anyway after the hype has died down). 
     staticHTML: |
-        <figure class="image">
-          <img src="/content/blog/Kingoftheworld.png" alt="Jensen Huang making the jump">
-          <figcaption class="has-text-centered is-size-7 mt-2">Jensen Huang making the jump</figcaption>
-        </figure>
+      <column class="column is-half is-offset-one-quarter">
+          <figure class="image">
+            <img src="/content/blog/Kingoftheworld.png" alt="Jensen Huang making the jump">
+            <figcaption class="has-text-centered is-size-7 mt-2">Jensen Huang making the jump</figcaption>
+          </figure>
+      </column>

@@ -85,7 +85,7 @@ const HeroSection = {
 const ContentSection = {
     props: ['sectionData'],
     template: `
-            <section class="section" :id="sectionData.title">
+            <section :class="['section ', sectionData.sectionClass]" :id="sectionData.title">
                 <div class="container" v-if="!sectionData.staticHTML">
                     <h2 class="title is-2">{{ sectionData.title }}</h2>
                     <div class="content" v-html="parseMarkdown(sectionData.content)"></div>
