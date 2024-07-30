@@ -64,6 +64,6 @@ done < public.ics
         sed 's/^/    /' "$event"
         rm "$event"
     done
-} > workshops.yml
+} > /content/yaml/workshops.yml
 
 echo "Conversion complete. Output written to workshops.yml"
