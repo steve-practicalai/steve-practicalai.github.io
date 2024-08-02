@@ -1,6 +1,7 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 import { ref, watchEffect, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { fetchContent } from '/utils';
 const parseMarkdown = (value) => marked.parse(value);
 
 const NavBar = {
@@ -86,17 +87,20 @@ const ContentSection = {
     props: ['sectionData'],
     template: `
             <section :class="['section ', sectionData.sectionClass]" :id="sectionData.title">
-                <div class="container" v-if="!sectionData.staticHTML">
+                <div class="container" v-if="!sectionData.staticHTML && !sectionData.content2">
                     <h2 class="title is-2">{{ sectionData.title }}</h2>
                     <div class="content" v-html="parseMarkdown(sectionData.content)"></div>
                 </div>
                 <div class="container" v-else>
                     <h2 class="title is-2">{{ sectionData.title }}</h2>
                     <div :class="['columns ', sectionData.columnsClass]">
-                        <div :class="['column', sectionData.columnClass]">
+                        <div v-if="sectionData.content" :class="['column', sectionData.columnClass]">
                             <div class="content" v-html="parseMarkdown(sectionData.content)"></div>
                         </div>
-                        <div class="column" v-html="sectionData.staticHTML"></div>
+                         <div v-if="sectionData.content2" :class="['column', sectionData.columnClass2]">
+                            <div class="content" v-html="parseMarkdown(sectionData.content2)"></div>
+                        </div>
+                        <div v-if="sectionData.staticHTML" :class="['column', sectionData.staticHTMLClass]" v-html="sectionData.staticHTML"></div>
                     </div>
                 </div>
             </section>
@@ -181,6 +185,7 @@ const CardSection = {
             this.activeModal = null;
         },
         filteredWorkshops(item) {
+            if (!this.workshops) return [];
             return this.workshops.filter(event => event.title === item.title);
         },
         navigateToBooking(eventCode) {
@@ -313,50 +318,33 @@ const BookwhenIframe = {
     `
 };
 
-
 const ContentLayout = {
     components: { NavBar, HeroSection, ContentSection, CardSection, ContactForm, SiteFooter, BookwhenIframe },
-    props: ['contentFile','eventCode'],
+    props: ['contentPath', 'workshopsPath'],
     setup(props) {
+        const route = useRoute();
         const content = ref(null);
-        const headerFooter = ref(null);
         const workshops = ref(null);
 
         watchEffect(async () => {
-            try {
-                const [contentResponse, headerFooterResponse, workshopResponse] = await Promise.all([
-                    fetch(props.contentFile),
-                    fetch('/content/yaml/headerFooter.yml'),
-                    fetch('/content/yaml/workshops.yml')
-                ]);
-
-                const [yamlContent, headerFooterContent, yamlWorkshops] = await Promise.all([
-                    contentResponse.text(),
-                    headerFooterResponse.text(),
-                    workshopResponse.text()
-                ]);
-
-                content.value = jsyaml.load(yamlContent);
-                headerFooter.value = jsyaml.load(headerFooterContent);
-                workshops.value = jsyaml.load(yamlWorkshops);
-            } catch (error) {
-                console.error('Error fetching content:', error);
+            content.value = await fetchContent(props.contentPath);
+            if (props.workshopsPath) {
+                const workshopsYaml = await fetchContent(props.workshopsPath);
+                workshops.value = workshopsYaml.workshops;
             }
         });
 
-        return { content, workshops, headerFooter };
+        return { content, workshops, eventCode: () => route.params.eventCode };
     },
     template: `
-        <nav-bar v-if="headerFooter" :logo="headerFooter.logo" :menu-items="headerFooter.menuItems"></nav-bar>
         <div v-if="content">
             <template v-for="(section, index) in content.sections" :key="index">
-                <component :is="section.type" :section-data="section" :workshops="workshops.workshops"></component>
+                <component :is="section.type" :section-data="section" :workshops="workshops"></component>
             </template>
         </div>
         <div v-else class="has-text-centered">
             <p>Loading...</p>
         </div>
-        <site-footer v-if="headerFooter" :footerData="headerFooter.footer"></site-footer>
     `
 };
 

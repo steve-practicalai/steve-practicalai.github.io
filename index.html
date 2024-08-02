@@ -4,81 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical:AI Empowering Kiwi Businesses with Hands-On AI Skills</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/style/base.css">
     <link rel="icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-F1CLVJLJXE');
     </script>
 </head>
 <body class="has-navbar-fixed-top">
-    <div id="app">
-    </div>
+    <div id="app"></div>
 
     <script type="importmap">
-        { "imports": {
-            "vue":               "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.prod.js",
-            "vue-router":        "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js",
-            "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js",
-            "base-components": "/components/base.js"
-        } }
-      </script>
-
+        {
+            "imports": {
+                "vue": "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.prod.js",
+                "vue-router": "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js",
+                "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js",
+                "/utils": "/utils.js"
+            }
+        }
+    </script>
     <script type="module">
-        import { createApp, ref, reactive, onMounted } from 'vue';
+        import { createApp, ref, onMounted } from 'vue';
         import { createRouter, createWebHashHistory } from 'vue-router';
-        import { ContentLayout, NavBar, HeroSection, ContentSection, CardSection, ContactForm, SiteFooter } from './components/base.js';
-
+        import { ContentLayout, NavBar, SiteFooter } from './components/base.js';
+        import { BlogPost, BlogListing } from './components/blog.js';
+        import { fetchContent } from '/utils';
+        
         const routes = [
-            { path: '/', component: ContentLayout, props: { contentFile: '/content/yaml/home.yml' } },
-            { path: '/booking/:eventCode', component: ContentLayout, props: route => ({ contentFile: '/content/yaml/foundations.yml', eventCode: route.params.eventCode }) },
-            { path: '/blog/:id', component: ContentLayout, props: route => ({ contentFile: `/content/yaml/blog/${route.params.id}.yml` }) }
-        ];
-
-        // Create router instance
+    { 
+        path: '/', 
+        component: ContentLayout,
+        props: {
+            contentPath: '/content/yaml/home.yml',
+            workshopsPath: '/content/yaml/workshops.yml'
+        }
+    },
+    { 
+        path: '/booking/:eventCode', 
+        component: ContentLayout,
+        props: {
+            contentPath: '/content/yaml/foundations.yml'
+        }
+    },
+    { path: '/blog', component: BlogListing },
+    { path: '/blog/:id', component: BlogPost }
+];
+    
         const router = createRouter({
             history: createWebHashHistory(),
             routes,
             scrollBehavior(to, from, savedPosition) {
-                if (savedPosition) {
-                    return savedPosition;
-                } else {
-                    return { top: 0 };
-                }
+                return savedPosition || { top: 0 };
             }
         });
-
-        // Create the Vue app
+    
         const app = createApp({
-            template: '<router-view></router-view>'
+            setup() {
+                const headerFooter = ref(null);
+                onMounted(async () => {
+                    headerFooter.value = await fetchContent('/content/yaml/headerFooter.yml');
+                });
+                return { headerFooter };
+            },
+            template: `
+                <nav-bar v-if="headerFooter" :logo="headerFooter.logo" :menu-items="headerFooter.menuItems"></nav-bar>
+                <router-view></router-view>
+                <site-footer v-if="headerFooter" :footerData="headerFooter.footer"></site-footer>
+            `
         });
-
-        // Register components
+    
         app.component('content-layout', ContentLayout);
         app.component('nav-bar', NavBar);
-        app.component('hero-section', HeroSection);
-        app.component('content-section', ContentSection);
-        app.component('card-section', CardSection);
-        app.component('contact-form', ContactForm);
         app.component('site-footer', SiteFooter);
-
-        // Use the router
+        app.component('blog-post', BlogPost);
+        app.component('blog-listing', BlogListing);
+    
         app.use(router);
-
-        // Mount the app
         app.mount('#app');
-        
     </script>
 </body>
 </html>

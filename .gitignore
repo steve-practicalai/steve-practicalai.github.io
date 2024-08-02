@@ -2,3 +2,4 @@
 ./updateEvents.sh
 public.ics
 .DS_Store
+content/.DS_Store
