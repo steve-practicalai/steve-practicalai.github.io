@@ -49,7 +49,6 @@ sections:
       The fact so little of the image is modified probably explains why this [Deepfake detector tool](https://hivemoderation.com/ai-generated-content-detection) struggles to detect the change:
 
   - type: ContentSection
-    title: Deepfake detector doing its best...
     columnClass: is-half mr-6 mt-0
     columnClass2: is-half mr-6 mt-0
     content: |
@@ -123,17 +122,17 @@ sections:
     columnsClass: is-multiline
     columnClass: is-two-thirds mr-6 pt-0 mt-0
     content: |
-      I actually think we've already passed peak AI-slop, the period of time where low quality AI-generated content could have been passed off as human made and sucessfully monetized was very short and hopefully already finished. 
+      I actually think we've already passed peak AI-slop, the period of time where low quality AI-generated content could be passed off as human made and sucessfully monetized was very short and hopefully already finished. 
       
-      Companies are also learning that just tacking the letters AI onto your product isn't a new fad, in fact it's driving consumers away and attempts at hidiing it risks public shaming on reddit. The thing with AI-Slop is it's not even making use of AI's strength which is intelligence not cheap content generation, after all we had Fiverr and content farms long before ChatGPT and LLMs. 
+      Companies are also learning that just tacking the letters AI onto your product isn't an AI strategy, in fact it's driving consumers away with attempts to hide AI cost cutting risking public shaming on reddit. What's overlooked with AI-Slop is that it's not the best use of AI's strength which is <i>intelligence</i> not cheap content generation, we already had Fiverr and content farms long before ChatGPT and LLMs. 
       
-      Much like the concerns around job market disruption AI doesn’t so much introduce a problem as it exacerbates an existing one, usually one we’ve been in denial about. For example a lot of the focus on detecting AI-generated content is coming from education but as any hiring manager or parent will tell you there is already a massive gulf between student's grades and their actual knowledge and skills.
+      Similar to the concerns around job market disruption AI doesn’t so much introduce a problem as it exacerbates an existing one, usually one we’ve been in denial about. Much of the focus on detecting AI-generated content is coming from Education but as any hiring manager or parent will tell you there was already a massive gulf between student's grades and their actual knowledge and skills.
       
-      Likewise with plagiarism, low quality content and all the intrinsically performative writing that’s underlying this manifestation of AI slop (that sentence should trigger the AI detector). We rightly are forgiving for poorly written content by human authors and have zero tolerance for AI-Slop but we shouldn't pretend AI invented the “Big-4 intern” style of writing.
+      Likewise with plagiarism and the low quality content in general, there isn't a recipe on the internet that was improved by the author's life story and we shouldn't pretend AI invented the “Big-4 intern” style of writing it's now mimicking.
 
-      The problems were already there, yes AI has made them worse but now we can’t ignore them any longer. The one incredible and slightly scary possibility is that if this Generative-AI vs AI-Detectors arms race continues the AI-Detectors may be forced to become less detectors of AI but rather detectors of any kind of “low quality content” regardless of author.
+      The problems were already there, AI has made them worse but only to the point that we can’t ignore them any longer. The one incredible and slightly scary possibility is that if this Generative-AI vs AI-Detectors arms race continues the AI-Detectors may be forced to become less detectors of AI but rather detectors of any kind of “low quality content” regardless of author.
       
-      Problems that AI makes worse are also opportunities for AI to resolve them entirely for good, if we could detect low quality content we could:
+      Problems that AI makes worse are also opportunities for AI to resolve them entirely, if we could detect low quality content we could:
       * Get rid of exams and the studying/teaching to standarized tests, replaced with personalised evaluations that measure learned skills and knowledge that stick.
       * Companies could turn their HR departments recruitment process ‘diamond in the rough’ detector rather than the processes we have today which rejects all but the most ‘polished rocks’ 
       * Break the effective monopoly Reddit has on user generated content by allowing anyone to sift out the quality comments without needing an army of volunteers to push back the bots, trolls and brigading that ruins all other platforms.
