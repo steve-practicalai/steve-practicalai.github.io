@@ -75,27 +75,36 @@ const BlogNavigationFooter = {
 const BlogHeader = {
     props: ['content'],
     template: `
-        <section v-if="content" class="hero is-medium is-info has-background-black">
-            <div class="container pb-4 pt-4">
-                <div class="columns">
-                    <div class="column is-two-thirds v-centered">
-                        <h1 class="title is-2">{{ content.blogTitle }}</h1>
-                        <h2 class="subtitle">{{ content.blogSubtitle }}</h2>
-                        <div class="column"><a href="www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
-                            <span class="icon">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+        <section v-if="content" class="hero is-medium is-info">
+            <div class="hero-body  has-background-black pb-3 pt-3">
+            <div class="container">
+                <div class="columns is-vcentered">
+                <div class="column is-9">
+                    <h1 class="title is-1 has-text-weight-bold">{{ content.blogTitle }}</h1>
+                    <h2 class="subtitle is-4 mt-3">{{ content.blogSubtitle }}</h2>
+                    <div class="level is-mobile mt-5">
+                    <div class="level-left">
+                        <div class="level-item">
+                        <a href="https://www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
+                            <span class="icon mr-2">
+                            <i class="fas fa-user" aria-hidden="true"></i>
                             </span>
-                            Steve Green
-                            </a>
-                            <span class="has-text-grey-light is-size-6">{{ formatDate(content.blogDate) }}</span>
+                            <span class="has-text-weight-semibold">Steve Green</span>
+                        </a>
+                        </div>
+                        <div class="level-item">
+                        <span class="has-text-grey-lighter is-size-6">{{ formatDate(content.blogDate) }}</span>
                         </div>
                     </div>
-                    <div class="column">
-                        <figure class="image">
-                            <img :src="content.blogImage" :alt="content.blogTitle">
-                        </figure>
                     </div>
                 </div>
+                <div class="column">
+                    <figure class="image">
+                    <img :src="content.blogImage" :alt="content.blogTitle" />
+                    </figure>
+                </div>
+                </div>
+            </div>
             </div>
         </section>
     `,
