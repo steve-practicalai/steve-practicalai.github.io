@@ -24,9 +24,9 @@ do
     file_number=$(basename "$file" .yml)
     
     # Extract title, date, and image from the YAML file
-    title=$(grep "blogTitle:" "$file" | cut -d ':' -f2- | sed 's/^[[:space:]]*//')
-    date=$(grep "blogDate:" "$file" | cut -d ':' -f2- | sed 's/^[[:space:]]*//')
-    image=$(grep "blogImage:" "$file" | cut -d ':' -f2- | sed 's/^[[:space:]]*//')
+    title=$(sed -n 's/^  title: //p' "$file" | sed 's/^[[:space:]]*//')
+    date=$(sed -n 's/^  date: //p' "$file" | sed 's/^[[:space:]]*//')
+    image=$(sed -n 's/^  image: //p' "$file" | sed 's/^[[:space:]]*//')
     
     # Add the blog post URL to the sitemap
     echo '  <url>' >> "$output_file"

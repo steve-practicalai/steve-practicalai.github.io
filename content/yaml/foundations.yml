@@ -1,9 +1,15 @@
 ---
+metadata:
+  title: Practical:AI Foundations Workshop
+  description: Kickstart your AI journey with Practical:AI's foundation course
+  image: /content/foundationsicon.png
+  date: 2024-08-01
+
 sections:
   - type: BookwhenIframe
     url: https://bookwhen.com/pai-foundations/iframe/e/
   - type: ContentSection
-    title: Foundations Course Details
+    title: Foundations Workshop Details
     content: |
       # Kickstart your AI journey with Practical:AI's foundation course.
 

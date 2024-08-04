@@ -1,8 +1,9 @@
 ---
-blogTitle: Tech in 2024 is starting to feel a lot like tech in the 1990s
-blogSubtitle: Reruns of the .com bubble (or could it really be different this time?)
-blogImage: /content/blog/90sRobot1.webp
-blogDate: 2024-07-25
+metadata:
+  title: Tech in 2024 is starting to feel a lot like tech in the 1990s
+  description: Reruns of the .com bubble (or could it really be different this time?)
+  image: /content/blog/90sRobot1.webp
+  date: 2024-07-25
 
 sections:
   - type: ContentSection

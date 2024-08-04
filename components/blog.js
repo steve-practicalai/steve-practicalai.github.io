@@ -80,7 +80,7 @@ const BlogHeader = {
             <div class="container">
                 <div class="columns is-vcentered">
                 <div class="column is-9">
-                    <h1 class="title is-1 has-text-weight-bold">{{ content.blogTitle }}</h1>
+                    <h1 class="title is-1 has-text-weight-bold">{{ content.metadata.title }}</h1>
                     <h2 class="subtitle is-4 mt-3">{{ content.blogSubtitle }}</h2>
                     <div class="level is-mobile mt-5">
                     <div class="level-left">
@@ -93,14 +93,14 @@ const BlogHeader = {
                         </a>
                         </div>
                         <div class="level-item">
-                        <span class="has-text-grey-lighter is-size-6">{{ formatDate(content.blogDate) }}</span>
+                        <span class="has-text-grey-lighter is-size-6">{{ formatDate(content.metadata.date) }}</span>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="column">
                     <figure class="image">
-                    <img :src="content.blogImage" :alt="content.blogTitle" />
+                    <img :src="content.metadata.image" :alt="content.metadata.title" />
                     </figure>
                 </div>
                 </div>
