@@ -6,21 +6,6 @@ blogDate: 2024-07-25
 
 sections:
   - type: ContentSection
-    columnsClass: is-multiline
-    columnClass: is-full pb-0 mb-0
-    title: Tech in 2024 is starting to feel a lot like tech in the 1990s
-    content: |
-      #### Reruns of the .com bubble (or could it really be different this time?)
-    staticHTML: |
-        <a href="www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
-          <span class="icon">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </span>
-          Steve Green
-        </a>
-        <span class="has-text-grey-light is-size-7">25th July 2024</span>
-
-  - type: ContentSection
     columnClass: is-three-quarters mr-6 pt-0 mt-0
     content: |
       As a geriatric Millennial I can say with absolute objective certainty that everything was better in the 90s, obviously the music but also the tech industry.
@@ -34,8 +19,8 @@ sections:
       That kind of runaway progress is what the 90s was like in tech and it's something that every tech startup since then has tried and mostly failed to generate, increasingly with technologies like VR and Crypto they've failed to even successfully *mimic* it.
     staticHTML: |
         <figure class="image">
-          <img class="is-rounded" src="/content/blog/90sRobot1.webp" alt="Prompt: A lighthearted illustration of a robot dressed like a 90s grunge singer, wearing flannel. The robot has a casual, laid-back posture, with flannel shirt over a band tee, ripped jeans, and grungy boots. No background details.">
-          <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s grunge singer, wearing flannel. The robot has a casual, laid-back posture, with flannel shirt over a band tee, ripped jeans, and grungy boots. No background details.</figcaption>        
+          <img class="is-rounded" src="/content/blog/90sRobot2.webp" alt="Prompt: A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.">
+           <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.</figcaption>        
         </figure>
   - type: ContentSection
     columnsClass: is-flex-direction-row-reverse
@@ -52,8 +37,8 @@ sections:
         If that pace of change wasn't fast enough Meta has just announced that they've open sourced their Llama 3.1 model: https://ai.meta.com/blog/meta-llama-3-1/
     staticHTML: |
         <figure class="image">
-          <img class="is-rounded" src="/content/blog/90sRobot2.webp" alt="Prompt: A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.">
-           <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s programmer, wearing hoodie. The robot is hunched over an old computer with large CRT screen. No background details.</figcaption>        
+          <img class="is-rounded" src="/content/blog/90sRobot1.webp" alt="Prompt: A lighthearted illustration of a robot dressed like a 90s grunge singer, wearing flannel. The robot has a casual, laid-back posture, with flannel shirt over a band tee, ripped jeans, and grungy boots. No background details.">
+          <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> A lighthearted illustration of a robot dressed like a 90s grunge singer, wearing flannel. The robot has a casual, laid-back posture, with flannel shirt over a band tee, ripped jeans, and grungy boots. No background details.</figcaption>        
         </figure>
   - type: ContentSection
     sectionClass: pt-3 

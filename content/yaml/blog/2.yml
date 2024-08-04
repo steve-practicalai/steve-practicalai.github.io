@@ -1,13 +1,13 @@
 ---
 blogTitle: Can we detect AI-generated cotent?
-blogSubtitle: Saruman is the only one who gets to say “Delve” unironically now
+blogSubtitle: I guess Saruman is the only one who gets to say “Delve” unironically now
 blogImage: /content/blog/saruchad.png
 blogDate: 2024-08-02
 
 sections:
   - type: ContentSection
     columnsClass: is-multiline
-    columnClass: is-half mr-6 pt-0 mt-0
+    columnClass: is-two-thirds pt-0 mt-0
     content: |
       The word “Delve” has became a meme in AI circles as people have started pointing it out as a dead giveaway for AI generated content. I've personally seen plenty of personalised and *very* obviously ChatGPT generated emails that offer to "delve deeper" or "delve into" some sales pitch.
 
@@ -18,7 +18,7 @@ sections:
       ![Twitter: @JeremyNguyenPhD!](/content/blog/JeremyNguyenPhDTweet.png "Twitter: @JeremyNguyenPhD")
       
     staticHTML: |
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steve.green.nz/video/7398094396492647688" data-video-id="7398094396492647688" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@steve.green.nz" href="https://www.tiktok.com/@steve.green.nz?refer=embed">@steve.green.nz</a> Since 1990 46% of all the papers on OpenAlex that use the word &#34;delve&#34; were added since January 2023. <a title="ai" target="_blank" href="https://www.tiktok.com/tag/ai?refer=embed">#ai</a> <a title="artificialintelligence" target="_blank" href="https://www.tiktok.com/tag/artificialintelligence?refer=embed">#artificialintelligence</a> <a title="delvedeep" target="_blank" href="https://www.tiktok.com/tag/delvedeep?refer=embed">#delvedeep</a> <a title="practicalai" target="_blank" href="https://www.tiktok.com/tag/practicalai?refer=embed">#practicalai</a> <a title="nz" target="_blank" href="https://www.tiktok.com/tag/nz?refer=embed">#nz</a> <a title="wellington" target="_blank" href="https://www.tiktok.com/tag/wellington?refer=embed">#wellington</a> <a target="_blank" title="♬ original sound - Steve Green" href="https://www.tiktok.com/music/original-sound-7398094415530625808?refer=embed">♬ original sound - Steve Green</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steve.green.nz/video/7398094396492647688" data-video-id="7398094396492647688" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@steve.green.nz" href="https://www.tiktok.com/@steve.green.nz?refer=embed">@steve.green.nz</a> Since 1990 46% of all the papers on OpenAlex that use the word &#34;delve&#34; were added since January 2023. <a title="ai" target="_blank" href="https://www.tiktok.com/tag/ai?refer=embed">#ai</a> <a title="artificialintelligence" target="_blank" href="https://www.tiktok.com/tag/artificialintelligence?refer=embed">#artificialintelligence</a> <a title="delvedeep" target="_blank" href="https://www.tiktok.com/tag/delvedeep?refer=embed">#delvedeep</a> <a title="practicalai" target="_blank" href="https://www.tiktok.com/tag/practicalai?refer=embed">#practicalai</a> <a title="nz" target="_blank" href="https://www.tiktok.com/tag/nz?refer=embed">#nz</a> <a title="wellington" target="_blank" href="https://www.tiktok.com/tag/wellington?refer=embed">#wellington</a> <a target="_blank" title="♬ original sound - Steve Green" href="https://www.tiktok.com/music/original-sound-7398094415530625808?refer=embed">♬ original sound - Steve Green</a> </section> </blockquote> 
   
   - type: ContentSection
     title: Can we detect AI-generated images?
@@ -31,12 +31,12 @@ sections:
       Images and video should have more information available to detect but one way to counter that is to keep the changes minor, consider this Deepfaked version of Back to the Future:
 
   - type: ContentSection
-    title: Robert Downey Jr and Tom Holland star in 'Deepfake to the Future!'
     columnsClass: is-centered
     staticHTMLClass: is-half mr-6 pt-0 mt-0
     staticHTML: |
+        <h3 class="title is-4 has-text-centered">Robert Downey Jr and Tom Holland star in...</h3>
+        <h3 class="title is-3 has-text-centered">'Deepfake to the Future!'</h3>
         <iframe width="640" height="480" src="https://www.youtube.com/embed/8OJnkJqkyio?si=v9SvtJkSq4YmHVYP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
   - type: ContentSection
     columnsClass: is-full
     content: |
@@ -101,7 +101,6 @@ sections:
       15. Underlying  
 
   - type: ContentSection
-    title: Can we detect AI-generated text?
     columnClass2: is-one-quarter
     content: |
       Let’s try this in the other direction, attempt to plagiarise the blog post and have the LLM write a knockoff version, perhaps to generate marketing copy that google won’t flag as a duplicate. 

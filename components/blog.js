@@ -24,25 +24,48 @@ async function fetchBlogSitemap() {
         return [];
     }
 }
-
 const BlogNavigationFooter = {
     props: ['blogSitemap', 'currentId'],
     computed: {
         nextPost() {
-            const currentIndex = this.blogSitemap.findIndex(post => post.url.endsWith(this.currentId));
+            const currentIndex = this.currentId - 1;
             return currentIndex < this.blogSitemap.length - 1 ? this.blogSitemap[currentIndex + 1] : null;
         },
         prevPost() {
-            const currentIndex = this.blogSitemap.findIndex(post => post.url.endsWith(this.currentId));
+            const currentIndex = this.currentId - 1;
             return currentIndex > 0 ? this.blogSitemap[currentIndex - 1] : null;
         }
     },
     template: `
-    <section v-if="blogSitemap" class="section">
+    <section v-if="blogSitemap" class="section has-background-grey-lighter">
         <div class="container">
-            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                <a v-if="prevPost" :href="prevPost.url" class="pagination-previous">Previous: {{ prevPost.title }}</a>
-                <a v-if="nextPost" :href="nextPost.url" class="pagination-next">Next: {{ nextPost.title }}</a>
+            <nav class="level">
+                <div class="level-left">
+                    <div v-if="prevPost" class="level-item">
+                        <a :href="prevPost.url" class="box p-0 is-flex is-align-items-center">
+                            <figure class="image is-64x64 mr-3">
+                                <img :src="prevPost.image" :alt="prevPost.title + ' thumbnail'">
+                            </figure>
+                            <div class="p-3">
+                                <p class="heading has-text-grey">Prev:</p>
+                                <p class="title is-6">{{ prevPost.title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div v-if="nextPost" class="level-item">
+                        <a :href="nextPost.url" class="box p-0 is-flex is-align-items-center">
+                            <div class="p-3 has-text-right">
+                                <p class="heading has-text-grey">Next:</p>
+                                <p class="title is-6">{{ nextPost.title }}</p>
+                            </div>
+                            <figure class="image is-64x64 ml-3">
+                                <img :src="nextPost.image" :alt="nextPost.title + ' thumbnail'">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
             </nav>
         </div>
     </section>
@@ -52,10 +75,10 @@ const BlogNavigationFooter = {
 const BlogHeader = {
     props: ['content'],
     template: `
-        <section v-if="content" class="section">
-            <div class="container">
-                <div class="columns is-vcentered">
-                    <div class="column is-four-fifths">
+        <section v-if="content" class="hero is-medium is-info has-background-black">
+            <div class="container pb-4 pt-4">
+                <div class="columns">
+                    <div class="column is-two-thirds v-centered">
                         <h1 class="title is-2">{{ content.blogTitle }}</h1>
                         <h2 class="subtitle">{{ content.blogSubtitle }}</h2>
                         <div class="column"><a href="www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
@@ -137,6 +160,7 @@ const BlogPost = {
         const content = ref(null);
         const contentPath = ref(null);
         const blogSitemap = ref([]);
+        const currentId = ref(null);
 
         watchEffect(async () => {
             const [contentData, sitemapData] = await Promise.all([
@@ -146,13 +170,14 @@ const BlogPost = {
             contentPath.value = `/content/yaml/blog/${route.params.id}.yml`;
             content.value = contentData;
             blogSitemap.value = sitemapData;
+            currentId.value = route.params.id;
         });
 
         return { 
             content, 
             contentPath,
-            blogSitemap, 
-            currentId: () => route.params.id 
+            blogSitemap,
+            currentId
         };
     },
     template: `

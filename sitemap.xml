@@ -3,7 +3,7 @@
         xmlns:custom="http://www.example.com/schemas/custom-sitemap">
   <url>
     <loc>https://practicalai.co.nz/</loc>
-    <lastmod>2024-08-02</lastmod>
+    <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <custom:title>Practical AI Home</custom:title>
@@ -21,7 +21,7 @@
     <lastmod>2024-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <custom:title>Delved too deep.</custom:title>
-    <custom:image>https://practicalai.co.nz/content/blog/deepchad.png</custom:image>
+    <custom:title>Can we detect AI-generated cotent?</custom:title>
+    <custom:image>https://practicalai.co.nz/content/blog/saruchad.png</custom:image>
   </url>
 </urlset>
