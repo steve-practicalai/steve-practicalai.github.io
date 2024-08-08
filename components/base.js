@@ -38,7 +38,13 @@ const NavBar = {
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-end">
-                        <a v-for="item in menuItems" :key="item.url" class="navbar-item" @click="handleNavigation(item)">
+                        <a 
+                            v-for="item in menuItems" 
+                            :key="item.url" 
+                            class="navbar-item"
+                            :href="item['static-url'] || '#'"
+                            @click="!item['static-url'] && handleNavigation(item)"
+                        >
                             {{ item.text }}
                         </a>
                     </div>
