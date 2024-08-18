@@ -1,1 +1,1 @@
-Sitemap: https://practicalai.co.nz/newsite/sitemap.xml
+Sitemap: http://localhost:4000/newsite/sitemap.xml

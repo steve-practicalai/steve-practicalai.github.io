@@ -23137,6 +23137,11 @@ div.highlight {
   color: #ea4aaa;
 }
 
+:root {
+  --bulma-label-color: #000000;
+  --bulma-text-strong-color: #000000;
+}
+
 .hover-effect {
   transition: all 0.3s ease;
 }
@@ -23173,7 +23178,6 @@ div.highlight {
 .section:nth-child(odd) {
   background-color: #ffffff;
   color: #000000;
-  --bulma-text-strong-color: #000000;
 }
 
 strong {
@@ -23190,9 +23194,9 @@ strong {
   max-height: 52px;
 }
 
-#navMenu {
-  font-weight: 600;
-  color: #ffffff;
+.navbar-menu a {
+  font-weight: 600 !important;
+  color: #ffffff !important;
 }
 
 .footer {
