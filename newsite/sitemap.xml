@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/newsite/blog/1.html</loc>
+<loc>https://practicalai.co.nz/newsite/blog/1.html</loc>
 <lastmod>2024-07-25T11:00:00+12:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/newsite/blog/2.html</loc>
+<loc>https://practicalai.co.nz/newsite/blog/2.html</loc>
 <lastmod>2024-08-02T11:00:00+12:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/newsite/workshops/foundations.html</loc>
-<lastmod>2024-08-18T17:39:51+12:00</lastmod>
+<loc>https://practicalai.co.nz/newsite/workshops/foundations.html</loc>
+<lastmod>2024-08-18T18:10:51+12:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/newsite/about/</loc>
+<loc>https://practicalai.co.nz/newsite/about/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/newsite/faq</loc>
+<loc>https://practicalai.co.nz/newsite/faq</loc>
 </url>
 <url>
-<loc>http://localhost:4000/newsite/</loc>
+<loc>https://practicalai.co.nz/newsite/</loc>
 </url>
 </urlset>
