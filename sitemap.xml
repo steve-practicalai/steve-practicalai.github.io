@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:custom="http://www.example.com/schemas/custom-sitemap">
-  <url>
-    <loc>https://practicalai.co.nz/</loc>
-    <lastmod>2024-08-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <custom:title>Practical AI Home</custom:title>
-  </url>
-  <url>
-    <loc>https://practicalai.co.nz/#/blog/1</loc>
-    <lastmod>2024-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <custom:title>Tech in 2024 is starting to feel a lot like tech in the 1990s</custom:title>
-    <custom:image>https://practicalai.co.nz/content/blog/90sRobot1.webp</custom:image>
-  </url>
-  <url>
-    <loc>https://practicalai.co.nz/#/blog/2</loc>
-    <lastmod>2024-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <custom:title>Can we detect AI-generated content?</custom:title>
-    <custom:image>https://practicalai.co.nz/content/blog/saruchad.png</custom:image>
-  </url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://practicalai.co.nz/blog/1.html</loc>
+<lastmod>2024-07-25T11:00:00+12:00</lastmod>
+</url>
+<url>
+<loc>https://practicalai.co.nz/blog/2.html</loc>
+<lastmod>2024-08-02T11:00:00+12:00</lastmod>
+</url>
+<url>
+<loc>https://practicalai.co.nz/blog/3.html</loc>
+<lastmod>2024-08-18T11:00:00+12:00</lastmod>
+</url>
+<url>
+<loc>https://practicalai.co.nz/workshops/foundations.html</loc>
+<lastmod>2024-08-20T14:02:25+12:00</lastmod>
+</url>
+<url>
+<loc>https://practicalai.co.nz/about/</loc>
+</url>
+<url>
+<loc>https://practicalai.co.nz/contact</loc>
+</url>
+<url>
+<loc>https://practicalai.co.nz/faq</loc>
+</url>
+<url>
+<loc>https://practicalai.co.nz/</loc>
+</url>
 </urlset>
