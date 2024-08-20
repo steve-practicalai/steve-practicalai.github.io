@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="/newsite/assets/css/app.css">
     <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" /><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Practical:AI Foundation Workshop</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Practical:AI Foundation Workshop" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kickstart your AI journey with Practical:AI’s foundation course." />
+<meta property="og:description" content="Kickstart your AI journey with Practical:AI’s foundation course." />
+<link rel="canonical" href="https://practicalai.co.nz/newsite/workshops/foundations.html" />
+<meta property="og:url" content="https://practicalai.co.nz/newsite/workshops/foundations.html" />
+<meta property="og:image" content="https://practicalai.co.nz/newsite/content/coursefoundationsheader.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-20T13:45:06+12:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://practicalai.co.nz/newsite/content/coursefoundationsheader.png" />
+<meta property="twitter:title" content="Practical:AI Foundation Workshop" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-20T13:45:06+12:00","datePublished":"2024-08-20T13:45:06+12:00","description":"Kickstart your AI journey with Practical:AI’s foundation course.","headline":"Practical:AI Foundation Workshop","image":"https://practicalai.co.nz/newsite/content/coursefoundationsheader.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://practicalai.co.nz/newsite/workshops/foundations.html"},"url":"https://practicalai.co.nz/newsite/workshops/foundations.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 <script async="" src="https://www.tiktok.com/embed.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
@@ -118,53 +137,15 @@
 
 <!-- Fixed bottom navbar for mobile -->
 <nav class="navbar is-fixed-bottom is-hidden-desktop is-hidden-tablet has-background-dark" role="navigation" aria-label="dropdown navigation">
+    
     <div class="navbar-brand px-2 py-2" style="width: 100%;">
         <div class="navbar-item">
-            <div class="dropdown is-up is-hoverable">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Select a date</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-up" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        
-                            <a href="?eventCode=ev-srvf-20240821100000" class="dropdown-item">
-                                Aug 21, 2024 - Wellington
-                            </a>
-                        
-                            <a href="?eventCode=ev-stoj-20240828100000" class="dropdown-item">
-                                Aug 28, 2024 - Lower Hutt
-                            </a>
-                        
-                            <a href="?eventCode=ev-srvf-20240904100000" class="dropdown-item">
-                                Sep 04, 2024 - Wellington
-                            </a>
-                        
-                            <a href="?eventCode=ev-srvf-20240911100000" class="dropdown-item">
-                                Sep 11, 2024 - Wellington
-                            </a>
-                        
-                            <a href="?eventCode=ev-srvf-20240918100000" class="dropdown-item">
-                                Sep 18, 2024 - Wellington
-                            </a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar-item"> 
-            <a href="?eventCode=ev-srvf-20240821100000" class="button is-primary">
-                <span class="icon">
-                    <i class="fas fa-calendar-alt"></i>
-                </span>
-                <span>Book Now</span>
-            </a>
+            <button class="button custom-button-dark hover-effect modal-button js-modal-trigger" data-target="book_modal" aria-haspopup="true">
+                Book Now
+            </button>
         </div>
     </div>
+    
 </nav>
 
 <!-- Workshops 2 Column -->
@@ -197,26 +178,6 @@
       </header>
       <section class="modal-card-body">
         <div class="buttons">
-          
-            <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240821100000">
-              Aug 21, 2024 - Wellington
-            </a>
-          
-            <a class="button is-fullwidth is-light" href="?eventCode=ev-stoj-20240828100000">
-              Aug 28, 2024 - Lower Hutt
-            </a>
-          
-            <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240904100000">
-              Sep 04, 2024 - Wellington
-            </a>
-          
-            <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240911100000">
-              Sep 11, 2024 - Wellington
-            </a>
-          
-            <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240918100000">
-              Sep 18, 2024 - Wellington
-            </a>
           
         </div>
       </section>
@@ -345,63 +306,53 @@ Our courses aren’t for any specific vendor and our Foundations course can be c
         <!-- Sidebar Column -->
         <div style="position: sticky; top:100px">
             <section id="book-now" class="box">
-                <h3 class="title is-4">Book Now</h3> 
-                <p class="mb-4">Reserve your spot for the upcoming Practical:AI Foundation Workshop.</p>
-                <form>
-                    <div class="field">
-                        <label class="label">Workshop Date</label>
-                        <div class="control">
-                            <div>
-                                
-                                <div class="buttons">
-                                
-                                    <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240821100000">
-                                    Aug 21, 2024 - Wellington
-                                    </a>
-                                
-                                    <a class="button is-fullwidth is-light" href="?eventCode=ev-stoj-20240828100000">
-                                    Aug 28, 2024 - Lower Hutt
-                                    </a>
-                                
-                                    <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240904100000">
-                                    Sep 04, 2024 - Wellington
-                                    </a>
-                                
-                                    <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240911100000">
-                                    Sep 11, 2024 - Wellington
-                                    </a>
-                                
-                                    <a class="button is-fullwidth is-light" href="?eventCode=ev-srvf-20240918100000">
-                                    Sep 18, 2024 - Wellington
-                                    </a>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="?eventCode=ev-srvf-20240821100000" class="button is-primary is-fullwidth">
-                        <span class="icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </span>
-                        <span>Book Now</span>
-                    </a>
-                </form>
+                <h3 class="title is-4 pb-3">Book</h3> 
+                
+                <p class="subtitle mb-4">Reserve your spot for the upcoming Practical:AI Foundation Workshop.</p>
+                <ul>
+                    <li><strong>Duration: </strong>6 hours (10AM - 4PM)</li>
+                    <li><strong>Locations: </strong>Onsite, Online and Wellington/Auckaland training facilities available</li>
+                    <li><strong>Price: </strong>$500 (per person)</li>
+                    <br/>
+                </ul>
+                <button class="button custom-button-dark hover-effect modal-button js-modal-trigger" data-target="book_modal" aria-haspopup="true">
+                    Book Now
+                </button>
+                
             </section>
-
             <!-- Additional Content Section -->
             <section class="box mt-5">
-                <h3 class="title is-4">Why Choose Us?</h3>
+                <h3 class="title is-4 pb-3">Why Choose Us?</h3>
                 <div class="content">
                     <ul>
                         <li>Expert-led workshops</li>
                         <li>Practical, hands-on learning</li>
                         <li>Small class sizes for personalized attention</li>
                         <li>Access to exclusive AI resources</li>
-                        <li>Networking opportunities with industry professionals</li>
                     </ul>
+                    <strong>Class Size: </strong>
+                    <p>Minimum of 10 people for Onsite workshops, minimum of 5 people for Online</p>
+                    <strong>Cancellation Policy: </strong>
+                    <p>Full refund for workshops cancelled 7 days before, 50% refund for less than 7 days.</p>
                 </div>
             </section>
         </div>
+    </div>
+</div>
+<div id="book_modal" class="modal is-fullwidth">
+    <div class="modal-background"></div>
+    <div class="section card p-3">
+    <div class="modal-content m-0">
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            region: "na1",
+            portalId: "45154194",
+            formId: "d9ace764-4a3e-4bcb-b481-b7346f29758f"
+          });
+        </script>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
     </div>
 </div>
             
