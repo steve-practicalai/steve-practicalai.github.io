@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Linear Regression</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #plot, #errorPlot {
+            width: 800px;
+            height: 500px;
+        }
+
+        input[type="range"] {
+            width: 800px;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataX = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]; 
+            const dataY = [2, 3, 5, 3.5, 10, 5, 6, 7, 2, 6, 8, 8.5, 6, 2, 9]; // Ensure dataY length matches dataX
+            let slope = parseFloat(document.getElementById('slope').value);
+            let intercept = parseFloat(document.getElementById('intercept').value);
+            let errorValues = [];
+            let timeSteps = [];
+            let startTime;
+            let oldLines = [];
+
+            const trace1 = {
+                x: dataX,
+                y: dataY,
+                mode: 'markers',
+                type: 'scatter',
+                name: 'Data Points'
+            };
+
+            function updateLine() {
+                const y_values = dataX.map(x => (x - 2010) * slope + intercept); // Adjust for years
+                const line = {
+                    x: dataX,
+                    y: y_values,
+                    mode: 'lines',
+                    type: 'scatter',
+                    name: 'Fit Line'
+                };
+                return line;
+            }
+
+            function calculateTotalError() {
+                return dataY.reduce((acc, y, i) => acc + Math.pow(((dataX[i] - 2010) * slope + intercept) - y, 2), 0);
+            }
+
+            function errorLines() {
+                const lines = [];
+                for (let i = 0; i < dataX.length; i++) {
+                    let improvementFlag = false; 
+                    const predictedY = (dataX[i] - 2010) * slope + intercept;
+                    if(oldLines[i]) {
+                        const actualY = dataY[i];
+                        const oldPrediction = oldLines[i].y[1];
+                        if (Math.abs(predictedY - actualY) < Math.abs(oldPrediction - actualY)) {
+                            improvementFlag = true;
+                        }
+                    } 
+                    const line = {
+                        x: [dataX[i], dataX[i]],
+                        y: [dataY[i], predictedY],
+                        mode: 'lines',
+                        type: 'scatter',
+                        line: {
+                            color: improvementFlag ? 'lime': 'red',
+                            width: 4
+                        },
+                        showlegend: false
+                    };
+                    lines.push(line);
+                }
+                oldLines = lines;
+                return lines;
+            }
+
+            var layout = {
+                xaxis: {
+                    title: 'Year',
+                    range: [2010, 2026]
+                },
+                yaxis: {
+                    title: 'Earnings $m',
+                    range: [0, 15]
+                }
+            };
+
+            function updateAll() {
+                if(!startTime) startTime = Date.now();
+                const totalError = calculateTotalError();
+                errorValues.push(totalError);
+                timeSteps.push((Date.now() - startTime) / 1000);
+                //updateErrorPlot();
+                slope = parseFloat(document.getElementById('slope').value);
+                document.getElementById('slopeLabel').textContent = `Slope: ${slope}`;
+                intercept = parseFloat(document.getElementById('intercept').value);
+                document.getElementById('interceptLabel').textContent = `Intercept: ${intercept}`;
+                const updatedLine = updateLine();
+                //const errors = errorLines();
+                //layout.title = `Interactive Linear Regression - Total Error: ${totalError.toFixed(2)}`;
+                Plotly.react('plot', [trace1, updatedLine], layout);
+            }
+
+            function updateErrorPlot() {
+        const errorTrace = {
+            x: timeSteps,
+            y: errorValues,
+            mode: 'lines',
+            type: 'scatter',
+            name: 'Error Over Time'
+        };
+
+        Plotly.newPlot('errorPlot', [errorTrace], {
+            title: 'Error Evolution',
+            xaxis: {
+                title: 'Time (seconds)',
+                range: [0, 60],
+            },
+            yaxis: {
+                title: 'Total Error'
+            }
+        });
+    }
+
+    function scoreit() {
+    // Calculate the total error using the existing function
+    const totalError = calculateTotalError();
+
+    // Create the message to display the score
+    const message = `<div style="text-align:center; font-size:24px;">
+                        Your score is: ${totalError.toFixed(2)}
+                     </div>
+                     <div style="text-align:center; margin-top:20px;">
+                        <button onclick="location.reload();">Refresh page to try again</button>
+                     </div>
+                     <div style="text-align:center; margin-top:10px;">
+                        <a href="exercise1b.html">Next Exercise</a>
+                     </div>`;
+
+    // Clear the body content and insert the score message
+    document.body.innerHTML = message;
+}
+
+
+    function simulateAI() {
+        startTime = Date.now();
+        errorValues = [];
+        let improvement = true;
+        const learningRate = 0.01;
+
+        const interval = setInterval(() => {
+            if (!improvement) {
+                clearInterval(interval);
+                return;
+            }
+            improvement = false;
+
+            let currentError = calculateTotalError();
+            let newError;
+
+            // Adjust slope
+            slope += learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                slope -= 2 * learningRate;
+                newError = calculateTotalError();
+                if (newError < currentError) {
+                    improvement = true;
+                } else {
+                    slope += learningRate; // revert to original
+                }
+            }
+
+            // Adjust intercept
+            intercept += learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                intercept -= 2 * learningRate;
+                newError = calculateTotalError();
+                if (newError < currentError) {
+                    improvement = true;
+                } else {
+                    intercept += learningRate; // revert to original
+                }
+            }
+            document.getElementById('slope').value = slope;
+            document.getElementById('intercept').value = intercept;
+
+            updateAll();
+        }, 50);
+    }
+
+            document.getElementById('slope').addEventListener('input', updateAll);
+            document.getElementById('intercept').addEventListener('input', updateAll);
+            document.getElementById('score').addEventListener('click', scoreit);
+
+            updateAll(); // Initialize plot and error graph
+        });
+    </script>
+</head>
+<body>
+    <h3>Interactive Linear Regression Demo</h3>
+    <div id="plot"></div>
+    <label for="slope" id="slopeLabel">Slope:</label>
+    <input type="range" id="slope" min="0" max="1" value="0" step="0.01">
+    <label for="intercept" id="interceptLabel">Intercept:</label>
+    <input type="range" id="intercept" min="0" max="10" value="1" step="0.01">
+    <button id="score">Score!</button>
+</body>
+</html>

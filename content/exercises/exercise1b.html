@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Linear Regression</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            justify-content: center; /* Center grid items horizontally */
+            align-items: start; /* Align items at the start of the grid row */
+            gap: 20px;
+        }
+        
+        #header {
+            width: 100%;
+            grid-column: 1 / -1; /* Span across all available columns */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .controls {
+            grid-column: 1 / -1; /* Span across all available columns */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        input[type="range"] {
+            width: 500px; /* Adjust width to your preference */
+            margin: 10px auto; /* Auto margins for horizontal centering */
+        }
+        
+        #plot, #errorPlot {
+            width: 100%; /* Adjusts width to be responsive */
+            height: 500px;
+            justify-self: center; /* Center each plot within its grid cell */
+        }
+        
+        @media (min-width: 1600px) {
+            body {
+                grid-template-columns: repeat(2, 1fr); /* Makes two columns when there is enough width */
+            }
+            #plot, #errorPlot {
+                grid-column: auto; /* Allows each plot to take one column */
+            }
+        }
+        
+        
+            </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataX = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]; 
+            const dataY = [2, 3, 5, 3.5, 10, 5, 6, 7, 2, 6, 8, 8.5, 6, 2, 9]; // Ensure dataY length matches dataX
+            let slope = parseFloat(document.getElementById('slope').value);
+            let intercept = parseFloat(document.getElementById('intercept').value);
+            let errorValues = [];
+            let timeSteps = [];
+            let startTime;
+            let oldLines = [];
+
+            const trace1 = {
+                x: dataX,
+                y: dataY,
+                mode: 'markers',
+                type: 'scatter',
+                name: 'Data Points'
+            };
+
+            function updateLine() {
+                const y_values = dataX.map(x => (x - 2010) * slope + intercept); // Adjust for years
+                const line = {
+                    x: dataX,
+                    y: y_values,
+                    mode: 'lines',
+                    type: 'scatter',
+                    name: 'Fit Line'
+                };
+                return line;
+            }
+
+            function calculateTotalError() {
+                return dataY.reduce((acc, y, i) => acc + Math.pow(((dataX[i] - 2010) * slope + intercept) - y, 2), 0);
+            }
+
+            function errorLines() {
+                const lines = [];
+                for (let i = 0; i < dataX.length; i++) {
+                    let improvementFlag = false; 
+                    const predictedY = (dataX[i] - 2010) * slope + intercept;
+                    if(oldLines[i]) {
+                        const actualY = dataY[i];
+                        const oldPrediction = oldLines[i].y[1];
+                        if (Math.abs(predictedY - actualY) < Math.abs(oldPrediction - actualY)) {
+                            improvementFlag = true;
+                        }
+                    } 
+                    const line = {
+                        x: [dataX[i], dataX[i]],
+                        y: [dataY[i], predictedY],
+                        mode: 'lines',
+                        type: 'scatter',
+                        line: {
+                            color: improvementFlag ? 'lime': 'red',
+                            width: 4
+                        },
+                        showlegend: false
+                    };
+                    lines.push(line);
+                }
+                oldLines = lines;
+                return lines;
+            }
+
+            var layout = {
+                title: 'Interactive Linear Regression',
+                xaxis: {
+                    title: 'Year',
+                    range: [2010, 2026]
+                },
+                yaxis: {
+                    title: 'Earnings $m',
+                    range: [0, 15]
+                }
+            };
+
+            function updateAll() {
+                if(!startTime) startTime = Date.now();
+                const totalError = calculateTotalError();
+                errorValues.push(totalError);
+                timeSteps.push((Date.now() - startTime) / 1000);
+        updateErrorPlot();
+                slope = parseFloat(document.getElementById('slope').value);
+                document.getElementById('slopeLabel').textContent = `Slope: ${slope}`;
+                intercept = parseFloat(document.getElementById('intercept').value);
+                document.getElementById('interceptLabel').textContent = `Intercept: ${intercept}`;
+                const updatedLine = updateLine();
+                const errors = errorLines();
+                layout.title = `Interactive Linear Regression - Total Error: ${totalError.toFixed(2)}`;
+                Plotly.react('plot', [trace1, updatedLine, ...errors], layout);
+            }
+
+            function updateErrorPlot() {
+        const errorTrace = {
+            x: timeSteps,
+            y: errorValues,
+            mode: 'lines',
+            type: 'scatter',
+            name: 'Error Over Time'
+        };
+
+        Plotly.newPlot('errorPlot', [errorTrace], {
+            title: 'Error Evolution',
+            xaxis: {
+                title: 'Time (seconds)',
+                range: [0, 60],
+            },
+            yaxis: {
+                title: 'Total Error'
+            }
+        });
+    }
+
+    function simulateAI() {
+        startTime = Date.now();
+        errorValues = [];
+        let improvement = true;
+        const learningRate = 0.01;
+
+        const interval = setInterval(() => {
+            if (!improvement) {
+                clearInterval(interval);
+                return;
+            }
+            improvement = false;
+
+            let currentError = calculateTotalError();
+            let newError;
+
+            // Adjust slope
+            slope += learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                slope -= 2 * learningRate;
+                newError = calculateTotalError();
+                if (newError < currentError) {
+                    improvement = true;
+                } else {
+                    slope += learningRate; // revert to original
+                }
+            }
+
+            // Adjust intercept
+            intercept += learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                intercept -= 2 * learningRate;
+                newError = calculateTotalError();
+                if (newError < currentError) {
+                    improvement = true;
+                } else {
+                    intercept += learningRate; // revert to original
+                }
+            }
+            document.getElementById('slope').value = slope;
+            document.getElementById('intercept').value = intercept;
+
+            updateAll();
+        }, 50);
+    }
+
+            document.getElementById('slope').addEventListener('input', updateAll);
+            document.getElementById('intercept').addEventListener('input', updateAll);
+            //document.getElementById('simulateAI').addEventListener('click', simulateAI);
+
+            updateAll(); // Initialize plot and error graph
+        });
+    </script>
+</head>
+<body>
+    <div id="header"><h3>Interactive Linear Regression Demo</h3></div>
+    <div id="errorPlot"></div>
+    <div id="plot"></div>
+     <div class="controls">
+        <label for="slope" id="slopeLabel">Slope:</label>
+        <input type="range" id="slope" min="0" max="1" value="0" step="0.01">
+        <label for="intercept" id="interceptLabel">Intercept:</label>
+        <input type="range" id="intercept" min="0" max="10" value="1" step="0.01">
+        <div style="text-align:center; margin-top:10px;">
+            <a href="exercise1c.html">Next Exercise</a>
+         </div>
+    </div>
+</body>
+</html>
