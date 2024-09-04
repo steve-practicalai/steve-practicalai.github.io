@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png" />
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to improve LLM reasoning</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="How to improve LLM reasoning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let’s reiterate the question and also think step by step." />
+<meta property="og:description" content="Let’s reiterate the question and also think step by step." />
+<link rel="canonical" href="https://practicalai.co.nz/blog/4.html" />
+<meta property="og:url" content="https://practicalai.co.nz/blog/4.html" />
+<meta property="og:image" content="https://practicalai.co.nz/content/blog/4/soileater.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-04T08:00:00+12:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://practicalai.co.nz/content/blog/4/soileater.png" />
+<meta property="twitter:title" content="How to improve LLM reasoning" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-04T08:00:00+12:00","datePublished":"2024-09-04T08:00:00+12:00","description":"Let’s reiterate the question and also think step by step.","headline":"How to improve LLM reasoning","image":"https://practicalai.co.nz/content/blog/4/soileater.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://practicalai.co.nz/blog/4.html"},"url":"https://practicalai.co.nz/blog/4.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<script async="" src="https://www.tiktok.com/embed.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F1CLVJLJXE');
+    </script>
+</head>
+<body class="has-navbar-fixed-top theme-light">
+    
+
+
+<!--  Navbar -->
+<nav class="navbar theme-dark is-fixed-top" x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a id="header-logo" href="/">
+                <img src="/content/WhiteLogo-OnTransparent.png" alt="Logo" />
+            </a>
+            <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navMenu"
+                :class="{ 'is-active': openNav }"
+                x-on:click="openNav = !openNav"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-end">
+                
+                    
+                        
+                            <a href="/" class="navbar-item">Home</a>
+                        
+                    
+                        
+                            <a href="/workshops/foundations" class="navbar-item">Workshops</a>
+                        
+                    
+                        
+                            <a href="/faq" class="navbar-item">FAQ</a>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="/blog/4.html" class="navbar-link">
+                                Blog
+                            </a>
+                            <div class="navbar-dropdown">
+                                
+                                    <a class="navbar-item" href="/blog/4.html">How to improve LLM reasoning</a>
+                                
+                                    <a class="navbar-item" href="/blog/3.html">AI is the Everything App</a>
+                                
+                                    <a class="navbar-item" href="/blog/2.html">Can we detect AI-generated content?</a>
+                                
+                                    <a class="navbar-item" href="/blog/1.html">Tech in 2024 is starting to feel a lot like tech in the 90s</a>
+                                
+                            </div>
+                            </div>
+                        
+                    
+                        
+                            <a href="/contact" class="navbar-item">Contact</a>
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Sections -->
+
+
+
+
+<!-- Sections -->
+<div>
+
+    
+            
+<section class="hero is-medium theme-dark">
+    <div class="hero-body pb-3 pt-3">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-9">
+                    <h1 class="title is-1 has-text-weight-bold">How to improve LLM reasoning</h1>
+                    <h2 class="subtitle is-4 mt-3">Let’s reiterate the question and also think step by step.</h2>
+                    <div class="level is-mobile mt-5">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <a href="https://www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
+                                    <span class="icon mr-2">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="has-text-weight-semibold">Steve Green</span>
+                                </a>
+                            </div>
+                            <div class="level-item">
+                                <span class="has-text-grey-lighter is-size-6">
+                                    September 04, 2024
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <img src="/content/blog/4/soileater.png" alt="How to improve LLM reasoning" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="content">
+        <h2 id="tldr-adding-the-below-prompt-will-improve-reasoning-tasks-by-13">TL;DR: Adding the below prompt will improve reasoning tasks by 13%</h2>
+<blockquote>
+  <p>✨<strong>EchoPrompt:</strong> Let’s reiterate the question and also think step by step.</p>
+
+  <p>Mekala, R.R., Razeghi, Y. and Singh, S., 2023. <br />
+EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Learning. <br />
+<a href="https://arxiv.org/pdf/2309.10687">Link: arXiv:2309.10687</a></p>
+</blockquote>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns pt-3">
+        
+          <div class="column is-two-thirds mr-2">
+            <div class="content">
+              <h1 id="prompt-engineering-is-a-moving-target">Prompt engineering is a moving target</h1>
+<p>Offering prompt engineering advice is always tricky, much of it has a short shelf life and some of it only applies to specific models (especially those ‘one weird trick’ tips).</p>
+
+<p>Also the speed at which the LLM vendors are baking functionality directly into the chat interfaces is really impressive. Increasingly I’m seeing interesting oddities like “how many Rs are in strawberry” getting patched out either in fine tuning or via the vendors adding extra context (i.e. they’re mucking with your prompt behind the scenes).</p>
+
+<p>Part of the reason most of these issues like the Strawberry example are so easily patched is they’re mostly just edge cases rather than the “proof LLMs can’t reason” people are looking for. In the case of the Strawberry problem it’s not even a true reasoning problem but just giving us a glimpse into the tokenization process that’s happening under the hood (see my LinkedIn post linked on right if you’re interested).</p>
+
+<p>Actual reasoning problems tend to fall into the following camps:</p>
+
+<ol>
+  <li>Lack of context, the LLM lacks the information that you take for granted.</li>
+  <li>Incorrect domain knowledge, the LLM is asked a question in one context (e.g. physics) when it needs to be in another (e.g. biology)</li>
+  <li>Sychophancy, the LLM is asked a leading question and has a strong bias to answer using your assumptions.</li>
+</ol>
+
+<p>A lot of the improvements you see from various prompt engineering techniques like COT or EchoPrompting come from having the LLM explore the problem space as a way to have it self-load the correct domain knowledge rather than you doing it manually.</p>
+
+<p>The COT “…think step by step” prompt isn’t useful because it triggers some sudden ephiphany but because the output of that prompt forms part of the context for the next prompt. This is why complex questions that fail on the first try will often work on the second, simply because the problem is already half solved on the second try.</p>
+
+            </div>
+          </div>
+        
+        
+        
+          <div class="column ">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7234344847736786944/" target="_blank" rel="noopener noreferrer">
+    <figure class="image">
+    <img class="is-rounded" src="/content/blog/4/strawberry.png" alt="Prompt: How many letter R's are in Strawberry?">
+    <figcaption class="has-text-centered is-size-7 mt-2"><b>Prompt:</b> How many letter R's are in Strawberry?</figcaption>   
+    </figure>
+</a>     
+
+          </div>
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="content">
+        <h1 id="think-step-by-step">…think step by step</h1>
+<p>Some prompt engineering tips are consistently useful because they give you some insight into how the LLM is approaching the problem. Chain-of-thought is useful but the technique I’ve recently been using much more is the EchoPrompt (paper linked above) which when combined with COT and “…critically review your assumptions” gives you excellent insights into how an LLM has interpreted your prompt.</p>
+
+<p>This turns it into almost a debugging tool for language, often with COT+EchoPrompt I’ll realise that I’m the one to blame and just increasing the clarity of my question gets the result I was after.</p>
+
+<p>Other times it will simply show me where the LLM is going wrong, usually because multiple knowledge domains are required to solve the problem.</p>
+
+<p>Here’s a great example using a riddle that trips up Claude 3.5 which I found in the <a href="https://arxiv.org/abs/2405.19616">‘Easy problems LLMs get wrong’</a> dataset.</p>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="stumping-claude-3-5-with-a-tree-riddle">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3">Stumping Claude 3.5 with a tree "riddle"</h2>
+      <div class="columns pt-3">
+        
+          <div class="column is-half">
+            <div class="content">
+              <h2 id="assume-a-spherical-tree">Assume a spherical tree</h2>
+
+<p>This prompt below isn’t so much a riddle as just a test of biology knowledge as the mass of a tree comes from the carbon dioxide in the air, not the soil.</p>
+
+<p><img src="/content/blog/4/puzzle1.png" alt="Tree Riddle" title="Tree riddle prompt 1" /></p>
+
+<p>The correct answer should be 10kg or a tiny bit under 10kg if you want to be really precise. I love here that the LLM clarifies that “assuming a closed system where the tree’s growth comes entirely from the soil, this is the correct answer”.</p>
+
+<p>It’s probably generous to joke this is a <a href="https://en.wikipedia.org/wiki/Spherical_cow">“spherical cow”</a> as I think this is more likely a <a href="https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models">sychophancy bias</a>, the model could just as easily be saying “assuming the world is flat…”.</p>
+
+<p><img src="/content/blog/4/solution1.png" alt="Tree Riddle" title="Tree riddle, solution 1" /></p>
+
+            </div>
+          </div>
+        
+        
+          <div class="column ">
+            <div class="content">
+              <h2 id="double-down-on-wrong">Double down on wrong</h2>
+
+<p>Let’s see if our Chain-of-thought and EchoPrompt can fix this.<br />
+<img src="/content/blog/4/puzzle2.png" alt="Tree Riddle" title="Tree riddle prompt 2" /></p>
+
+<p>As we can see the COT and EchoPrompt didn’t make any improvement and that’s for 2 reasons:</p>
+<ol>
+  <li>It’s already taking that COT approach in the first prompt which is something OpenAI/Anthropic are increasingly adding either by editing your prompt under the hood or in fine tuning.</li>
+  <li>As we’ll see later these kind of prompts will in certain situations make the model <strong>get better at being wrong</strong>, in other words they’ll become even better flat earthers.</li>
+</ol>
+
+<p><img src="/content/blog/4/solution2.png" alt="Tree Riddle" title="Tree riddle, solution 2" /></p>
+
+            </div>
+          </div>
+        
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns pt-3">
+        
+          <div class="column is-half">
+            <div class="content">
+              <h2 id="works-every-time">Works every time</h2>
+
+<p>We can easily cheat here to get the model to return the correct answer by manually setting the biologist role in the prompt.</p>
+
+<p><img src="/content/blog/4/puzzle3.png" alt="Tree Riddle" title="Tree riddle prompt 3" /></p>
+
+<p>It seems conterintuative to most people that it could “forget” information like biology which it clearly knows when tested in other prompts but this is a great example of where LLMs reasoning is radically different to ours.</p>
+
+<p>Its learned knowledge and skills are not all simultantiously activated, the key constraint on LLMs isn’t so much their context window (the max prompt size supported) but their attention and how many features and knowledge domains they can simulationously activate.</p>
+
+<p><img src="/content/blog/4/solution3.png" alt="Tree Riddle" title="Tree riddle, solution 3" /></p>
+
+            </div>
+          </div>
+        
+        
+          <div class="column ">
+            <div class="content">
+              <h2 id="60-of-the-time">60% of the time</h2>
+
+<p>However this solution isn’t actually consistently solving the problem, often when people are complaining the LLM isn’t working anymore or has been “dumbed down” what’s really happening is they’ve created a prompt that doesn’t actually work 100% of the time and they’re running into those failures that were always there.</p>
+
+<p><img src="/content/blog/4/puzzle4.png" alt="Tree Riddle" title="Tree riddle prompt 4" /></p>
+
+<p>Here it only took a change of a few characters (removing “given”) to get a wrong answer, this just shows how important testing becomes anytime you’re looking to use LLMs in any ongoing process or for automations.</p>
+
+<p>Again what’s funny here is that it’s still activating part of the biologist role in that it correctly states that the tree gains mass from the air but it wasn’t enough to push it toward the correct answer we saw before.</p>
+
+<p>If you question Claude 3.5 why it does this the reply is very telling:</p>
+<blockquote>
+  <p>My mistake was in thinking that the problem was intended as a simplified mathematical exercise, rather than a test of biological understanding.</p>
+</blockquote>
+
+<p>The wording of the riddle itself is what’s tripping it up, its bias to stick to incorrect assumptions made in the prompt is very strong. We never told it explicitly to assume the mass is coming from the soil, and it often points out the error but still sticks to giving the wrong answer after protesting.</p>
+
+<p><img src="/content/blog/4/solution4.png" alt="Tree Riddle" title="Tree riddle, solution 4" /></p>
+
+            </div>
+          </div>
+        
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="problamatically-probalistic">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3">Problamatically probalistic</h2>
+      <div class="content">
+        <p>Somewhere in the multiverse is a beautiful world where the grammer of every language requires each sentance to specify if the statement is objective or subjective, a concrete fact or ‘just a vibe’. One where every statment is inheritly probalistic, I don’t “kinda want to have Indian takeways tonight” but “..I want Indian takeaways, ~42%”.</p>
+
+<p>The closest thing we have to this here on Earth are the LLMs, everything they do and say is probalistic by nature, if you’re curious how this works have a play with this Transformer Explainer tool by the ‘Polo Club of Data Science’ team at Georgia Tech:</p>
+
+<p><a href="https://poloclub.github.io/transformer-explainer/">https://poloclub.github.io/transformer-explainer/</a></p>
+
+<p>To see this in action let’s create 10 variants of the riddle, each with only a few tokens of difference:</p>
+
+<blockquote>
+  <ol>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>Given a 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree growing in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>A 2kg tree is growing in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>With 2kg tree that grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree that grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree growing in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+    <li>A 2kg tree growing in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+  </ol>
+</blockquote>
+
+<p>With this we get some really interesting insights:
+<img src="/content/blog/4/bars.png" alt="10x Riddles" title="10x Riddles" /></p>
+
+<p>Why did EchoPrompt on its own perform so poorly? It <em>got better at being wrong</em>, the EchoPrompt amplified the “assume a flat earth” bias that’s in our riddle and despite many responses included protests or caveats their final answer was still incorrect.</p>
+
+<p>Combined with the “As a biologist” role however bumps the score back up to 90%, high enough that many people might not see this prompt fail in a chat UI, a good example of why testing is so important.</p>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns pt-3">
+        
+          <div class="column is-half">
+            <div class="content">
+              <h2 id="getting-to-100">Getting to ~100%</h2>
+<p>How can we get to a prompt that solves 10/10 of the riddle variants? This is where a little extra prompt engineering can help, here we’re splitting the EchoPrompt into its two parts (Restate question and COT) and adding a third to <strong>critically review the assumptions the LLM is making</strong>.</p>
+
+<ol>
+  <li>Critically review your assumptions and change them when false - It’s not enough to just state them, the LLM needs to be prompted to <em>change</em> them when wrong.</li>
+  <li>Reiterate the question - EchoPrompt</li>
+  <li>Think step by step - Chain-of-thought</li>
+</ol>
+
+<p><img src="/content/blog/4/puzzle5.png" alt="Tree Riddle" title="Tree riddle prompt 5" /></p>
+
+<p>With this combination we get a 10/10 for the riddles, you can see below that it identifies and corrects the mass conservation / math puzzle assumption in the riddle and manages to avoid making that mistake.</p>
+
+<p><img src="/content/blog/4/solution5.png" alt="Tree Riddle" title="Tree riddle, solution 5" /></p>
+
+<p><img src="/content/blog/4/win.png" alt="Mission Complete" title="10 out of 10 solved" /></p>
+
+            </div>
+          </div>
+        
+        
+          <div class="column ">
+            <div class="content">
+              <h2 id="auto-role">Auto-Role</h2>
+
+<p>There is one last thing we need to fix, the prompt techniques above are generic and fairly universal allowing them to be used across a wide number of possible riddles.</p>
+
+<p>However picking “As a biologist…” as the role was something I did and assumes a human in the loop making that decision. For automated workflows we can get the LLM to make the decision on the correct role to use.</p>
+
+<p><img src="/content/blog/4/autorole.png" alt="AutoRole prompt" title="AutoRole prompt" /></p>
+
+<p>The use of Botanist over Biologist still results in 10/10 riddles solved.</p>
+
+<h2 id="constrained-outputs">Constrained outputs</h2>
+
+<p>Something to note about these kinds of prompts (EchoPrompt, COT, CriticalReview) is they don’t work when you constrain the output.</p>
+
+<p>If you add this constraint to the prompts shown here:</p>
+<blockquote>
+  <p>Only output your answer as a number, don’t output anything else.</p>
+</blockquote>
+
+<p>Then the performance across the board drops to 0% for all but the final prompt which solves 1 riddle in 10.</p>
+
+<h2 id="claude-sheets">Claude Sheets</h2>
+
+<p>I ran all these tests using the Claude Sheets extension by Anthropic:
+<a href="https://docs.anthropic.com/en/docs/build-with-claude/claude-for-sheets">https://docs.anthropic.com/en/docs/build-with-claude/claude-for-sheets</a>
+ <img src="/content/blog/4/claude_sheets.png" alt="Claude Sheets" title="Claude Sheets" /></p>
+
+<p>Just beware that these use API credits rather than the buffet offer that is claude.ai chat, total cost for this blog post was: $1.15 NZD</p>
+
+            </div>
+          </div>
+        
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+<section class="section pt-6">
+    <div class="container">
+        <h2 class="title is-2 pb-3">Looking to learn more?</h2>
+        <div class="columns pt-3">
+            <div class="column is-half mr-6">
+                <p>I hope this was useful, AI should be as big a productivity boost to you and your organisation as spreadsheets are today, now imagine nobody on your team knows how to use =SUM()<br /><br />
+                If you're an organisation looking for Foundational AI skills training for your teams then please get in touch. <br /><br />
+                The content in this blog post is more for our Advanced workshop but the core concepts of effective prompt engineering are the same. <br /><br />
+                Importantly we tie this all back to concrete usecases in the workplace minus the tech vendor hype, in a word we keep it practical.</p>
+            </div>
+            <div class="column is-half mr-6">
+                <div class="content">
+                    
+<div class="card">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    <img class="is-rounded" src="/content/foundationsicon.png" alt="Practical:AI Foundation" />
+                </figure>
+            </div>
+            <div class="media-content">
+                <p class="title is-4">Practical:AI Foundation</p>
+            </div>
+        </div>
+        <div class="content"><p>Our half-day Foundations workshop will equip you with:</p>
+<ul>
+  <li><strong>AI Theory (That Won’t Put You to Sleep):</strong> Understand how AI ticks under the hood without needing a math PhD.</li>
+  <li><strong>Extracting real business value:</strong> AI is an endless goldmine of value, learn how to ‘mine’ it safely.</li>
+  <li><strong>Risks and challenges:</strong> Learn about what is meant when we say AI “hallucinates”, the biases, risks and how they can be managed.</li>
+  <li><strong>The new frontier:</strong> AI has upended the status quo to the extent everything will need to be revalauated, learn to seperate the low-hanging fruit from the AI Slop.</li>
+</ul>
+
+<h4 id="price-499pp-half-day-workshop"><strong>Price: $499pp (half-day workshop)</strong></h4>
+</div>
+        
+        <div class="mt-5">
+            <a class="button custom-button-dark hover-effect is-large" data-target="Practical:AI Foundation_workshopModal" href="https://practicalai.co.nz/workshops/foundations">
+                Book
+            </a>
+        </div>
+        
+    </div>
+</div>
+  
+
+
+<div id="_workshopModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Select an event date for </p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="buttons">
+          
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+<!-- Blog Nav -->
+
+
+
+
+
+
+<section class="section has-background-grey-lighter">
+    <div class="container">
+        <nav class="level">
+            <div class="level-left">
+                
+                    <div class="level-item">
+                        <a href="/blog/3.html" class="box p-0 is-flex is-align-items-center">
+                            <figure class="image is-64x64 mr-3">
+                                <img src="/content/blog/3/SaaS_AI_Smoosh_square.png" alt="AI is the Everything App thumbnail">
+                            </figure>
+                            <div class="p-2 pr-5">
+                                <p class="heading has-text-grey">Prev:</p>
+                                <p class="title is-6">AI is the Everything App</p>
+                            </div>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="level-right">
+                
+            </div>
+        </nav>
+    </div>
+</section>
+            
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-vcentered is-mobile is-multiline">
+                <div class="column is-12-mobile is-4-tablet is-3-desktop order-1-mobile">
+                    <div class="content has-text-left-tablet">
+                        <a href="https://techalliance.nz">
+                            <img loading="lazy" decoding="async" src="/content/tech_alliance_logo.png" alt="Tech Alliance Logo" width="180">
+                        </a>
+                        <p class="mt-2">New Zealand Tech Alliance Member</p>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-8-tablet is-9-desktop order-2-mobile">
+                    <div class="content has-text-left-tablet">
+                        <p>Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620</p>
+                        <p>All content generated by humans and © 2024 Practical:AI - All rights reserved.</p>
+                        <div class="buttons is-left">
+                            
+                            <a href="https://www.facebook.com/PracticalAINZ" class="button is-light">
+                                <span class="icon"><i class="fab fa-facebook"></i></span>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/company/nzpai/" class="button is-light">
+                                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+            
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+</body>
+</html>

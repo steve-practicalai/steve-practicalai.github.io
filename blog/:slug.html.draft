@@ -1,0 +1,24 @@
+The problem with the Stochastic parrots argument is you quickly get bogged down in semantics and philosophy. If you take a very narrow definition of intelligence as "economically useful labor" then LLMs from GPT4 onward are absolutely intelligent. 
+
+
+
+Even GPT3.5 is capable of impressive feats with careful prompting. A good demonstration thatt they mostly draw from their training data is modifying this classic puzzle as follows:
+Here is a logic puzzle. I need to carry a cabbage, a horse, and a vegan lion across a river. 
+I can only carry one item at a time with me in the boat. 
+I can't leave the horse alone with the cabbage, and I can't leave the cabbage alone with the vegan lion. 
+How can I get everything the other side of the river?
+
+Simply converting the lion into a vegan...
+https://claude.ai/chat/7e20944b-5434-4724-9327-769d1b7f0d7a
+
+Attention is all you need (to worry about)
+
+The problem with the Stochastic parrots argument is you quickly get bogged down in semantics and philosophy. If you take a very narrow definition of intelligence as "economically useful labor" then LLMs from GPT4 onward are absolutely intelligent. 
+
+
+
+I think the most convincing way they demonstrate reasoning is that when they get things wrong you can often walk them through a correct way of thinking and they will then apply it to future examples. 
+
+
+
+It's still just next token prediction and the source of intelligence was 100% human (your prompt + training data) but the correct application to new examples wasn't illusionary or a trick. 
