@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png" />
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Practical:AI Foundation Workshop</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Practical:AI Foundation Workshop" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kickstart your AI journey with Practical:AI’s foundation course." />
+<meta property="og:description" content="Kickstart your AI journey with Practical:AI’s foundation course." />
+<link rel="canonical" href="https://practicalai.co.nz/exercises/lr3.html" />
+<meta property="og:url" content="https://practicalai.co.nz/exercises/lr3.html" />
+<meta property="og:image" content="https://practicalai.co.nz/content/coursefoundationsheader.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-09T12:00:00+12:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://practicalai.co.nz/content/coursefoundationsheader.png" />
+<meta property="twitter:title" content="Practical:AI Foundation Workshop" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-09T12:00:00+12:00","datePublished":"2024-09-09T12:00:00+12:00","description":"Kickstart your AI journey with Practical:AI’s foundation course.","headline":"Practical:AI Foundation Workshop","image":"https://practicalai.co.nz/content/coursefoundationsheader.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://practicalai.co.nz/exercises/lr3.html"},"url":"https://practicalai.co.nz/exercises/lr3.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<script async="" src="https://www.tiktok.com/embed.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F1CLVJLJXE');
+    </script>
+</head>
+<body class="has-navbar-fixed-top theme-light">
+    
+
+
+<!--  Navbar -->
+<nav class="navbar theme-dark is-fixed-top" x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a id="header-logo" href="/">
+                <img src="/content/WhiteLogo-OnTransparent.png" alt="Logo" />
+            </a>
+            <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navMenu"
+                :class="{ 'is-active': openNav }"
+                x-on:click="openNav = !openNav"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-end">
+                
+                    
+                        
+                            <a href="/" class="navbar-item">Home</a>
+                        
+                    
+                        
+                            <a href="/workshops/foundations" class="navbar-item">Workshops</a>
+                        
+                    
+                        
+                            <a href="/faq" class="navbar-item">FAQ</a>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="/blog/4.html" class="navbar-link">
+                                Blog
+                            </a>
+                            <div class="navbar-dropdown">
+                                
+                                    <a class="navbar-item" href="/blog/4.html">How to improve LLM reasoning</a>
+                                
+                                    <a class="navbar-item" href="/blog/3.html">AI is the Everything App</a>
+                                
+                                    <a class="navbar-item" href="/blog/2.html">Can we detect AI-generated content?</a>
+                                
+                                    <a class="navbar-item" href="/blog/1.html">Tech in 2024 is starting to feel a lot like tech in the 90s</a>
+                                
+                            </div>
+                            </div>
+                        
+                    
+                        
+                            <a href="/contact" class="navbar-item">Contact</a>
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+</nav>
+            <!-- Sections -->
+        
+
+
+
+<!-- Sections -->
+<div>
+
+    
+            
+<section class="hero is-medium theme-dark">
+    <div class="hero-body pb-3 pt-3">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-9">
+                    <h1 class="title is-1 has-text-weight-bold">Practical:AI Foundation Workshop</h1>
+                    <h2 class="subtitle is-4 mt-3">Kickstart your AI journey with Practical:AI's foundation course.</h2>
+                    <div class="level is-mobile mt-5">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <a href="https://www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
+                                    <span class="icon mr-2">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="has-text-weight-semibold">Steve Green</span>
+                                </a>
+                            </div>
+                            <div class="level-item">
+                                <span class="has-text-grey-lighter is-size-6">
+                                    September 09, 2024
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <img src="/content/coursefoundationsheader.png" alt="Practical:AI Foundation Workshop" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+<div>
+<section class="section pt-6">
+    <div class="container">
+        <h2 class="title is-2 pb-3">Interactive Linear Regression Demo</h2>
+        <h2 class="title is-3 pb-3" id="totalError">Total Error: Unknown</h2>
+        <div class="columns is-centered">
+            <div class="column is-half" id="plot"></div>
+            <div class="column is-half" id="errorPlot"></div>
+        </div>
+        <div class="controls is-centered">
+            <label for="slope" id="slopeLabel">Slope:</label>
+            <input type="range" id="slope" min="0" max="1" value="0" step="0.01" />
+            <br />
+            <label for="intercept" id="interceptLabel">Intercept:</label>
+            <input type="range" id="intercept" min="0" max="10" value="1" step="0.01" />
+            <br />
+            <button class="button custom" id="simulateAI">Simulate AI Tuning</button>
+        </div>
+    </div>
+</section>
+<section class="section pt-6">
+    <div class="container">
+        <h2 class="title is-2 pb-3">Instructions</h2>
+        <p>Now use visibility of the error score to select a better a prediction of 2026's earnings by drawing the trend line</p>
+        <p><b>Use Slope:</b> To change the angle of the line.</p>
+        <p><b>Use Intercept:</b> To move the line up and down.</p>
+        <p><b>Then click Score</b></p>
+</div>
+</section>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+        input[type="range"] {
+            width: 800px; /* Adjust width to your preference */
+            margin: 10px auto; /* Auto margins for horizontal centering */
+        }
+        
+        #plot, #errorPlot {
+            width: 600px; /* Adjusts width to be responsive */
+            height: 500px;
+            justify-self: center; /* Center each plot within its grid cell */
+        }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dataX = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]; 
+        const dataY = [2, 3, 5, 3.5, 10, 5, 6, 7, 2, 6, 8, 8.5, 6, 2, 9]; // Ensure dataY length matches dataX
+        let slope = parseFloat(document.getElementById('slope').value);
+        let intercept = parseFloat(document.getElementById('intercept').value);
+        let errorValues = [];
+        let timeSteps = [];
+        let startTime;
+        let oldLines = [];
+
+        const trace1 = {
+            x: dataX,
+            y: dataY,
+            mode: 'markers',
+            type: 'scatter',
+            name: 'Data Points'
+        };
+
+        function updateLine() {
+            const y_values = dataX.map(x => (x - 2010) * slope + intercept); // Adjust for years
+            const line = {
+                x: dataX,
+                y: y_values,
+                mode: 'lines',
+                type: 'scatter',
+                name: 'Fit Line'
+            };
+            return line;
+        }
+
+        function calculateTotalError() {
+            return dataY.reduce((acc, y, i) => acc + Math.pow(((dataX[i] - 2010) * slope + intercept) - y, 2), 0);
+        }
+
+        function errorLines() {
+            const lines = [];
+            for (let i = 0; i < dataX.length; i++) {
+                let improvementFlag = false; 
+                const predictedY = (dataX[i] - 2010) * slope + intercept;
+                if(oldLines[i]) {
+                    const actualY = dataY[i];
+                    const oldPrediction = oldLines[i].y[1];
+                    if (Math.abs(predictedY - actualY) < Math.abs(oldPrediction - actualY)) {
+                        improvementFlag = true;
+                    }
+                } 
+                const line = {
+                    x: [dataX[i], dataX[i]],
+                    y: [dataY[i], predictedY],
+                    mode: 'lines',
+                    type: 'scatter',
+                    line: {
+                        color: improvementFlag ? 'lime': 'red',
+                        width: 4
+                    },
+                    showlegend: false
+                };
+                lines.push(line);
+            }
+            oldLines = lines;
+            return lines;
+        }
+
+        var layout = {
+            title: 'Interactive Linear Regression',
+            xaxis: {
+                title: 'Year',
+                range: [2010, 2026]
+            },
+            yaxis: {
+                title: 'Earnings $m',
+                range: [0, 15]
+            }
+        };
+
+        function updateAll() {
+            if(!startTime) startTime = Date.now();
+            const totalError = calculateTotalError();
+            errorValues.push(totalError);
+            timeSteps.push((Date.now() - startTime) / 1000);
+    updateErrorPlot();
+            slope = parseFloat(document.getElementById('slope').value);
+            document.getElementById('slopeLabel').textContent = `Slope: ${slope}`;
+            intercept = parseFloat(document.getElementById('intercept').value);
+            document.getElementById('interceptLabel').textContent = `Intercept: ${intercept}`;
+            const updatedLine = updateLine();
+            const errors = errorLines();
+            document.getElementById('totalError').textContent = `Total Error: ${totalError.toFixed(2)}`;
+            Plotly.react('plot', [trace1, updatedLine, ...errors], layout);
+        }
+
+        function updateErrorPlot() {
+    const errorTrace = {
+        x: timeSteps,
+        y: errorValues,
+        mode: 'lines',
+        type: 'scatter',
+        name: 'Error Over Time'
+    };
+
+    Plotly.newPlot('errorPlot', [errorTrace], {
+        title: 'Error Evolution',
+        xaxis: {
+            title: 'Time (seconds)',
+            range: [0, 60],
+        },
+        yaxis: {
+            title: 'Total Error'
+        }
+    });
+}
+
+function simulateAI() {
+    startTime = Date.now();
+    errorValues = [];
+    let improvement = true;
+    const learningRate = 0.01;
+
+    const interval = setInterval(() => {
+        if (!improvement) {
+            clearInterval(interval);
+            return;
+        }
+        improvement = false;
+
+        let currentError = calculateTotalError();
+        let newError;
+
+        // Adjust slope
+        slope += learningRate;
+        newError = calculateTotalError();
+        if (newError < currentError) {
+            improvement = true;
+        } else {
+            slope -= 2 * learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                slope += learningRate; // revert to original
+            }
+        }
+
+        // Adjust intercept
+        intercept += learningRate;
+        newError = calculateTotalError();
+        if (newError < currentError) {
+            improvement = true;
+        } else {
+            intercept -= 2 * learningRate;
+            newError = calculateTotalError();
+            if (newError < currentError) {
+                improvement = true;
+            } else {
+                intercept += learningRate; // revert to original
+            }
+        }
+        document.getElementById('slope').value = slope;
+        document.getElementById('intercept').value = intercept;
+
+        updateAll();
+    }, 50);
+}
+
+        document.getElementById('slope').addEventListener('input', updateAll);
+        document.getElementById('intercept').addEventListener('input', updateAll);
+        document.getElementById('simulateAI').addEventListener('click', simulateAI);
+
+        updateAll(); // Initialize plot and error graph
+    });
+</script>
+</div>
+
+</div>
+
+
+            
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-vcentered is-mobile is-multiline">
+                <div class="column is-12-mobile is-4-tablet is-3-desktop order-1-mobile">
+                    <div class="content has-text-left-tablet">
+                        <a href="https://techalliance.nz">
+                            <img loading="lazy" decoding="async" src="/content/tech_alliance_logo.png" alt="Tech Alliance Logo" width="180">
+                        </a>
+                        <p class="mt-2">New Zealand Tech Alliance Member</p>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-8-tablet is-9-desktop order-2-mobile">
+                    <div class="content has-text-left-tablet">
+                        <p>Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620</p>
+                        <p>All content generated by humans and © 2024 Practical:AI - All rights reserved.</p>
+                        <div class="buttons is-left">
+                            
+                            <a href="https://www.facebook.com/PracticalAINZ" class="button is-light">
+                                <span class="icon"><i class="fab fa-facebook"></i></span>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/company/nzpai/" class="button is-light">
+                                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+            
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+</body>
+</html>
