@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/content/WhiteLogo-OnTransparent.png" />
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Attention is all you need? Yeah, nah.</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Attention is all you need? Yeah, nah." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Measuring LLM cognitive load and the challenges of low-resource languages." />
+<meta property="og:description" content="Measuring LLM cognitive load and the challenges of low-resource languages." />
+<link rel="canonical" href="https://practicalai.co.nz/blog/5.html" />
+<meta property="og:url" content="https://practicalai.co.nz/blog/5.html" />
+<meta property="og:image" content="https://practicalai.co.nz/content/blog/5/tui_on_k%C5%ABmara.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-19T08:00:00+12:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://practicalai.co.nz/content/blog/5/tui_on_k%C5%ABmara.png" />
+<meta property="twitter:title" content="Attention is all you need? Yeah, nah." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-19T08:00:00+12:00","datePublished":"2024-09-19T08:00:00+12:00","description":"Measuring LLM cognitive load and the challenges of low-resource languages.","headline":"Attention is all you need? Yeah, nah.","image":"https://practicalai.co.nz/content/blog/5/tui_on_k%C5%ABmara.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://practicalai.co.nz/blog/5.html"},"url":"https://practicalai.co.nz/blog/5.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<script async="" src="https://www.tiktok.com/embed.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-F1CLVJLJXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F1CLVJLJXE');
+    </script>
+</head>
+<body class="has-navbar-fixed-top theme-light">
+    
+
+
+<!--  Navbar -->
+<nav class="navbar theme-dark is-fixed-top" x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a id="header-logo" href="/">
+                <img src="/content/WhiteLogo-OnTransparent.png" alt="Logo" />
+            </a>
+            <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navMenu"
+                :class="{ 'is-active': openNav }"
+                x-on:click="openNav = !openNav"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-end">
+                
+                    
+                        
+                            <a href="/" class="navbar-item">Home</a>
+                        
+                    
+                        
+                            <a href="/workshops/foundations" class="navbar-item">Workshops</a>
+                        
+                    
+                        
+                            <a href="/faq" class="navbar-item">FAQ</a>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="/blog/5.html" class="navbar-link">
+                                Blog
+                            </a>
+                            <div class="navbar-dropdown">
+                                
+                                    <a class="navbar-item" href="/blog/5.html">Attention is all you need? Yeah, nah.</a>
+                                
+                                    <a class="navbar-item" href="/blog/4.html">How to improve LLM reasoning</a>
+                                
+                                    <a class="navbar-item" href="/blog/3.html">AI is the Everything App</a>
+                                
+                                    <a class="navbar-item" href="/blog/2.html">Can we detect AI-generated content?</a>
+                                
+                                    <a class="navbar-item" href="/blog/1.html">Tech in 2024 is starting to feel a lot like tech in the 90s</a>
+                                
+                            </div>
+                            </div>
+                        
+                    
+                        
+                            <a href="/contact" class="navbar-item">Contact</a>
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Sections -->
+
+
+
+
+<!-- Sections -->
+<div>
+
+    
+            
+<section class="hero is-medium theme-dark">
+    <div class="hero-body pb-3 pt-3">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-9">
+                    <h1 class="title is-1 has-text-weight-bold">Attention is all you need? Yeah, nah.</h1>
+                    <h2 class="subtitle is-4 mt-3">Measuring LLM cognitive load and the challenges of low-resource languages.</h2>
+                    <div class="level is-mobile mt-5">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <a href="https://www.linkedin.com/in/stevegnz" class="is-flex is-align-items-center">
+                                    <span class="icon mr-2">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="has-text-weight-semibold">Steve Green</span>
+                                </a>
+                            </div>
+                            <div class="level-item">
+                                <span class="has-text-grey-lighter is-size-6">
+                                    September 19, 2024
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <img src="/content/blog/5/tui_on_kūmara.png" alt="Attention is all you need? Yeah, nah." />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+    
+            
+<section class="section  pt-3 " id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns pt-3">
+        
+          <div class="column is-two-thirds mr-2">
+            <div class="content">
+              <p>My attention is divided right now, behind me are three flowering kōwhai trees and about a dozen Tui birds noisily devouring their spring flowers. It’s hard to focus and not watch them (it’s also hard to not think about the mess they’re making which I’ll need to sweep up).</p>
+
+<p>New Zealand being a beautiful distraction and the limits of attention gave me an idea to test one of the surprising tips we teach Practical:AI students:</p>
+<blockquote>
+  <p><strong>DO NOT</strong>  prompt the LLM to “speak in New Zealand English”.</p>
+</blockquote>
+
+<h2 id="realise-vs-realize">Realise vs Realize</h2>
+<p>In addition to different spellings New Zealand also has its own tone and style of writing, something which the newer LLM models are pretty good at replicating. The problem is that prompting them to use this spelling and tone comes at a cost, the model performs <em>much</em> worse at the rest of the task.</p>
+
+<p>There is a limited cognitive load that each LLM can support and something seemingly simple like asking it to “use New Zealand English” directs far too much of that attention to something that can easily be fixed later in a spell check.</p>
+
+            </div>
+          </div>
+        
+        
+        
+          <div class="column ">
+            <figure class="image">
+<img class="is-rounded" src="/content/blog/5/tuis.gif" alt="Tui">
+<figcaption class="has-text-centered is-size-7 mt-2">Tui living their best life being distracting.</figcaption>   
+</figure>  
+
+          </div>
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns ">
+        
+          <div class="column is-two-thirds">
+            <div class="content">
+              <h2 id="llm-horsepower">LLM Horsepower</h2>
+
+<p>One of the most important skill sets when using LLMs is getting a gut sense of that limit and how to avoid exceeding it. The reason it’s a gut sense is there is no metric or feedback LLMs give you that you’ve hit their limit other than the quality of responses quickly degrading and the hallucinations kick in.</p>
+
+<p>Interestingly one area where these limits have been studied is the security implications, specifically <a href="https://arxiv.org/abs/2311.09827">‘jailbreaking’</a> where models are pushed past their limit and can no longer enforce their safety constraints.</p>
+
+<p>Switching languages is a very effective way to break the constraints vendors have created and with LLMs fast becoming baked into organisations systems and processes these jailbreaks represent an entirely novel attack vector.</p>
+
+<p>LLM vendors can’t easily give us visibility of this cognitive limit, they know it exists but they can’t measure it,  it’s why they focus so much on context windows. The current situation is like trying to buy a Truck and only getting told the storage space but not the horsepower.</p>
+
+<p>LLM explainability is always lagging behind model capability but eventually we’ll get that cognitive horsepower metric. For today however I think we could use our “speak in New Zealand English” task as a way to not measure the total horsepower but to visualise that breaking point where we exceed it.</p>
+
+            </div>
+          </div>
+        
+        
+        
+          <div class="column ">
+            <figure class="image">
+<img src="/content/blog/5/horsepower.png" alt="LLM Horsepower">
+<figcaption class="has-text-centered is-size-7 mt-2">Context window size? It's basically unlimited bro.</figcaption>   
+</figure> 
+
+          </div>
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="columns ">
+        
+          <div class="column is-two-thirds">
+            <div class="content">
+              <h2 id="dogs--parrots">Dogs &amp; Parrots</h2>
+<blockquote>
+  <p>TL;DR - Skip this section if you’ve read enough “stochastic parrot” vs “emergent capability” musings.</p>
+</blockquote>
+
+<p>What trips people up with LLMs is just how alien they are, they’re not thinking and reasoning in anything like the same way we are. That said they fundamentally are based on us, waving at a mirror and then getting frustrated there isn’t enough room behind the mirror for another person to fit is not just a misunderstanding about how mirrors work but also <em>who was doing the waving</em>.</p>
+
+<p>LLM’s don’t reason through the question of 3+3+3= in the same iterative way a person or even a computer program would. They begin with a random noise of possible answers containing everything from “zero” to “spanner” and step by step a bell curve of probability emerges that converges on the answer of “nine”. This is where the “stochastic parrot” argument comes from, that LLMs aren’t demonstrating any real intelligence, they’re just “autocomplete on steroids” predicting the most likely next word.</p>
+
+<p>To quote Lebowski, “you’re not wrong…” but you’re missing the point, that percentage score isn’t how confident the LLM is, <strong>the percentage is the cognition process itself</strong>. A huge part of that convergence, that narrowing of the bell curve to select “nine” is simply recall, it’s drawing on the training data to arrive at the right answer instead of reasoning because why wouldn’t it?</p>
+
+<p>There is a theory that <a href="https://en.wikipedia.org/wiki/Dog_intelligence#Evolutionary_perspective">dogs aren’t as smart as wolves</a> because it’s pointless to waste calories on a big brain when your best friend is a two legged hyper-intelligent lovecraftian horror who will solve all tricky problems for you (freeing you up to focus on fetching sticks).</p>
+
+<p>In the same way LLMs are leaning on us for the bulk of their intelligence, they’re incredible compression systems that convert terabytes of training data into gigabytes of knowledge. They draw on this knowledge to cheaply arrive at correct conclusions in the same way dogs fetch us to solve their non-stick related problems.</p>
+
+<p>For the longest time that’s all LLMs could do, compress information and recall, if you wanted to improve the model then the only option was to help it improve the rate of compression or increase the amount of data they could draw on. That dam broke with the <a href="https://arxiv.org/abs/1706.03762">“Attention is all you need”</a> paper which showed this was a local minima, a dead end that we could get out of. With the right architecture and an incredible amount of computation the models could start to form generalisable skills, instead of only getting better at compressing and recalling poems they had learned to write them.</p>
+
+            </div>
+          </div>
+        
+        
+        
+          <div class="column ">
+            <figure class="image">
+<img class="is-rounded" src="/content/blog/5/once_upon_a_bell_curve.png" alt="Once upon a bell curve">
+<figcaption class="has-text-centered is-size-7 mt-2">You can see this in action using the prompt “Once upon a “ in the excellent <a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer.</a></figcaption>   
+</figure> 
+
+          </div>
+        
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="content">
+        <h2 id="10kg-kōwhai">10kg Kōwhai</h2>
+<p>So with that quick primer out of the way the thing to know about cognitive load is that recall (e.g. Once upon a <em>time</em>) is cheap but tapping into these generalisable skills  (e.g. “Use New Zealand English”), which are often called emergent capabilities, is expensive. Just to make things harder each task in a prompt is a combination of both recall and emergent capabilities with no visibility of the ratio or how overall “expensive” the task is.</p>
+
+<p>This is where I think we can use the 10kg tree riddle from my <a href="https://practicalai.co.nz/blog/4.html">previous blog post</a> to help visualise the problem, to recap we started with this riddle from the <a href="https://arxiv.org/abs/2405.19616">‘Easy problems LLMs get wrong’</a> dataset:</p>
+
+<blockquote>
+  <p>A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</p>
+</blockquote>
+
+<p>We can then “expand” that to 10 riddles by creating variants that only differ by a few tokens:</p>
+
+<blockquote>
+  <ol>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>Given a 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree growing in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>A 2kg tree is growing in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?</li>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>With 2kg tree that grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree that grows in a planted pot with 10kg of soil. When the tree has grown to 3kg, how much soil is left?</li>
+    <li>A 2kg tree grows in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+    <li>With a 2kg tree growing in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+    <li>A 2kg tree growing in a planted pot with 10kg of soil, when the tree has grown to 3kg, how much soil is left?</li>
+  </ol>
+</blockquote>
+
+<p>Why are we creating the variants? Because when you’re approaching the cognitive limit the impact of tokenization and embedding becomes more pronounced (i.e. the same things that trip up LLMs when counting how many R’s are in “Strawberry”).</p>
+
+<p>A prompt that’s successful may have close “neighbours” that are failing, you can also use temperature for even more visibility and here’s how that looks:
+<img src="/content/blog/5/test1.png" alt="Tree Riddle" title="Tree riddle, Test 1" /></p>
+
+<p>What jump out here:</p>
+
+<ol>
+  <li>Tokenization/embedding impacts outcome more than temperature, a prompt that fails tends to continue to fail across a range of temperatures.</li>
+  <li>The word “Given” doesn’t radically change the meaning of the riddle but has a large negative impact on the LLM’s ability to solve the riddle.</li>
+  <li>The riddle that starts “With 2kg…” performs perfectly fine despite the weird grammar.</li>
+  <li>I initially set this up with a temperature range of 0.1 to 0.2 but when I noticed this wasn’t performing as poorly as in my <a href="https://practicalai.co.nz/blog/4.html">previous blog post</a> post I realised the default =CLAUDE() function must use a higher temperature. I tacked on 0.4 to 1 and the 0.4 setting got the same 50% score as I got in  those tests.</li>
+  <li>I have no idea what’s happening at 0.6 temperature, I double checked and it doesn’t look like it’s a mistake in the test, random good luck?</li>
+</ol>
+
+<p>So now let’s improve these results by adding some prompt engineering:
+<img src="/content/blog/5/test2.png" alt="Tree Riddle" title="Tree riddle, Test 2" /></p>
+
+<p>That boosts us up to 98% but I suspect we’re now at the limit of how many instructions we can give the LLM, let’s test that by also asking it to “Only use New Zealand English in your responses”:
+<img src="/content/blog/5/test3.png" alt="Tree Riddle" title="Tree riddle, Test 3" /></p>
+
+<p>There we have it, our prompt engineering has pushed us to the LLM’s cognative limit and adding this one last instruction took it too far and our performance takes a substantial hit, this is despite the riddle answers not actually having any New Zealand spelling mistakes.</p>
+
+<p>Again there’s nothing stopping us from solving NZ spelling in a follow-up prompt or just by using spellcheck, this is why we strongly recommend against using this prompt  in our classes as you’ll often miss the LLM is returning nonsense (with perfect spelling).</p>
+
+<h2 id="low-resource-languages">Low resource languages</h2>
+<p>Spelling mistakes are nothing compared to the issues we have with New Zealand’s oldest language, Te Reo Māori. We’ve known for a long time that there is a direct link between the capabilities of the LLM in a specific language and the training data available for it.</p>
+
+<p>When we say Te Reo Māori is a “Low Resource language” what we’re referring to is that English makes up 43% of the <a href="https://commoncrawl.github.io/cc-crawl-statistics/plots/languages">Common Crawl dataset</a> and 22% of <a href="https://en.wikipedia.org/wiki/Wikipedia:Multilingual_statistics">Wikipedia</a>, Te Reo Māori in contrast is 0.057% and 0.0013% respectively.</p>
+
+<p>This probably explains why the tree riddle when translated to Te Reo fails across all 10 variants even with extra prompt engineering. What it doesn’t explain is why adding even a single Te Reo word (kōwhai) reduces the pass rate to 33%.
+<img src="/content/blog/5/test4.png" alt="Tree Riddle" title="Tree riddle, Test 4" /></p>
+
+<p>I’ve been using <a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a> to try to learn some Te Reo and I’m increasingly convinced that it’s cognitively an American who just happens to be fluent in Te Reo. I’ve noticed that avoiding English in the prompt and speaking only in Te Reo (I translate in a separate window) results in better outputs, especially when the question is specifically about the meaning of Te Reo words.</p>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="content">
+        <h2 id="openai-o1-is-a-kūmara">OpenAI o1 is a Kūmara</h2>
+
+<p>It goes without saying that the recent <a href="https://openai.com/index/introducing-openai-o1-preview/">OpenAI o1 model</a> absolutely crushed the 10kg tree riddle with 10/10 across all variants, I was actually struggling to demonstrate a cognitive load limit but I did manage to trip it up (bit of a Kūmara boast).</p>
+
+<p>Here is a little story/riddle in Te Reo Māori:</p>
+
+<blockquote>
+  <p>I tētahi rā, e tākaro ana ngā tuākana teina ki te taha o te awa. Kei te mau te tuakana i tētahi pēke, kāore te teina i te mōhio he aha kei roto. Ka kī atu te teina, “He tino toa au ki te kauhoe. Ka taea e au te kauhoe ki tērā taha o te awa me te hoki mai, kāore he āwhina.”
+Ka whakahoki te tuakana, “E tama, kei te kūmara koe i a koe anō!”
+Ka kata te teina, “Kāo, he pono taku kōrero. He māmā noa iho ki a au.”
+Ka haere tonu rāua ki te tākaro, ā, i te mutunga o te rā, ka huri mai ki a koe te pātai:
+“Ki ōu whakaaro, he aha kei roto i te pēke a te tuakana?</p>
+</blockquote>
+
+<blockquote>
+  <p>One day, siblings were playing by the river. The older sibling was holding a bag, and the younger sibling didn’t know what was inside. The younger sibling said, “I’m very good at swimming. I can swim to the other side of the river and back without any help.” The older sibling replied, “Boy, you’re praising yourself too much!” (literally: “You’re sweetpotato-ing yourself!”) The younger sibling laughed, “No, I’m telling the truth. It’s very easy for me.” 
+They continued to play, and at the end of the day, the question turns to you: “What do you think was inside the older sibling’s bag?”</p>
+</blockquote>
+
+<p>Kūmara is a New Zealand sweet potato (it’s excellent) but can also be used as an idiom in Te Reo for boasting:</p>
+
+<blockquote>
+  <p>“The kūmara does not speak of its own sweetness.”</p>
+</blockquote>
+
+<p>When Claude 3.5 is given just the Te Reo version and asked what’s in the bag it <em>correctly</em> replies in Te Reo that there isn’t enough information to say for sure. In fact if you go further and suggest Kūmara as the answer it points out this is incorrect and patiently explains the idiom.</p>
+
+<p>So how does OpenAI o1 perform?</p>
+
+<p><img src="/content/blog/5/o1_answer.png" alt="o1 Answer" title="o1 Answer" /></p>
+
+<p>Ok so not great, so what was the reasoning chain?</p>
+
+<p><img src="/content/blog/5/o1_cot.png" alt="o1 COT" title="o1 COT" /></p>
+
+<p>This is the surprise, it understands the idiom but the very first step was to translate the story into English, from that point on it’s operating in English against an English text.</p>
+
+<p>It knows Kūmara is used as an idiom but still ends up suggesting it as the answer. This could be just a quirk of how it’s evaluated but I suspect we’ll in time find countless examples of this across all low resource languages.</p>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+    
+            
+<section class="section pt-6" id="">
+  
+    <div class="container">
+      <h2 class="title is-2 pb-3"></h2>
+      <div class="content">
+        <h2 id="pure-speculation--hot-takes">Pure Speculation &amp; Hot Takes</h2>
+
+<p>Here are some totally unsubstantiated speculation:</p>
+
+<ol>
+  <li>The frontier models will eventually ship a cognitive load metric, they might not expose it at the UI level but they’ll absolutely use it in the APIs and bake it into their chain of reasoning and training.</li>
+  <li>I suspect cognitive load and measuring it will be found to be an artefact of the <a href="https://www.youtube.com/watch?v=9-Jl0dxWQs8">superposition</a> that models use to store information, because the features are superimposed they can’t all be simultaneously activated and this creates the limit we see.</li>
+  <li>I also suspect that the inferior performance seen for Te Reo prompts isn’t just the lack of training data, that doesn’t explain why a single word “kōwhai” had such a negative impact. Instead what we might be seeing is Te Reo itself is carrying a heavy cognitive load, just one word is enough to activate an entire language which is “crowding out” the emergent capabilities that are needed to solve the riddle.</li>
+  <li>LLMs may be excellent polyglots but if the approach OpenAI has taken with o1 becomes mainstream then increasingly we’ll see them become cognitively ‘American English’ monoglots, if the chain-of-thought reasoning is in English then even if it translates back at the end it’s always going to struggle with “Kūmara riddles”.</li>
+</ol>
+
+<p>The issue of cognitive load and measuring it will solve itself, we can’t keep building Trucks without some measure of horsepower.</p>
+
+<p>The issue of low resource languages however isn’t going to solve itself and the long term risks of that are… troubling. We might even need to explore novel models, it’s possible that the low resource languages might benefit more from specalised audio-to-audio models?</p>
+
+<p>We can look to increase the size of our training data (e.g. NZ sponsors the Te Reo Māori wikipedia)  or improve the capabilities of Small Language Models but IMHO it’s going to take a nation state level infrastructure investment to properly solve this (NZ-GPT?).</p>
+
+      </div>
+    </div>
+  
+</section>
+        
+
+
+
+</div>
+
+
+<!-- Blog Nav -->
+
+
+
+
+
+
+<section class="section has-background-grey-lighter">
+    <div class="container">
+        <nav class="level">
+            <div class="level-left">
+                
+                    <div class="level-item">
+                        <a href="/blog/4.html" class="box p-0 is-flex is-align-items-center">
+                            <figure class="image is-64x64 mr-3">
+                                <img src="/content/blog/4/soileater.png" alt="How to improve LLM reasoning thumbnail">
+                            </figure>
+                            <div class="p-2 pr-5">
+                                <p class="heading has-text-grey">Prev:</p>
+                                <p class="title is-6">How to improve LLM reasoning</p>
+                            </div>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="level-right">
+                
+            </div>
+        </nav>
+    </div>
+</section>
+            
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-vcentered is-mobile is-multiline">
+                <div class="column is-12-mobile is-4-tablet is-3-desktop order-1-mobile">
+                    <div class="content has-text-left-tablet">
+                        <a href="https://techalliance.nz">
+                            <img loading="lazy" decoding="async" src="/content/tech_alliance_logo.png" alt="Tech Alliance Logo" width="180">
+                        </a>
+                        <p class="mt-2">New Zealand Tech Alliance Member</p>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-8-tablet is-9-desktop order-2-mobile">
+                    <div class="content has-text-left-tablet">
+                        <p>Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620</p>
+                        <p>All content generated by humans and © 2024 Practical:AI - All rights reserved.</p>
+                        <div class="buttons is-left">
+                            
+                            <a href="https://www.facebook.com/PracticalAINZ" class="button is-light">
+                                <span class="icon"><i class="fab fa-facebook"></i></span>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/company/nzpai/" class="button is-light">
+                                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+            
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+</body>
+</html>
