@@ -9,7 +9,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-F1CLVJLJXE', { 'debug_mode':true });
+    gtag('config', 'G-F1CLVJLJXE');
     </script>
 
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Attention is all you need? Yeah, nah.</title>
+<title>Attention is all you need? Yeah, nah. | Practical:AI</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Attention is all you need? Yeah, nah." />
 <meta property="og:locale" content="en_US" />
@@ -28,6 +28,7 @@
 <meta property="og:description" content="Measuring LLM cognitive load and the challenges of low-resource languages." />
 <link rel="canonical" href="https://practicalai.co.nz/blog/5.html" />
 <meta property="og:url" content="https://practicalai.co.nz/blog/5.html" />
+<meta property="og:site_name" content="Practical:AI" />
 <meta property="og:image" content="https://practicalai.co.nz/content/blog/5/tui_on_k%C5%ABmara.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-09-19T08:00:00+12:00" />
@@ -42,15 +43,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 <script async="" src="https://www.tiktok.com/embed.js"></script></head>
 <body class="has-navbar-fixed-top theme-light">
-    
-
-
-<!--  Navbar -->
+    <!--  Navbar -->
 <nav class="navbar theme-dark is-fixed-top" x-data="{ openNav: false }">
     <div class="container">
         <div class="navbar-brand">
-            <a id="header-logo" href="/">
-                <img src="/content/WhiteLogo-OnTransparent.png" alt="Logo" />
+            <a class="navbar-item" href="/">
+                <img src="/content/WhiteLogo-OnTransparent.png" alt="Practical:AI logo" />
+                <span class="ml-2 has-text-weight-bold is-size-4">Practical:AI</span>
             </a>
             <a
                 role="button"
@@ -70,43 +69,15 @@
             <div class="navbar-end">
                 
                     
-                        
-                            <a href="/" class="navbar-item">Home</a>
-                        
-                    
-                        
-                            <a href="/aboutus" class="navbar-item">About Us</a>
-                        
-                    
-                        
-                            <div class="navbar-item has-dropdown is-hoverable">
-                            <a href="/blog/5.html" class="navbar-link">
-                                Blog
-                            </a>
-                            <div class="navbar-dropdown">
-                                
-                                    <a class="navbar-item" href="/blog/5.html">Attention is all you need? Yeah, nah.</a>
-                                
-                                    <a class="navbar-item" href="/blog/4.html">How to improve LLM reasoning</a>
-                                
-                                    <a class="navbar-item" href="/blog/3.html">AI is the Everything App</a>
-                                
-                                    <a class="navbar-item" href="/blog/2.html">Can we detect AI-generated content?</a>
-                                
-                                    <a class="navbar-item" href="/blog/1.html">Tech in 2024 is starting to feel a lot like tech in the 90s</a>
-                                
-                            </div>
-                            </div>
-                        
+                        <a href="/" class="navbar-item">Home</a>
                     
                 
             </div>
         </div>
     </div>
 </nav>
+
     <!-- Sections -->
-
-
 
 
 <!-- Sections -->
@@ -148,7 +119,7 @@
         </div>
     </div>
 </section>
-        
+    
 
     
             
@@ -162,7 +133,7 @@
             <div class="content">
               <p>My attention is divided right now, behind me are three flowering kōwhai trees and about a dozen Tui birds noisily devouring their spring flowers. It’s hard to focus and not watch them (it’s also hard to not think about the mess they’re making which I’ll need to sweep up).</p>
 
-<p>New Zealand being a beautiful distraction and the limits of attention gave me an idea to test one of the surprising tips we teach Practical:AI students:</p>
+<p>New Zealand being a beautiful distraction and the limits of attention gave me an idea to test one of my more surprising prompting tips:</p>
 <blockquote>
   <p><strong>DO NOT</strong>  prompt the LLM to “speak in New Zealand English”.</p>
 </blockquote>
@@ -316,7 +287,7 @@
 <p>A prompt that’s successful may have close “neighbours” that are failing, you can also use temperature for even more visibility and here’s how that looks:
 <img src="/content/blog/5/test1.png" alt="Tree Riddle" title="Tree riddle, Test 1" /></p>
 
-<p>What jump out here:</p>
+<p>What jumps out here:</p>
 
 <ol>
   <li>Tokenization/embedding impacts outcome more than temperature, a prompt that fails tends to continue to fail across a range of temperatures.</li>
@@ -332,9 +303,9 @@
 <p>That boosts us up to 98% but I suspect we’re now at the limit of how many instructions we can give the LLM, let’s test that by also asking it to “Only use New Zealand English in your responses”:
 <img src="/content/blog/5/test3.png" alt="Tree Riddle" title="Tree riddle, Test 3" /></p>
 
-<p>There we have it, our prompt engineering has pushed us to the LLM’s cognative limit and adding this one last instruction took it too far and our performance takes a substantial hit, this is despite the riddle answers not actually having any New Zealand spelling mistakes.</p>
+<p>There we have it, our prompt engineering has pushed us to the LLM’s cognitive limit and adding this one last instruction took it too far and our performance takes a substantial hit, this is despite the riddle answers not actually having any New Zealand spelling mistakes.</p>
 
-<p>Again there’s nothing stopping us from solving NZ spelling in a follow-up prompt or just by using spellcheck, this is why we strongly recommend against using this prompt  in our classes as you’ll often miss the LLM is returning nonsense (with perfect spelling).</p>
+<p>Again there’s nothing stopping us from solving NZ spelling in a follow-up prompt or just by using spellcheck, this is why I strongly recommend against using this prompt as you’ll often miss the LLM is returning nonsense (with perfect spelling).</p>
 
 <h2 id="low-resource-languages">Low resource languages</h2>
 <p>Spelling mistakes are nothing compared to the issues we have with New Zealand’s oldest language, Te Reo Māori. We’ve known for a long time that there is a direct link between the capabilities of the LLM in a specific language and the training data available for it.</p>
@@ -424,7 +395,7 @@ They continued to play, and at the end of the day, the question turns to you: �
 
 <p>The issue of cognitive load and measuring it will solve itself, we can’t keep building Trucks without some measure of horsepower.</p>
 
-<p>The issue of low resource languages however isn’t going to solve itself and the long term risks of that are… troubling. We might even need to explore novel models, it’s possible that the low resource languages might benefit more from specalised audio-to-audio models?</p>
+<p>The issue of low resource languages however isn’t going to solve itself and the long term risks of that are… troubling. We might even need to explore novel models, it’s possible that the low resource languages might benefit more from specialised audio-to-audio models?</p>
 
 <p>We can look to increase the size of our training data (e.g. NZ sponsors the Te Reo Māori wikipedia)  or improve the capabilities of Small Language Models but IMHO it’s going to take a nation state level infrastructure investment to properly solve this (NZ-GPT?).</p>
 
@@ -474,48 +445,20 @@ They continued to play, and at the end of the day, the question turns to you: �
     <!-- Footer -->
     <footer class="footer theme-dark">
         <div class="container">
-            <div class="columns is-vcentered is-mobile is-multiline">
-                <div class="column is-12-mobile is-2-tablet is-2-desktop order-1-mobile mr-6">
-                    <div class="content has-text-left-tablet">
-                            <h2 class="title">Is the AI hype failing to deliver?</h2>
-                            <a href="https://www.udemy.com/course/practicalai-foundations/?referralCode=A5BEE859DF6C5638F5BB" class="button custom-button-light is-large hover-effect">Upskill</a>
-                            <div>
-                                <br/>
-                                <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="Practical:AI Logo">
-                            </div>
-                    </div>
+            <div class="content has-text-centered">
+                <div class="buttons is-centered">
+                    
+                    <a href="https://www.linkedin.com/in/stevegnz" class="button is-light">
+                        <span class="icon"><i class="fab fa-linkedin"></i></span>
+                    </a>
+                    
+                    <a href="https://github.com/steve-practicalai" class="button is-light">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                    </a>
+                    
                 </div>
-                <div class="column is-12-mobile is-4-tablet is-4-desktop order-2-mobile">
-                    <div class="content has-text-left-tablet">
-                        <p>Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620</p>
-                        <p>All content generated by humans and © 2024 Practical:AI - All rights reserved.</p>
-                        <div class="buttons is-left">
-                            
-                            <a href="https://www.facebook.com/PracticalAINZ" class="button is-light">
-                                <span class="icon"><i class="fab fa-facebook"></i></span>
-                            </a>
-                            
-                            <a href="https://www.linkedin.com/company/nzpai/" class="button is-light">
-                                <span class="icon"><i class="fab fa-linkedin"></i></span>
-                            </a>
-                            
-                            <a href="/privacy">
-                                |  Privacy Policy
-                            </a>
-                            <a href="/policy">
-                                Terms of use
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-12-mobile is-4-tablet is-4-desktop order-3-mobile">
-                    <div class="content has-text-right-tablet">
-                        <a href="https://techalliance.nz">
-                            <img loading="lazy" decoding="async" src="/content/tech_alliance_logo.png" alt="Tech Alliance Logo" width="180">
-                        </a>
-                        <p class="mt-2">New Zealand Tech Alliance Member</p>
-                    </div>
-                </div>
+                <p class="mb-1">© 2026 Steve Green - All rights reserved.</p>
+                <p class="is-size-7 has-text-grey-light">Site built with AI assistance; all posts written by a human.</p>
             </div>
         </div>
     </footer>

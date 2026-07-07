@@ -9,7 +9,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-F1CLVJLJXE', { 'debug_mode':true });
+    gtag('config', 'G-F1CLVJLJXE');
     </script>
 
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>How to improve LLM reasoning</title>
+<title>How to improve LLM reasoning | Practical:AI</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="How to improve LLM reasoning" />
 <meta property="og:locale" content="en_US" />
@@ -28,6 +28,7 @@
 <meta property="og:description" content="Let’s reiterate the question and also think step by step." />
 <link rel="canonical" href="https://practicalai.co.nz/blog/4.html" />
 <meta property="og:url" content="https://practicalai.co.nz/blog/4.html" />
+<meta property="og:site_name" content="Practical:AI" />
 <meta property="og:image" content="https://practicalai.co.nz/content/blog/4/soileater.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-09-04T08:00:00+12:00" />
@@ -42,15 +43,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 <script async="" src="https://www.tiktok.com/embed.js"></script></head>
 <body class="has-navbar-fixed-top theme-light">
-    
-
-
-<!--  Navbar -->
+    <!--  Navbar -->
 <nav class="navbar theme-dark is-fixed-top" x-data="{ openNav: false }">
     <div class="container">
         <div class="navbar-brand">
-            <a id="header-logo" href="/">
-                <img src="/content/WhiteLogo-OnTransparent.png" alt="Logo" />
+            <a class="navbar-item" href="/">
+                <img src="/content/WhiteLogo-OnTransparent.png" alt="Practical:AI logo" />
+                <span class="ml-2 has-text-weight-bold is-size-4">Practical:AI</span>
             </a>
             <a
                 role="button"
@@ -70,43 +69,15 @@
             <div class="navbar-end">
                 
                     
-                        
-                            <a href="/" class="navbar-item">Home</a>
-                        
-                    
-                        
-                            <a href="/aboutus" class="navbar-item">About Us</a>
-                        
-                    
-                        
-                            <div class="navbar-item has-dropdown is-hoverable">
-                            <a href="/blog/5.html" class="navbar-link">
-                                Blog
-                            </a>
-                            <div class="navbar-dropdown">
-                                
-                                    <a class="navbar-item" href="/blog/5.html">Attention is all you need? Yeah, nah.</a>
-                                
-                                    <a class="navbar-item" href="/blog/4.html">How to improve LLM reasoning</a>
-                                
-                                    <a class="navbar-item" href="/blog/3.html">AI is the Everything App</a>
-                                
-                                    <a class="navbar-item" href="/blog/2.html">Can we detect AI-generated content?</a>
-                                
-                                    <a class="navbar-item" href="/blog/1.html">Tech in 2024 is starting to feel a lot like tech in the 90s</a>
-                                
-                            </div>
-                            </div>
-                        
+                        <a href="/" class="navbar-item">Home</a>
                     
                 
             </div>
         </div>
     </div>
 </nav>
+
     <!-- Sections -->
-
-
 
 
 <!-- Sections -->
@@ -148,7 +119,7 @@
         </div>
     </div>
 </section>
-        
+    
 
     
             
@@ -194,12 +165,12 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
 <ol>
   <li>Lack of context, the LLM lacks the information that you take for granted.</li>
   <li>Incorrect domain knowledge, the LLM is asked a question in one context (e.g. physics) when it needs to be in another (e.g. biology)</li>
-  <li>Sychophancy, the LLM is asked a leading question and has a strong bias to answer using your assumptions.</li>
+  <li>Sycophancy, the LLM is asked a leading question and has a strong bias to answer using your assumptions.</li>
 </ol>
 
 <p>A lot of the improvements you see from various prompt engineering techniques like COT or EchoPrompting come from having the LLM explore the problem space as a way to have it self-load the correct domain knowledge rather than you doing it manually.</p>
 
-<p>The COT “…think step by step” prompt isn’t useful because it triggers some sudden ephiphany but because the output of that prompt forms part of the context for the next prompt. This is why complex questions that fail on the first try will often work on the second, simply because the problem is already half solved on the second try.</p>
+<p>The COT “…think step by step” prompt isn’t useful because it triggers some sudden epiphany but because the output of that prompt forms part of the context for the next prompt. This is why complex questions that fail on the first try will often work on the second, simply because the problem is already half solved on the second try.</p>
 
             </div>
           </div>
@@ -262,7 +233,7 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
 
 <p>The correct answer should be 10kg or a tiny bit under 10kg if you want to be really precise. I love here that the LLM clarifies that “assuming a closed system where the tree’s growth comes entirely from the soil, this is the correct answer”.</p>
 
-<p>It’s probably generous to joke this is a <a href="https://en.wikipedia.org/wiki/Spherical_cow">“spherical cow”</a> as I think this is more likely a <a href="https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models">sychophancy bias</a>, the model could just as easily be saying “assuming the world is flat…”.</p>
+<p>It’s probably generous to joke this is a <a href="https://en.wikipedia.org/wiki/Spherical_cow">“spherical cow”</a> as I think this is more likely a <a href="https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models">sycophancy bias</a>, the model could just as easily be saying “assuming the world is flat…”.</p>
 
 <p><img src="/content/blog/4/solution1.png" alt="Tree Riddle" title="Tree riddle, solution 1" /></p>
 
@@ -311,9 +282,9 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
 
 <p><img src="/content/blog/4/puzzle3.png" alt="Tree Riddle" title="Tree riddle prompt 3" /></p>
 
-<p>It seems conterintuative to most people that it could “forget” information like biology which it clearly knows when tested in other prompts but this is a great example of where LLMs reasoning is radically different to ours.</p>
+<p>It seems counterintuitive to most people that it could “forget” information like biology which it clearly knows when tested in other prompts but this is a great example of where LLMs reasoning is radically different to ours.</p>
 
-<p>Its learned knowledge and skills are not all simultantiously activated, the key constraint on LLMs isn’t so much their context window (the max prompt size supported) but their attention and how many features and knowledge domains they can simulationously activate.</p>
+<p>Its learned knowledge and skills are not all simultaneously activated, the key constraint on LLMs isn’t so much their context window (the max prompt size supported) but their attention and how many features and knowledge domains they can simultaneously activate.</p>
 
 <p><img src="/content/blog/4/solution3.png" alt="Tree Riddle" title="Tree riddle, solution 3" /></p>
 
@@ -354,14 +325,14 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
 
     
             
-<section class="section pt-6" id="problamatically-probalistic">
+<section class="section pt-6" id="problematically-probabilistic">
   
     <div class="container">
-      <h2 class="title is-2 pb-3">Problamatically probalistic</h2>
+      <h2 class="title is-2 pb-3">Problematically probabilistic</h2>
       <div class="content">
-        <p>Somewhere in the multiverse is a beautiful world where the grammer of every language requires each sentance to specify if the statement is objective or subjective, a concrete fact or ‘just a vibe’. One where every statment is inheritly probalistic, I don’t “kinda want to have Indian takeways tonight” but “..I want Indian takeaways, ~42%”.</p>
+        <p>Somewhere in the multiverse is a beautiful world where the grammar of every language requires each sentence to specify if the statement is objective or subjective, a concrete fact or ‘just a vibe’. One where every statement is inherently probabilistic, I don’t “kinda want to have Indian takeaways tonight” but “..I want Indian takeaways, ~42%”.</p>
 
-<p>The closest thing we have to this here on Earth are the LLMs, everything they do and say is probalistic by nature, if you’re curious how this works have a play with this Transformer Explainer tool by the ‘Polo Club of Data Science’ team at Georgia Tech:</p>
+<p>The closest thing we have to this here on Earth are the LLMs, everything they do and say is probabilistic by nature, if you’re curious how this works have a play with this Transformer Explainer tool by the ‘Polo Club of Data Science’ team at Georgia Tech:</p>
 
 <p><a href="https://poloclub.github.io/transformer-explainer/">https://poloclub.github.io/transformer-explainer/</a></p>
 
@@ -452,7 +423,7 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
 <h2 id="claude-sheets">Claude Sheets</h2>
 
 <p>I ran all these tests using the Claude Sheets extension by Anthropic:
-<a href="https://docs.anthropic.com/en/docs/build-with-claude/claude-for-sheets">https://docs.anthropic.com/en/docs/build-with-claude/claude-for-sheets</a>
+<a href="https://web.archive.org/web/20240919122046/https://docs.anthropic.com/en/docs/build-with-claude/claude-for-sheets">docs.anthropic.com/claude-for-sheets (archived)</a>
  <img src="/content/blog/4/claude_sheets.png" alt="Claude Sheets" title="Claude Sheets" /></p>
 
 <p>Just beware that these use API credits rather than the buffet offer that is claude.ai chat, total cost for this blog post was: $1.15 NZD</p>
@@ -519,48 +490,20 @@ EchoPrompt: Instructing the Model to Rephrase Queries for Improved In-context Le
     <!-- Footer -->
     <footer class="footer theme-dark">
         <div class="container">
-            <div class="columns is-vcentered is-mobile is-multiline">
-                <div class="column is-12-mobile is-2-tablet is-2-desktop order-1-mobile mr-6">
-                    <div class="content has-text-left-tablet">
-                            <h2 class="title">Is the AI hype failing to deliver?</h2>
-                            <a href="https://www.udemy.com/course/practicalai-foundations/?referralCode=A5BEE859DF6C5638F5BB" class="button custom-button-light is-large hover-effect">Upskill</a>
-                            <div>
-                                <br/>
-                                <img src="/content/WhiteLogo-BrandName-OnTransparent.png" alt="Practical:AI Logo">
-                            </div>
-                    </div>
+            <div class="content has-text-centered">
+                <div class="buttons is-centered">
+                    
+                    <a href="https://www.linkedin.com/in/stevegnz" class="button is-light">
+                        <span class="icon"><i class="fab fa-linkedin"></i></span>
+                    </a>
+                    
+                    <a href="https://github.com/steve-practicalai" class="button is-light">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                    </a>
+                    
                 </div>
-                <div class="column is-12-mobile is-4-tablet is-4-desktop order-2-mobile">
-                    <div class="content has-text-left-tablet">
-                        <p>Website code and design generated using Practical:AI's RCCT prompt chaining framework running on claude-3-5-sonnet-20240620</p>
-                        <p>All content generated by humans and © 2024 Practical:AI - All rights reserved.</p>
-                        <div class="buttons is-left">
-                            
-                            <a href="https://www.facebook.com/PracticalAINZ" class="button is-light">
-                                <span class="icon"><i class="fab fa-facebook"></i></span>
-                            </a>
-                            
-                            <a href="https://www.linkedin.com/company/nzpai/" class="button is-light">
-                                <span class="icon"><i class="fab fa-linkedin"></i></span>
-                            </a>
-                            
-                            <a href="/privacy">
-                                |  Privacy Policy
-                            </a>
-                            <a href="/policy">
-                                Terms of use
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-12-mobile is-4-tablet is-4-desktop order-3-mobile">
-                    <div class="content has-text-right-tablet">
-                        <a href="https://techalliance.nz">
-                            <img loading="lazy" decoding="async" src="/content/tech_alliance_logo.png" alt="Tech Alliance Logo" width="180">
-                        </a>
-                        <p class="mt-2">New Zealand Tech Alliance Member</p>
-                    </div>
-                </div>
+                <p class="mb-1">© 2026 Steve Green - All rights reserved.</p>
+                <p class="is-size-7 has-text-grey-light">Site built with AI assistance; all posts written by a human.</p>
             </div>
         </div>
     </footer>
