@@ -23212,5 +23212,55 @@ strong {
     content: url("/content/WhiteLogo-OnTransparent.png");
   }
 }
+.content .post-figure {
+  margin: 1.5rem 0 2rem;
+}
+.content .post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.content .post-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  font-style: italic;
+}
+.content .post-figure.is-portrait {
+  max-width: 480px;
+}
+.content .post-figure.is-screenshot {
+  margin: 0.75rem 0;
+}
+.content .post-figure.is-screenshot img {
+  border: 1px solid #dbdbdb;
+}
+
+.post-body a,
+.post-figure figcaption a,
+.post-credits a,
+.post-todo a {
+  color: #3273dc;
+  text-decoration: underline;
+}
+
+.post-credits {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dbdbdb;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+}
+
+.content .rule-key {
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+.content .rule-key code {
+  font-size: 0.8rem;
+  color: #4a4a4a;
+  background: none;
+  padding: 0;
+}
 
 /*# sourceMappingURL=app.css.map */
